@@ -65,11 +65,11 @@
     <Content Include="main\comensales\comentarios.aspx" />
     <Content Include="main\comensales\reservar.aspx" />
     <Content Include="main\comensales\reservas.aspx" />
-    <Content Include="main\login.aspx" />
-    <Content Include="main\registracion.aspx" />
-    <Content Include="main\userControls\ucMenuAnonimo.ascx" />
-    <Content Include="main\userControls\ucMenuCocinero.ascx" />
-    <Content Include="main\userControls\ucMenuComensal.ascx" />
+    <Content Include="main\anonimo\login.aspx" />
+    <Content Include="main\anonimo\registracion.aspx" />
+    <Content Include="main\ucMenuAnonimo.ascx" />
+    <Content Include="main\ucMenuCocinero.ascx" />
+    <Content Include="main\ucMenuComensal.ascx" />
     <Content Include="resources\css\bootstrap-theme.css" />
     <Content Include="resources\css\bootstrap-theme.min.css" />
     <Content Include="resources\css\bootstrap.css" />
@@ -138,11 +138,11 @@
     <Compile Include="main\comensales\reservas.aspx.designer.cs">
       <DependentUpon>reservas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="main\login.aspx.cs">
+    <Compile Include="main\anonimo\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="main\login.aspx.designer.cs">
+    <Compile Include="main\anonimo\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="main\master\Anonimo.master.cs">
@@ -173,29 +173,29 @@
     <Compile Include="main\master\Comensal.master.designer.cs">
       <DependentUpon>Comensal.master</DependentUpon>
     </Compile>
-    <Compile Include="main\registracion.aspx.cs">
+    <Compile Include="main\anonimo\registracion.aspx.cs">
       <DependentUpon>registracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="main\registracion.aspx.designer.cs">
+    <Compile Include="main\anonimo\registracion.aspx.designer.cs">
       <DependentUpon>registracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="main\userControls\ucMenuAnonimo.ascx.cs">
+    <Compile Include="main\ucMenuAnonimo.ascx.cs">
       <DependentUpon>ucMenuAnonimo.ascx</DependentUpon>
     </Compile>
-    <Compile Include="main\userControls\ucMenuAnonimo.ascx.designer.cs">
+    <Compile Include="main\ucMenuAnonimo.ascx.designer.cs">
       <DependentUpon>ucMenuAnonimo.ascx</DependentUpon>
     </Compile>
-    <Compile Include="main\userControls\ucMenuCocinero.ascx.cs">
+    <Compile Include="main\ucMenuCocinero.ascx.cs">
       <DependentUpon>ucMenuCocinero.ascx</DependentUpon>
     </Compile>
-    <Compile Include="main\userControls\ucMenuCocinero.ascx.designer.cs">
+    <Compile Include="main\ucMenuCocinero.ascx.designer.cs">
       <DependentUpon>ucMenuCocinero.ascx</DependentUpon>
     </Compile>
-    <Compile Include="main\userControls\ucMenuComensal.ascx.cs">
+    <Compile Include="main\ucMenuComensal.ascx.cs">
       <DependentUpon>ucMenuComensal.ascx</DependentUpon>
     </Compile>
-    <Compile Include="main\userControls\ucMenuComensal.ascx.designer.cs">
+    <Compile Include="main\ucMenuComensal.ascx.designer.cs">
       <DependentUpon>ucMenuComensal.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,6 +221,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="main\userControls\" />
     <Folder Include="resources\img\" />
   </ItemGroup>
   <PropertyGroup>
