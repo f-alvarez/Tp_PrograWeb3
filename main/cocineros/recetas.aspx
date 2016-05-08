@@ -1,17 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="recetas.aspx.cs" Inherits="Tp__PrograWeb3.main.cocineros.recetas" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/main/master/Cocinero.master" AutoEventWireup="true" CodeBehind="recetas.aspx.cs" Inherits="Tp__PrograWeb3.main.cocineros.recetas" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+</asp:Content>

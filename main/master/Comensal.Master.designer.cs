@@ -7,9 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Tp__PrograWeb3.main.cocineros {
+namespace Tp__PrograWeb3.main.master {
     
     
-    public partial class perfil {
+    public partial class Cocinero {
     }
 }

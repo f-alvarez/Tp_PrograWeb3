@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tp__PrograWeb3.main
+namespace Tp__PrograWeb3.main.comensales
 {
 
 
-    public partial class login
+    public partial class comentarios
     {
 
         /// <summary>

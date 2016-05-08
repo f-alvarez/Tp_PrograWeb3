@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="Tp__PrograWeb3.main.master.Base" %>
+
+<%@ Register Src="~/main/userControls/ucMenuAnonimo.ascx" TagPrefix="uc1" TagName="ucMenuAnonimo" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="~/resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="~/resources/css/estilos.css"/>
+</head>
+<body>
+    <uc1:ucMenuAnonimo runat="server" ID="ucMenuAnonimo" />
+    <div class="container">
+        <div class="row">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</body>
+</html>

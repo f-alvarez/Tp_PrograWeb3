@@ -7,63 +7,54 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Tp__PrograWeb3.main.anonimo {
+namespace Tp__PrograWeb3.main.userControls {
     
     
-    public partial class _default {
+    public partial class ucEventosInicio {
         
         /// <summary>
-        /// Control ucEventosInicio.
+        /// Control linkImgEvento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UserControl ucEventosInicio;
+        protected global::System.Web.UI.WebControls.HyperLink linkImgEvento;
         
         /// <summary>
-        /// Control ucEventosInicio1.
+        /// Control ImgEvento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UserControl ucEventosInicio1;
+        protected global::System.Web.UI.WebControls.Image ImgEvento;
         
         /// <summary>
-        /// Control ucEventosInicio2.
+        /// Control linkNombreEvento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UserControl ucEventosInicio2;
+        protected global::System.Web.UI.WebControls.HyperLink linkNombreEvento;
         
         /// <summary>
-        /// Control ucEventosInicio3.
+        /// Control lblPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UserControl ucEventosInicio3;
+        protected global::System.Web.UI.WebControls.Label lblPrecio;
         
         /// <summary>
-        /// Control ucEventosInicio4.
+        /// Control lblPuntuacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UserControl ucEventosInicio4;
-        
-        /// <summary>
-        /// Control ucEventosInicio5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UserControl ucEventosInicio5;
+        protected global::System.Web.UI.WebControls.Label lblPuntuacion;
     }
 }

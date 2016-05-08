@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/main/master/Base.Master" AutoEventWireup="true" CodeBehind="Cocinero.master.cs" Inherits="Tp__PrograWeb3.main.master.Cocinero" %>
+
+
+<asp:Content ID="Content4" ContentPlaceHolderID="body" runat="server">
+
+    <header>
+        <div class="">
+            <label>Este es el menu de los cocineros</label>
+        </div>
+    </header>
+    <div class="container">
+        <asp:ContentPlaceHolder ID="main" runat="server" />
+    </div>
+
+</asp:Content>

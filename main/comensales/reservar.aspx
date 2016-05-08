@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registracion.aspx.cs" Inherits="Tp__PrograWeb3.main.registracion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservar.aspx.cs" Inherits="Tp__PrograWeb3.main.comensales.reservar" %>
 
 <!DOCTYPE html>
 

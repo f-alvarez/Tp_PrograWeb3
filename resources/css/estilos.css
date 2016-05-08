@@ -3,3 +3,46 @@
     padding-left: 10px;
 	color: #FFA103;
 }
+
+.puntuacion {
+	color: #FFA103;
+    font-weight: bold;
+}
+
+.miniimgIndex{
+	width: 400px !important;
+	height: 200px !important;
+}
+
+.center {
+    margin: 0 auto 0 auto !important;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.ContenedorFormulario{
+	width: 615px;
+	height: auto;
+	margin: 0 auto 30px auto;
+	background-color: #FFFFFF;
+	border: 1px solid #d0d1d5;
+	border-radius: 3px;
+}
+
+.ContenedorFormularioInterior{
+	padding: 2% 2% 0 2%;
+}
+
+.portrait {
+    width: 50%;
+    margin: 20px auto;
+}
+
+@media all and (max-width: 767px) {
+	.ContenedorFormulario{
+		height: auto;
+		width: 100%;
+	}
+}
