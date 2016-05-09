@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="~/resources/css/estilos.css"/>
 </head>
 <body>
+<%--    TODO: Si no está logueado mostrar ucMenuAnonimo. Si está logueado, mostrar ucMenuCocinero si es cocinero, o ucMenuComensal si es comensal--%>
     <uc1:ucMenuAnonimo runat="server" ID="ucMenuAnonimo" />
     <div class="container">
         <div class="row">

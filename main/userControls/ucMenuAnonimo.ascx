@@ -12,11 +12,11 @@
 			<!--INICIA MENU-->
 			<div class="collapse navbar-collapse" id="navegacion"><!--NAVEGACION-->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="default.aspx">Inicio</a>
+                    <a class="navbar-brand" href='<%=ResolveUrl("~/main/anonimo/default.aspx") %>'>Inicio</a>
                 </div>
 				<ul class="pull-right nav navbar-nav">
-					<li><a href="login.aspx">Ingresar</a></li>
-					<li><a href="registracion.aspx">Registro</a></li>
+					<li><a href='<%=ResolveUrl("~/main/anonimo/login.aspx") %>'>Ingresar</a></li>
+					<li><a href='<%=ResolveUrl("~/main/anonimo/registracion.aspx") %>'>Registro</a></li>
 				</ul>
 			</div>
 		</div>

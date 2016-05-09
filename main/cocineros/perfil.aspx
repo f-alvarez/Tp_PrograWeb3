@@ -8,6 +8,9 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
     <div class="col-md-12">
+        <div class="text-center col-md-12">
+            <h1>PERFIL</h1>
+        </div>
         <div class="col-md-6">
             <div class="col-md-12">
                 <div class="panel panel-default titles text-center">

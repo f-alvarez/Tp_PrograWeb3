@@ -41,6 +41,9 @@ campo Foto en la base de datos el Path relativo.--%>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
     <div class="col-md-12">
+        <div class="text-center col-md-12">
+            <h1>EVENTOS</h1>
+        </div>
         <form id="Form1" class="form" runat="server">
           <div class="form-group col-md-6">
             <label>Nombre del evento:</label>
