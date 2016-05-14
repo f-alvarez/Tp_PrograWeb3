@@ -53,23 +53,15 @@ campo Foto en la base de datos el Path relativo.--%>
             </asp:RequiredFieldValidator>
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label>Fecha del evento:</label>
-            <input type="text" class="form-control" id="fechaId" placeholder="dd/mm/yyyy" runat="server">
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="fechaId" ValidationExpression="(((0|1)[1-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$"
-            ValidationGroup="Group1" CssClass="has-error">
-                <span class="help-block">Ingrese una fecha válida</span>
-            </asp:RegularExpressionValidator>
+
+            <asp:Calendar ID="calendarId" runat="server"></asp:Calendar>
             
-            <asp:CompareValidator ID="Comparevalidator1" runat="server" 
-            controltovalidate="fechaId" type="String"
-            valuetocompare="0" CssClass="has-error">
-                <span class="help-block">La fecha no puede ser menor al día de hoy</span>
-            </asp:CompareValidator>
+            <asp:customvalidator id="CustomValidator1" Display="Dynamic" CssClass="has-error" onservervalidate="DateCustVal_Validate" runat="server">
+                <span class="help-block">La fecha no puede ser menor al día de hoy</span>            
+            </asp:customvalidator>
             
-              <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic" ControlToValidate="fechaId" CssClass="has-error">
-                <span class="help-block">Ingrese una fecha</span>
-            </asp:RequiredFieldValidator>
 
           </div>
           

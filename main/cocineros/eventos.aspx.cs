@@ -13,5 +13,17 @@ namespace Tp__PrograWeb3.main.cocineros
         {
 
         }
+
+        protected void DateCustVal_Validate(object source, ServerValidateEventArgs args)
+        {
+            if (calendarId.SelectedDate < DateTime.Now)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 }
