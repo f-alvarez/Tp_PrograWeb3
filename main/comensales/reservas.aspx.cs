@@ -11,40 +11,31 @@ namespace Tp__PrograWeb3.main.comensales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             List<Eventos> ListEven = new List<Eventos>();
 
-            Eventos evento = new Eventos();
-            evento.nombre = "Festival Raíz";
-            evento.fecha = "25/5/2016";
-            evento.descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            evento.estado = "Pendiente";
+            string nombre = "Festival Raíz";
+            string fecha = "25/5/2016";
+            string descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
+            string estado = "Pendiente";
+            Eventos evento = new Eventos(nombre,fecha,descripcion,estado);
             ListEven.Add(evento);
 
-            Eventos evento1 = new Eventos();
-            evento.nombre = "Sabores Etnicos";
-            evento.fecha = "3/4/2016";
-            evento.descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            evento.estado = "Realizado";
+            nombre = "Sabores Etnicos";
+            fecha = "3/4/2016";
+            descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
+            estado = "Realizado";
+            Eventos evento1 = new Eventos(nombre, fecha, descripcion, estado);
             ListEven.Add(evento1);
 
-            Eventos evento2 = new Eventos();
-            evento.nombre = "Food Markt";
-            evento.fecha = "7/6/2016";
-            evento.descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            evento.estado = "Cancelado";
+            nombre = "Food Markt";
+            fecha = "7/6/2016";
+            descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
+            estado = "Cancelado";
+            Eventos evento2 = new Eventos(nombre, fecha, descripcion, estado);
             ListEven.Add(evento2);
             
-           
-
-
-
-
             gvListaEventos.DataSource = ListEven;
-            gvListaEventos.DataBind();
-
-          
-            
+            gvListaEventos.DataBind();            
         }
 
 
