@@ -17,7 +17,7 @@ Al momento de crear un evento deberá cargar:
 
 Todos los campos son obligatorios y deberán ser validados. X
 
-El cocinero deberá al menos seleccionar una (pueden ser varias) de sus recetas para el evento.
+El cocinero deberá al menos seleccionar una (pueden ser varias) de sus recetas para el evento. x
 
 La cantidad de comensales será para todo el evento y no por receta.
 
@@ -47,8 +47,8 @@ campo Foto en la base de datos el Path relativo.--%>
         <form id="Form1" class="form" runat="server">
           <div class="form-group col-md-6">
             <label>Nombre del evento:</label>
-            <input type="text" class="form-control" runat="server" id="nombreId" placeholder="Ingrese nombre">
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ControlToValidate="nombreId" CssClass="has-error">
+            <input type="text" class="form-control" runat="server" id="NombreId" placeholder="Ingrese nombre">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ControlToValidate="NombreId" CssClass="has-error">
                 <span class="help-block">Ingrese un nombre</span>
             </asp:RequiredFieldValidator>
           </div>
@@ -79,12 +79,19 @@ campo Foto en la base de datos el Path relativo.--%>
           <div class="form-group col-md-6">
             <label>Recetas propuestas:</label>
 
-              <div class="checkbox">
-                <label><input type="checkbox" name="receta" value="0" />Sopa</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="receta" value="1" />Una receta que ya está creada.</label>
-              </div>
+              <asp:CheckBoxList ID="recetasListId" runat="server" CssClass="checkbox">
+                <asp:ListItem Text="Apple" />
+                <asp:ListItem Text="Banana" />
+                <asp:ListItem Text="Pineapple" />
+                <asp:ListItem Text="Guava" />
+                <asp:ListItem Text="Grapes" />
+                <asp:ListItem Text="Papaya" />
+            </asp:CheckBoxList>
+
+              <asp:CustomValidator ID="ValidadorRecetaId" runat="server" 
+                onservervalidate="ValidarRecetaSeleccionada" CssClass="has-error">
+                    <span class="help-block">Seleccione al menos una receta</span>
+              </asp:CustomValidator>
           </div>
 
           <div class="form-group col-md-6">
@@ -109,7 +116,7 @@ campo Foto en la base de datos el Path relativo.--%>
             <label>Foto:</label>
             <asp:FileUpload id="fotoId" runat="server" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" Display="Dynamic" ControlToValidate="fotoId" CssClass="has-error">
-                <span class="help-block">Ingrese la ubicación</span>
+                <span class="help-block">Ingrese la foto</span>
             </asp:RequiredFieldValidator>
           </div>
 
@@ -127,8 +134,12 @@ campo Foto en la base de datos el Path relativo.--%>
           </div>
                
           <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-success pull-right">Guardar Evento</button>
-          </div>                     
+            <asp:Button runat="server" id="UploadButton" CssClass="btn btn-success pull-right" text="Guardar Evento" onclick="GuardarEventoClick" />
+          </div>
+          <div class="form-group col-md-12">
+            <asp:Label runat="server" CssClass="pull-right" id="StatusLabel" text="" />
+          </div>            
+                     
         </form>
     </div>
 </asp:Content>
