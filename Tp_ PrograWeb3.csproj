@@ -77,6 +77,7 @@
     <Content Include="resources\css\bootstrap.css" />
     <Content Include="resources\css\bootstrap.min.css" />
     <Content Include="resources\css\estilos.css" />
+    <Content Include="resources\img\Evento1.jpeg" />
     <Content Include="resources\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="resources\js\js-bootstrap\bootstrap.js" />
     <Content Include="resources\js\js-bootstrap\bootstrap.min.js" />
@@ -85,7 +86,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Eventos.cs" />
     <Compile Include="main\anonimo\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,8 +241,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="resources\img\" />
+    <ProjectReference Include="..\Repositorios\Repositorios.csproj">
+      <Project>{7793cd1b-214a-4bca-b85b-e0a3efd2621d}</Project>
+      <Name>Repositorios</Name>
+    </ProjectReference>
+    <ProjectReference Include="Entidades\Entidades.csproj">
+      <Project>{541e43d4-e31c-4ef7-9a35-918a1ef96c4f}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

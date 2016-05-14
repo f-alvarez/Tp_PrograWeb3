@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp_ PrograWeb3", "Tp_ PrograWeb3.csproj", "{5921C604-15D6-43DA-AC21-C49B62BC41FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorios", "..\Repositorios\Repositorios.csproj", "{7793CD1B-214A-4BCA-B85B-E0A3EFD2621D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{541E43D4-E31C-4EF7-9A35-918A1EF96C4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{5921C604-15D6-43DA-AC21-C49B62BC41FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5921C604-15D6-43DA-AC21-C49B62BC41FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5921C604-15D6-43DA-AC21-C49B62BC41FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7793CD1B-214A-4BCA-B85B-E0A3EFD2621D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7793CD1B-214A-4BCA-B85B-E0A3EFD2621D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7793CD1B-214A-4BCA-B85B-E0A3EFD2621D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7793CD1B-214A-4BCA-B85B-E0A3EFD2621D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541E43D4-E31C-4EF7-9A35-918A1EF96C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541E43D4-E31C-4EF7-9A35-918A1EF96C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541E43D4-E31C-4EF7-9A35-918A1EF96C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541E43D4-E31C-4EF7-9A35-918A1EF96C4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
