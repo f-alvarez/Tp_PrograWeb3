@@ -1,17 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservas.aspx.cs" Inherits="Tp__PrograWeb3.main.comensales.reservas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main/master/Comensal.Master" AutoEventWireup="true" CodeBehind="reservas.aspx.cs" Inherits="Tp__PrograWeb3.main.comensales.reservas" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat ="server">
+
+     <div class="col-md-12">
+        <div class="text-center col-md-12">
+            <h1>MIS RESERVAS</h1>
+
+         </div>
+         <form id="gv" class="form-horizontal" runat="server">
+        <asp:GridView ID="gvListaEventos" runat="server" CssClass="table table-striped table-bordered table-condensed">
+        </asp:GridView>
     </form>
-</body>
-</html>
+    </div>
+    </div>
+</asp:Content>

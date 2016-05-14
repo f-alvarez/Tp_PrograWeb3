@@ -67,6 +67,8 @@
     <Content Include="main\comensales\comentarios.aspx" />
     <Content Include="main\comensales\reservar.aspx" />
     <Content Include="main\comensales\reservas.aspx" />
+    <Content Include="main\ucMenuCocinero.ascx" />
+    <Content Include="main\ucMenuComensal.ascx" />
     <Content Include="main\userControls\ucEventosInicio.ascx" />
     <Content Include="main\userControls\ucLabelTexto.ascx" />
     <Content Include="main\userControls\ucMenuAnonimo.ascx" />
@@ -83,6 +85,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Eventos.cs" />
     <Compile Include="main\anonimo\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -180,6 +183,20 @@
     </Compile>
     <Compile Include="main\master\Comensal.Master.designer.cs">
       <DependentUpon>Comensal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="main\ucMenuCocinero.ascx.cs">
+      <DependentUpon>ucMenuCocinero.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\ucMenuCocinero.ascx.designer.cs">
+      <DependentUpon>ucMenuCocinero.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="main\ucMenuComensal.ascx.cs">
+      <DependentUpon>ucMenuComensal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\ucMenuComensal.ascx.designer.cs">
+      <DependentUpon>ucMenuComensal.ascx</DependentUpon>
     </Compile>
     <Compile Include="main\userControls\ucEventosInicio.ascx.cs">
       <DependentUpon>ucEventosInicio.ascx</DependentUpon>

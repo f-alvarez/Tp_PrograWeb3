@@ -7,9 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Tp__PrograWeb3.main.master {
+namespace Tp__PrograWeb3.main {
     
     
-    public partial class Comensal {
+    public partial class ucMenuComensal {
     }
 }
