@@ -17,10 +17,10 @@ namespace Tp__PrograWeb3.main.master
             ucMenuAnonimo.Visible = false;
             switch (typeUser)
             {
-                case "Comensal":
+                case "Comensal@gmail.com":
                     ucMenuComensal.Visible = true;
                     break;
-                case "Cocinero":
+                case "Cocinero@gmail.com":
                     ucMenuCocinero.Visible = true;
                     break;
                 default:

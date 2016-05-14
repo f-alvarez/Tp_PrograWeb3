@@ -22,6 +22,15 @@ namespace Tp__PrograWeb3.main {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
+        /// Control ResumenValidaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ResumenValidaciones;
+        
+        /// <summary>
         /// Control ucLabelTextoNombre.
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace Tp__PrograWeb3.main {
         protected global::Tp__PrograWeb3.main.userControls.ucLabelTexto ucLabelTextoConfirmPass;
         
         /// <summary>
-        /// Control CompareValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-        
-        /// <summary>
         /// Control RequiredFieldValidator4.
         /// </summary>
         /// <remarks>
@@ -119,6 +119,15 @@ namespace Tp__PrograWeb3.main {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        
+        /// <summary>
+        /// Control CompareValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// Control RadioButtonTipoUser.

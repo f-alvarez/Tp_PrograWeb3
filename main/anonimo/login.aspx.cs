@@ -13,5 +13,27 @@ namespace Tp__PrograWeb3.main
         {
 
         }
+
+        protected void btnIngresarLogin_Click(object sender, EventArgs e)
+        {
+            Redireccion(ucLabelTextoEmail.TextoTextBox);
+        }
+
+        private void Redireccion(string tipoUsuario)
+        {
+            string urlDestino = "login.aspx";
+            switch (tipoUsuario)
+            {
+                case "Comensal@gmail.com":
+                    urlDestino = String.Format("../comensales/reservas.aspx?tipoUsuario={0}", tipoUsuario);
+                    break;
+                case "Cocinero@gmail.com":
+                    urlDestino = String.Format("../cocineros/perfil.aspx?tipoUsuario={0}", tipoUsuario);
+                    break;
+                default:
+                break;
+            }
+            Response.Redirect(urlDestino);
+        }
     }
 }
