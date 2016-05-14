@@ -8,10 +8,17 @@
             <h1>MIS RESERVAS</h1>
 
          </div>
-         <form id="gv" class="form-horizontal" runat="server">
-        <asp:GridView ID="gvListaEventos" runat="server" CssClass="table table-striped table-bordered table-condensed">
-        </asp:GridView>
+         <form id="gv" class="form-horizontal" runat="server"  >
+        <asp:GridView ID="gvListaEventos" runat="server" CssClass="table table-striped table-bordered table-condensed"  >
+            <Columns>
+                <asp:HyperLinkField NavigateUrl="~/main/comensales/comentarios.aspx" Text="CALIFICAR" />
+            </Columns>
+        
+        
+        </asp:GridView> 
+            
     </form>
     </div>
-    </div>
+  
+    
 </asp:Content>

@@ -19,22 +19,23 @@ namespace Tp__PrograWeb3.main.comensales
             evento.fecha = "25/5/2016";
             evento.descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             evento.estado = "Pendiente";
+            ListEven.Add(evento);
 
             Eventos evento1 = new Eventos();
             evento.nombre = "Sabores Etnicos";
             evento.fecha = "3/4/2016";
             evento.descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             evento.estado = "Realizado";
+            ListEven.Add(evento1);
 
             Eventos evento2 = new Eventos();
             evento.nombre = "Food Markt";
             evento.fecha = "7/6/2016";
             evento.descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             evento.estado = "Cancelado";
-
-            ListEven.Add(evento);
-            ListEven.Add(evento1);
             ListEven.Add(evento2);
+            
+           
 
 
 
@@ -42,6 +43,13 @@ namespace Tp__PrograWeb3.main.comensales
             gvListaEventos.DataSource = ListEven;
             gvListaEventos.DataBind();
 
+          
+            
         }
+
+
+
+
+
     }
 }
