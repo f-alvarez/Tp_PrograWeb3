@@ -34,20 +34,21 @@ namespace Tp__PrograWeb3.main.cocineros
 
         protected void GuardarEventoClick(object sender, EventArgs e)
         {
-            try 
-	        {
+            try
+            {
                 GuardarFoto();
                 StatusLabel.Text = "Upload status: File uploaded!";
-	        }
-	        catch (Exception)
-	        {
-		
-		        throw;
-	        }
-            
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
-        protected void GuardarFoto(){
+        protected void GuardarFoto()
+        {
             if (fotoId.HasFile)
             {
                 try
@@ -60,5 +61,6 @@ namespace Tp__PrograWeb3.main.cocineros
                     StatusLabel.Text = "Upload status: Error al subir la imagen: " + ex.Message;
                 }
             }
+        }
     }
 }
