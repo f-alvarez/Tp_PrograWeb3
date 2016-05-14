@@ -23,19 +23,23 @@
             </div>
         </div>
         <div class="form-group">
-            <uc1:ucLabelTexto runat="server" ID="ucLabelTextoPass" TextoLabel="Password" TxtType="Password"/>
+            <uc1:ucLabelTexto runat="server" ID="ucLabelTextoPass" TextoLabel="Password" TxtType="SingleLine"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese una contraseña" Display="Dynamic" ControlToValidate="ucLabelTextoPass$txt" CssClass="help-block"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                 ErrorMessage="La contraseña debe empezar con 1 letra mayúscula y contener al menos 1 número"
                 ControlToValidate="ucLabelTextoPass$txt"
-                ValidationExpression="^([A-Z]{1})+([a-zA-Z0-9]*)$" Display="Dynamic" CssClass="help-block">
+                ValidationExpression="^([A-Z]{1})(?=.*\d)([a-z]*).{7,15}" Display="Dynamic" CssClass="help-block">
             </asp:RegularExpressionValidator>
         </div>
         </div>
         <div class="form-group">
             <uc1:ucLabelTexto runat="server" ID="ucLabelTextoConfirmPass" TextoLabel="Confirmar Password" TxtType="Password"/>
+            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                ControlToValidate="ucLabelTextoConfirmPass$txt"
+                CssClass="help-block"
+                ControlToCompare="ucLabelTextoPass$txt"
+                ErrorMessage="Las contraseñas no coinciden" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Confirme contraseña" Display="Dynamic" ControlToValidate="ucLabelTextoConfirmPass$txt" CssClass="help-block"></asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden" Display="Dynamic" ControlToValidate="ucLabelTextoConfirmPass$txt" CssClass="help-block"></asp:CompareValidator>
         </div>
         </div>
         <div class="form-group">
