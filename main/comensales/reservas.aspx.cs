@@ -11,28 +11,46 @@ namespace Tp__PrograWeb3.main.comensales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Eventos> ListEven = new List<Eventos>();
+            List<Evento> ListEven = new List<Evento>();
 
             string nombre = "Festival Raíz";
             string fecha = "25/5/2016";
             string descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             string estado = "Pendiente";
-            Eventos evento = new Eventos(nombre,fecha,descripcion,estado);
-            ListEven.Add(evento);
+            Evento evento1 = new Evento
+            {
+                nombre = nombre,
+                fecha = fecha,
+                descripcion = descripcion,
+                estado = estado
+            };
+            ListEven.Add(evento1);
 
             nombre = "Sabores Etnicos";
             fecha = "3/4/2016";
             descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             estado = "Realizado";
-            Eventos evento1 = new Eventos(nombre, fecha, descripcion, estado);
-            ListEven.Add(evento1);
+            Evento evento2 = new Evento
+            {
+                nombre = nombre,
+                fecha = fecha,
+                descripcion = descripcion,
+                estado = estado
+            };
+            ListEven.Add(evento2);
 
             nombre = "Food Markt";
             fecha = "7/6/2016";
             descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             estado = "Cancelado";
-            Eventos evento2 = new Eventos(nombre, fecha, descripcion, estado);
-            ListEven.Add(evento2);
+            Evento evento3 = new Evento
+            {
+                nombre = nombre,
+                fecha = fecha,
+                descripcion = descripcion,
+                estado = estado
+            };
+            ListEven.Add(evento3);
             
             gvListaEventos.DataSource = ListEven;
             gvListaEventos.DataBind();            
