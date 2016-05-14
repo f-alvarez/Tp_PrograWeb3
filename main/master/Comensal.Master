@@ -4,8 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-</asp:Content>
-
-
-<asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
+    <div class="col-md-12">
+        <asp:ContentPlaceHolder ID="bodyComensales" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 </asp:Content>

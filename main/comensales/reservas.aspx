@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main/master/Comensal.Master" AutoEventWireup="true" CodeBehind="reservas.aspx.cs" Inherits="Tp__PrograWeb3.main.comensales.reservas" %>
 
 
-<asp:Content ID="Content2" ContentPlaceHolderID="body" runat ="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyComensales" runat ="server">
 
      <div class="col-md-12">
         <div class="text-center col-md-12">

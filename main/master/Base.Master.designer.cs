@@ -40,6 +40,24 @@ namespace Tp__PrograWeb3.main.master {
         protected global::Tp__PrograWeb3.main.userControls.ucMenuAnonimo ucMenuAnonimo;
         
         /// <summary>
+        /// Control ucMenuCocinero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Tp__PrograWeb3.main.ucMenuCocinero ucMenuCocinero;
+        
+        /// <summary>
+        /// Control ucMenuComensal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Tp__PrograWeb3.main.ucMenuComensal ucMenuComensal;
+        
+        /// <summary>
         /// Control body.
         /// </summary>
         /// <remarks>

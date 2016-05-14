@@ -1,6 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="Tp__PrograWeb3.main.master.Base" %>
 
 <%@ Register Src="~/main/userControls/ucMenuAnonimo.ascx" TagPrefix="uc1" TagName="ucMenuAnonimo" %>
+<%@ Register Src="~/main/ucMenuCocinero.ascx" TagPrefix="uc1" TagName="ucMenuCocinero" %>
+<%@ Register Src="~/main/ucMenuComensal.ascx" TagPrefix="uc1" TagName="ucMenuComensal" %>
+
+
 
 <!DOCTYPE html>
 
@@ -16,6 +20,8 @@
 <body>
 <%--    TODO: Si no está logueado mostrar ucMenuAnonimo. Si está logueado, mostrar ucMenuCocinero si es cocinero, o ucMenuComensal si es comensal--%>
     <uc1:ucMenuAnonimo runat="server" ID="ucMenuAnonimo" />
+    <uc1:ucMenuCocinero runat="server" ID="ucMenuCocinero" />
+    <uc1:ucMenuComensal runat="server" ID="ucMenuComensal" />
     <div class="container">
         <div class="row">
             <asp:ContentPlaceHolder ID="body" runat="server">
