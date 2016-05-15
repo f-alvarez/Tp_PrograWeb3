@@ -50,9 +50,12 @@
 		<div class="form-group">
 		<label class="col-sm-4 control-label" for=""></label>	    
 			<div class="col-sm-6">
-				<button type="submit" id="btnSubmit" name="enviar" class="btn btn-success btn-md" value="Aceptar"><span class="glyphicon glyphicon glyphicon-ok-circle"></span> Aceptar</button>	
+				<button type="button" runat="server" id="btnSubmit" name="enviar" class="btn btn-success btn-md" onserverclick="registrarUsuario" value="Aceptar"><span class="glyphicon glyphicon glyphicon-ok-circle"></span> Aceptar</button>	
 				<button type="reset" id="btnButton" name="cancelar" class="btn btn-danger btn-md" value="Cancelar"><span class="glyphicon glyphicon-remove-circle"></span> Cancelar</button>
 			</div>
+            <div class="col-sm-6">
+                <asp:Label Text="" ID="StatusLabel" runat="server" />
+            </div>
 		</div>
 </form>
     </div>

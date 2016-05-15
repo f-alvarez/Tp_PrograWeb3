@@ -21,23 +21,18 @@ namespace Tp__PrograWeb3.main.cocineros
         {
             if (!IsPostBack)
             {
-                this.userId = 1; //obtener de la session o la url
+                this.userId = Int32.Parse(Session["userId"].ToString());
                 CargarPerfil();
             }
         }
 
         private void CargarPerfil()
         {
-            //TODO:USAR ESTO UNA VEZ QUE SE GUARDE USUARIOS EN EL REPO DE USUARIOS
-            ////Usuario usuario = UsuariosRepo.getById(this.userId);
-            ////nombreId.Text = usuario.nombre + " " + usuario.apellido;
-            ////fechaIngresoId.Text = usuario.fechaIngreso;
-            ////mailId.Text = usuario.mail;
 
             Usuario usuario = UsuariosRepo.getById(this.userId);
-            nombreId.Text = "pepe" + " " + "pepo";
-            fechaIngresoId.Text = "12 de abril de 2012";
-            mailId.Text = "pepe@gmail.com";
+            nombreId.Text = usuario.nombre;
+            fechaIngresoId.Text = usuario.fechaIngreso;
+            mailId.Text = usuario.mail;
             
             CargarRecetas();
             CargarEventos();
@@ -47,12 +42,28 @@ namespace Tp__PrograWeb3.main.cocineros
         private void CargarRecetas()
         {
             recetasId.DataSource = RecetasRepo.GetAllByUserId(this.userId);
+            if (recetasId.Items.Count == 0)
+            {
+                labelRecetas.Visible = false;
+            }
+            else
+            {
+                labelRecetas.Visible = true;
+            }
             recetasId.DataBind();
         }
 
         private void CargarEventos()
         {
             eventosId.DataSource = EventosRepo.GetAllByUserId(this.userId);
+            if (eventosId.Items.Count == 0)
+            {
+                labelEventos.Visible = false;
+            }
+            else
+            {
+                labelEventos.Visible = true;
+            }
             eventosId.DataBind();
         }
     }

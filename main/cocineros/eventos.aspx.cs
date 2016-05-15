@@ -20,17 +20,16 @@ namespace Tp__PrograWeb3.main.cocineros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.userId = 1; //viene de la sesion
             if (!IsPostBack) {
+                this.userId = Int32.Parse(Session["userId"].ToString());
                 CargarRecetas();
             }
-
         }
 
         private void CargarRecetas() {
             recetasListId.DataSource = RecetasRepo.GetAllByUserId(this.userId);
-            recetasListId.DataTextField = "recetaId";
-            recetasListId.DataValueField = "nombre";
+            recetasListId.DataTextField = "nombre";
+            recetasListId.DataValueField = "recetaId";
             recetasListId.DataBind();
         }
 
@@ -59,7 +58,7 @@ namespace Tp__PrograWeb3.main.cocineros
                 try
                 {
                     var evento = new Evento();
-                    evento.userId = 1;
+                    evento.userId = this.userId;
                     evento.nombre = NombreId.Value;
                     evento.fecha = calendarId.ToString();
                     evento.descripcion = descripcionId.Value;
@@ -71,6 +70,7 @@ namespace Tp__PrograWeb3.main.cocineros
                     eventoRepositorio.add(evento);
 
                     StatusLabel.Text = "Upload status: Guardado con éxito";
+                    Response.Redirect("perfil.aspx");
                 }
                 catch (Exception ex)
                 {

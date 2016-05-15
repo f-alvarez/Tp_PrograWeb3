@@ -16,32 +16,24 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                 <div class="panel panel-default titles text-center">
                     <div class="panel-heading">Eventos</div>
                     <ul class="list-group">
-                        <li class="list-group-item">
-
-
-                            <asp:Repeater id="eventosId" runat="server">
-                            
-                                <ItemTemplate>
-                                    <div class="panel-body">
-                                        <%# Eval("nombre")%>
-                            
-                                    </div>                            
-                                </ItemTemplate>
-                            </asp:Repeater>
-
-
-                            <div class="panel-body">
-                                <p><b>Cocina Chano</b></p>
-                                <p>Fecha: 21/09/16</p>
-                                <p>En la cocina para Chano no vas a comer nada</p>
-                                <p>Cantidad máxima: 40 comensales</p>
-                                <p>Cantidad de reservas: 0 comensales</p>
-                                <p>Estado: Pendiente</p>
-                                <div class="text-right">
-                                     <a class="text-right" href="#">Opciones</a>
-                                </div>
-                            </div>
-                        </li>
+                        <asp:Label ID="labelEventos" Text="No hay eventos para mostrar" runat="server" />
+                        <asp:Repeater id="eventosId" runat="server">                            
+                            <ItemTemplate>
+                                <li class="list-group-item">
+                                    <div class="panel-body">                      
+                                        <p><b><%# Eval("nombre")%></b></p>
+                                        <p><%# Eval("fecha")%></p>
+                                        <p><%# Eval("descripcion")%></p>
+                                        <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
+                                        <p>Cantidad de reservas: <%# Eval("reservas")%></p>
+                                        <p>Estado: <%# Eval("estado")%></p>
+                                        <div class="text-right">
+                                                <a class="text-right" href="#">Opciones</a>
+                                        </div>
+                                    </div>     
+                                </li>                       
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </ul>
                 </div>
             </div>
@@ -49,6 +41,8 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                 <div class="panel panel-default titles text-center">
                     <div class="panel-heading">Recetas</div>
                     <ul class="list-group">
+                        <asp:Label ID="labelRecetas" Text="No hay recetas para mostrar" runat="server" />
+
                             <asp:Repeater id="recetasId" runat="server">
                                 <ItemTemplate>
                                     <li class="list-group-item"><%# Eval("nombre")%></li>

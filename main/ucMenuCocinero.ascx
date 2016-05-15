@@ -15,7 +15,7 @@
       <a class="navbar-brand" href="#">Cocineros</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="perfil.aspx​.">Mi Perfil</a></li>
+      <li class="active"><a href="perfil.aspx​">Mi Perfil</a></li>
                   
 					<li><a href="recetas.aspx">Crear Recetas</a></li>
                     <li><a href="eventos.aspx">Crear Eventos de Cocina</a></li>

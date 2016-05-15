@@ -12,8 +12,13 @@ namespace Tp__PrograWeb3.main.cocineros
     public partial class recetas : System.Web.UI.Page
     {
         RecetasRepository recetaRepositorio = new RecetasRepository();
+        int userId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack) {
+                this.userId = Int32.Parse(Session["userId"].ToString());
+            }
 
         }
 
@@ -21,7 +26,8 @@ namespace Tp__PrograWeb3.main.cocineros
         {
             try
             {
-                var receta = new Receta();
+                Receta receta = new Receta();
+                receta.userId = this.userId;
                 receta.nombre = nombreId.Value;
                 receta.tiempoDeCoccion = Int32.Parse(tiempoId.Value);
                 receta.descripcionYPasosDeRealizacion = descripcionId.Value;

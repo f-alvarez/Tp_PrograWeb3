@@ -28,5 +28,32 @@ namespace Repositorios
                 return Usuarios.ElementAt(index);             
             }   
         }
+
+        public Usuario getByMail(string mail)
+        {
+
+            int index = Usuarios.FindIndex(usuario => usuario.mail == mail);
+            if (index < 0)
+            {
+                return null;
+            }
+            else
+            {
+                return Usuarios.ElementAt(index);
+            }
+        }
+
+        public Usuario getByMailAndPass(string mail, string pass) {
+            
+            int index = Usuarios.FindIndex(usuario => (usuario.mail == mail && usuario.pass == pass));
+            if (index < 0)
+            {
+                return null;
+            }
+            else
+            {
+                return Usuarios.ElementAt(index);
+            }
+        }
     }
 }

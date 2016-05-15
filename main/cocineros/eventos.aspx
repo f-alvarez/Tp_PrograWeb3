@@ -80,12 +80,7 @@ campo Foto en la base de datos el Path relativo.--%>
             <label>Recetas propuestas:</label>
 
               <asp:CheckBoxList ID="recetasListId" runat="server" CssClass="checkbox">
-                <asp:ListItem Text="Apple" />
-                <asp:ListItem Text="Banana" />
-                <asp:ListItem Text="Pineapple" />
-                <asp:ListItem Text="Guava" />
-                <asp:ListItem Text="Grapes" />
-                <asp:ListItem Text="Papaya" />
+
             </asp:CheckBoxList>
             <asp:CustomValidator ID="validadorRecetas" runat="server" 
                 OnServerValidate="ValidarRecetaSeleccionada" 

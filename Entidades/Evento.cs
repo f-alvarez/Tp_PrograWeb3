@@ -8,8 +8,12 @@ namespace Entidades
 {
     public class Evento
     {
+        public Evento() {
+            reservas = 0;
+        }
         public List<Receta> recetas { get; set; }
         public int cantidadComensales { get; set; }
+        public int reservas { get; set; }
         public string ubicacion { get; set; }
         public string foto { get; set; }
         public double precio { get; set; }
