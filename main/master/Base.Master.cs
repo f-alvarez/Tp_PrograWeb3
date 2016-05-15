@@ -54,22 +54,26 @@ namespace Tp__PrograWeb3.main.master
 
         private void MockData() {
 
-            Usuario nuevoUsuario = new Usuario();
-            nuevoUsuario.id = 1;
-            nuevoUsuario.nombre = "pepe";
-            nuevoUsuario.pass = "A123456789";
-            nuevoUsuario.mail = "pepe@cocinero.com";
-            nuevoUsuario.fechaIngreso = DateTime.Now.ToString();
-            nuevoUsuario.tipo = 2;
+            Usuario nuevoUsuario = new Usuario 
+            {
+                id = 1,
+                nombre = "pepe",
+                pass = "A123456789",
+                mail = "pepe@cocinero.com",
+                fechaIngreso = DateTime.Now.ToString(),
+                tipo = 2
+            };
             UsuarioRepo.add(nuevoUsuario);
 
-            Usuario nuevoUsuario2 = new Usuario();
-            nuevoUsuario.id = 2;
-            nuevoUsuario.nombre = "pepe";
-            nuevoUsuario.pass = "A123456789";
-            nuevoUsuario.mail = "pepe@comensal.com";
-            nuevoUsuario.fechaIngreso = DateTime.Now.ToString();
-            nuevoUsuario.tipo = 1;
+            Usuario nuevoUsuario2 = new Usuario 
+            {
+                id = 2,
+                nombre = "pepe",
+                pass = "A123456789",
+                mail = "pepe@comensal.com",
+                fechaIngreso = DateTime.Now.ToString(),
+                tipo = 1,
+            };
             UsuarioRepo.add(nuevoUsuario2);
 
             Receta receta = new Receta
