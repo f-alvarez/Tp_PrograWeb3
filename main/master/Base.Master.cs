@@ -72,6 +72,7 @@ namespace Tp__PrograWeb3.main.master
 
             Receta receta = new Receta
             {
+                recetaId = 33,
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
                 nombre = "Pizza",
                 tiempoDeCoccion = 30,
@@ -81,6 +82,7 @@ namespace Tp__PrograWeb3.main.master
             };
             Receta receta2 = new Receta
             {
+                recetaId = 44,
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
                 nombre = "Milanesa napolitana con papas",
                 tiempoDeCoccion = 35,
@@ -91,7 +93,7 @@ namespace Tp__PrograWeb3.main.master
 
             int cantidadComensales = 10;
             string ubicacion = "Lavalle 348";
-            string foto = "~/main/fotos/02.jpg";
+            string foto = "~/resources/img/02.jpg";
             double precio = 120.50;
             string nombre = "Festival Raíz";
             string fecha = "25/5/2016";
@@ -114,7 +116,7 @@ namespace Tp__PrograWeb3.main.master
 
             cantidadComensales = 3;
             ubicacion = "San Martin 347";
-            foto = "~/main/fotos/Evento1.jpeg";
+            foto = "~/resources/img/Evento1.jpeg";
             precio = 220.50;
             nombre = "La Festichola";
             fecha = "15/12/2016";

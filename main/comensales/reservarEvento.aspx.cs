@@ -15,8 +15,17 @@ namespace Tp__PrograWeb3.main.comensales
         {
             string Id = Request.QueryString["idEvento"];
             Evento evento = EventosRepository.getInstance.GetEventoById(Id);
-            RecetasRepeater.DataSource = evento.recetas;
-            RecetasRepeater.DataBind();
+            gvListaRecetas.DataSource = evento.recetas;
+            gvListaRecetas.DataBind();
         }
+
+        protected void btnReceta_Click1(object sender, EventArgs e)
+        {
+            string valor = cantidadComensales.Text;
+            string id = Request.Form["radCustomer"];
+            Label1.Text = valor + " " + id;
+        }
+
+
     }
 }
