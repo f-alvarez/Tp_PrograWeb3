@@ -5,10 +5,14 @@
         <div class="text-center col-md-12">
             <h1>Reservar</h1>
         </div>
-        <form id="gv" class="form-horizontal" runat="server"  >
-            <asp:GridView ID="gvListaEventosARecervar" runat="server" CssClass="table table-striped table-bordered table-condensed"  UseAccessibleHeader="True" AutoGenerateColumns="False">
+        <form id="gv" class="form-horizontal teVoyACagar" runat="server"  >
+            <asp:GridView ID="GridView1" runat="server" CssClass="left table table-striped table-bordered table-condensed"  UseAccessibleHeader="True" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:BoundField DataField="recetas" HeaderText="Recetas" />
+                    <asp:BoundField DataField="nombre" HeaderText="Recetas" />
+                </Columns> 
+            </asp:GridView> 
+            <asp:GridView ID="gvListaEventosARecervar" runat="server" CssClass="right table table-striped table-bordered table-condensed"  UseAccessibleHeader="True" AutoGenerateColumns="False">
+                <Columns>
                     <asp:BoundField DataField="cantidadComensales" HeaderText="Cantidad de comensales" />
                     <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
                     <asp:BoundField DataField="foto" HeaderText="Foto" />
