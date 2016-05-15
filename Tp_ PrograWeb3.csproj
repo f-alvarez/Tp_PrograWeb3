@@ -243,13 +243,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Repositorios\Repositorios.csproj">
-      <Project>{7793cd1b-214a-4bca-b85b-e0a3efd2621d}</Project>
-      <Name>Repositorios</Name>
-    </ProjectReference>
     <ProjectReference Include="Entidades\Entidades.csproj">
       <Project>{541e43d4-e31c-4ef7-9a35-918a1ef96c4f}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="Repositorios\Repositorios.csproj">
+      <Project>{83d15c58-2987-4d7e-8b6e-ec5e830a70d0}</Project>
+      <Name>Repositorios</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
