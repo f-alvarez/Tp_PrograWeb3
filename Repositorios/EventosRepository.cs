@@ -29,5 +29,19 @@ namespace Repositorios
             return eventosByUser;
             
         }
+
+        public Evento GetEventoById(int id) 
+        { 
+            Evento eventoById = new Evento();
+
+             foreach(Evento evento in Eventos){
+                if (evento.eventoId == id)
+                {
+                    eventoById = evento;
+                }
+            }
+            return eventoById;
+
+        }
     }
 }
