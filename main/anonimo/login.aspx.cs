@@ -15,6 +15,16 @@ namespace Tp__PrograWeb3.main
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string exit = Request.QueryString["exit"];
+            if (exit == "1") {
+                Session.Clear();
+                Session.Abandon();
+
+                if (Session["userId"] == null)
+                {
+                    Response.Redirect(ResolveUrl("~/main/anonimo/login.aspx"));
+                }
+            }
 
         }
 

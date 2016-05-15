@@ -15,13 +15,13 @@ namespace Tp__PrograWeb3.main.cocineros
         UsuariosRepository UsuariosRepo = UsuariosRepository.getInstance;
         RecetasRepository RecetasRepo = RecetasRepository.getInstance;
 
-        int userId;
+        static int userId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                this.userId = Int32.Parse(Session["userId"].ToString());
+                userId = Int32.Parse(Session["userId"].ToString());
                 CargarPerfil();
             }
         }
@@ -29,7 +29,7 @@ namespace Tp__PrograWeb3.main.cocineros
         private void CargarPerfil()
         {
 
-            Usuario usuario = UsuariosRepo.getById(this.userId);
+            Usuario usuario = UsuariosRepo.getById(userId);
             nombreId.Text = usuario.nombre;
             fechaIngresoId.Text = usuario.fechaIngreso;
             mailId.Text = usuario.mail;
@@ -41,7 +41,7 @@ namespace Tp__PrograWeb3.main.cocineros
 
         private void CargarRecetas()
         {
-            recetasId.DataSource = RecetasRepo.GetAllByUserId(this.userId);
+            recetasId.DataSource = RecetasRepo.GetAllByUserId(userId);
             if (recetasId.Items.Count == 0)
             {
                 labelRecetas.Visible = false;
@@ -55,7 +55,7 @@ namespace Tp__PrograWeb3.main.cocineros
 
         private void CargarEventos()
         {
-            eventosId.DataSource = EventosRepo.GetAllByUserId(this.userId);
+            eventosId.DataSource = EventosRepo.GetAllByUserId(userId);
             if (eventosId.Items.Count == 0)
             {
                 labelEventos.Visible = false;

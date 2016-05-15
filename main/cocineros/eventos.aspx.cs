@@ -16,18 +16,18 @@ namespace Tp__PrograWeb3.main.cocineros
         UsuariosRepository UsuariosRepo = UsuariosRepository.getInstance;
         RecetasRepository RecetasRepo = RecetasRepository.getInstance;
         string filename = "";
-        int userId;
+        static int userId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                this.userId = Int32.Parse(Session["userId"].ToString());
+                userId = Int32.Parse(Session["userId"].ToString());
                 CargarRecetas();
             }
         }
 
         private void CargarRecetas() {
-            recetasListId.DataSource = RecetasRepo.GetAllByUserId(this.userId);
+            recetasListId.DataSource = RecetasRepo.GetAllByUserId(userId);
             recetasListId.DataTextField = "nombre";
             recetasListId.DataValueField = "recetaId";
             recetasListId.DataBind();
@@ -58,7 +58,7 @@ namespace Tp__PrograWeb3.main.cocineros
                 try
                 {
                     var evento = new Evento();
-                    evento.userId = this.userId;
+                    evento.userId = userId;
                     evento.nombre = NombreId.Value;
                     evento.fecha = calendarId.ToString();
                     evento.descripcion = descripcionId.Value;

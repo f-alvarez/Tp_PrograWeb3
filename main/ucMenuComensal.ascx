@@ -17,7 +17,7 @@
     <ul class="nav navbar-nav">
         <li><a href="reservas.aspx">Mis reservas</a></li>                  
         <li><a href="reservar.aspx">Reservar Evento</a></li>
-        <li><a id="A1" href="#" runat="server" onserverclick="Logout">Cerrar Sesión</a></li>
+        <li><a href='<%=ResolveUrl("~/main/anonimo/login.aspx?exit=1") %>' >Cerrar Sesion</a></li>
     </ul>
   </div>
 </nav>
