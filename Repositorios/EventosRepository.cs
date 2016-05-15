@@ -44,9 +44,11 @@ namespace Repositorios
             return eventosByUser;
             
         }
+
         public List<Evento> getAllEventos(){
             return Eventos;
         }
+
         public List<Evento> getEventosByEstado(string estado)
         {
             List<Evento> eventosFilter = new List<Evento>();
@@ -59,6 +61,19 @@ namespace Repositorios
                 }
             }
             return eventosFilter;
+        }
+
+        public Evento GetEventoById(int id) 
+        { 
+            Evento eventoById = new Evento();
+
+             foreach(Evento evento in Eventos){
+                if (evento.eventoId == id)
+                {
+                    eventoById = evento;
+                }
+            }
+            return eventoById;
         }
     }
 }

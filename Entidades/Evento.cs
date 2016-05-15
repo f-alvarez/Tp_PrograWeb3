@@ -12,6 +12,7 @@ namespace Entidades
             reservas = 0;
         }
         public List<Receta> recetas { get; set; }
+        public int eventoId { get; set; }
         public int cantidadComensales { get; set; }
         public int reservas { get; set; }
         public string ubicacion { get; set; }
