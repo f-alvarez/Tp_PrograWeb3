@@ -102,6 +102,7 @@ namespace Tp__PrograWeb3.main.master
             Evento evento1 = new Evento
             {
                 recetas = new List<Receta> { receta, receta2 },
+                eventoId = "1",
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,
@@ -123,6 +124,7 @@ namespace Tp__PrograWeb3.main.master
             Evento evento2 = new Evento
             {
                 recetas = new List<Receta> { receta, receta2 },
+                eventoId = "2",
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,
@@ -144,6 +146,7 @@ namespace Tp__PrograWeb3.main.master
             Evento evento3 = new Evento
             {
                 recetas = new List<Receta> { receta, receta2 },
+                eventoId = "3",
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,

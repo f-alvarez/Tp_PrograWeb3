@@ -63,7 +63,7 @@ namespace Repositorios
             return eventosFilter;
         }
 
-        public Evento GetEventoById(int id) 
+        public Evento GetEventoById(string id) 
         { 
             Evento eventoById = new Evento();
 

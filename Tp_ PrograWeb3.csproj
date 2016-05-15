@@ -66,6 +66,7 @@
     <Content Include="main\anonimo\registracion.aspx" />
     <Content Include="main\comensales\comentarios.aspx" />
     <Content Include="main\comensales\reservar.aspx" />
+    <Content Include="main\comensales\reservarEvento.aspx" />
     <Content Include="main\comensales\reservas.aspx" />
     <Content Include="main\ucMenuCocinero.ascx" />
     <Content Include="main\ucMenuComensal.ascx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="main\comensales\reservar.aspx.designer.cs">
       <DependentUpon>reservar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\comensales\reservarEvento.aspx.cs">
+      <DependentUpon>reservarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\comensales\reservarEvento.aspx.designer.cs">
+      <DependentUpon>reservarEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="main\comensales\reservas.aspx.cs">
       <DependentUpon>reservas.aspx</DependentUpon>
@@ -248,9 +256,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="main\fotos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="Entidades\Entidades.csproj">
       <Project>{541e43d4-e31c-4ef7-9a35-918a1ef96c4f}</Project>

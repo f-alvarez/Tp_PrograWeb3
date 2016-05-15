@@ -7,7 +7,7 @@
         </div>
      </div>
 	<form id="gv" class="form-horizontal" runat="server"  >
-        <asp:GridView ID="gvListaEventosAReservar" runat="server" CssClass="sinMarginBotton table table-bordered table-condensed"  UseAccessibleHeader="True" AutoGenerateColumns="False">
+        <asp:GridView ID="gvListaEventosAReservar" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="cantidadComensales" HeaderText="Cantidad de comensales" />
                 <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
@@ -21,8 +21,8 @@
                 <asp:BoundField DataField="fecha" HeaderText="Fecha" />
                 <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
-                <asp:HyperLinkField NavigateUrl="#" ControlStyle-CssClass="btn btn-success" Text="Concurrir" />
+                <asp:HyperLinkField Text="Concurrir" ControlStyle-CssClass="btn btn-success" DataNavigateUrlFields="eventoId" DataNavigateUrlFormatString="reservarEvento.aspx?idEvento={0}"/>
             </Columns> 
-        </asp:GridView> 
+        </asp:GridView>
     </form>
 </asp:Content>
