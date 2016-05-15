@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Entidades;
+using System.Linq;
 
 namespace Tp__PrograWeb3
 {
     public class Evento
     {
-
         public List<Receta> recetas { get; set; }
         public int cantidadComensales { get; set; }
         public string ubicacion { get; set; }
