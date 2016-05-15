@@ -28,7 +28,7 @@ namespace Repositorios
         }
         public void agregarEvento(Evento evento)
         {
-            this.Eventos.Add(evento);
+            Eventos.Add(evento);
         }
 
         public List<Evento> GetAllByUserId(int userId)
@@ -43,6 +43,22 @@ namespace Repositorios
             }
             return eventosByUser;
             
+        }
+        public List<Evento> getAllEventos(){
+            return Eventos;
+        }
+        public List<Evento> getEventosByEstado(string estado)
+        {
+            List<Evento> eventosFilter = new List<Evento>();
+
+            foreach (Evento evento in Eventos)
+            {
+                if (evento.estado.Equals(estado))
+                {
+                    eventosFilter.Add(evento);
+                }
+            }
+            return eventosFilter;
         }
     }
 }

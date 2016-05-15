@@ -43,10 +43,11 @@ namespace Tp__PrograWeb3.main
             switch (tipoUsuario)
             {
                 case "1":
-                    urlDestino = String.Format("../comensales/reservas.aspx?tipoUsuario={0}", tipoUsuario);
+                    urlDestino = String.Format("../comensales/reservas.aspx");
                     break;
                 case "2":
-                    urlDestino = String.Format("../cocineros/perfil.aspx?tipoUsuario={0}", tipoUsuario);
+                    //urlDestino = String.Format("../cocineros/perfil.aspx?tipoUsuario={0}", tipoUsuario);
+                    urlDestino = String.Format("../cocineros/perfil.aspx");
                     break;
                 default:
                 break;

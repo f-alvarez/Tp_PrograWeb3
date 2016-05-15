@@ -113,14 +113,35 @@ namespace Tp__PrograWeb3.main.master
             };
 
             cantidadComensales = 3;
-            ubicacion = "Lavalle 2348";
+            ubicacion = "San Martin 347";
             foto = "~/resources/img/Evento1.jpeg";
             precio = 220.50;
             nombre = "La Festichola";
             fecha = "15/12/2016";
             descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            estado = "Pendiente";
+            estado = "Cancelado";
             Evento evento2 = new Evento
+            {
+                recetas = new List<Receta> { receta, receta2 },
+                cantidadComensales = cantidadComensales,
+                ubicacion = ubicacion,
+                foto = foto,
+                precio = precio,
+                nombre = nombre,
+                fecha = fecha,
+                descripcion = descripcion,
+                estado = estado
+            };
+
+            cantidadComensales = 3;
+            ubicacion = "Av.Corrientes 2348";
+            foto = "~/resources/img/05.jpg";
+            precio = 300;
+            nombre = "Sabores Etnicos";
+            fecha = "24/05/2016";
+            descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
+            estado = "Realizado";
+            Evento evento3 = new Evento
             {
                 recetas = new List<Receta> { receta, receta2 },
                 cantidadComensales = cantidadComensales,
@@ -135,8 +156,9 @@ namespace Tp__PrograWeb3.main.master
 
             eventoRepositorio.agregarEvento(evento1);
             eventoRepositorio.agregarEvento(evento2);
-        
-        
+            eventoRepositorio.agregarEvento(evento3);
+
+
         }
     }
 }

@@ -13,9 +13,7 @@ namespace Tp__PrograWeb3.main.comensales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            EventosRepository eventoRepo = EventosRepository.getInstance;
-            gvListaEventosAReservar.DataSource = eventoRepo.Eventos;
+            gvListaEventosAReservar.DataSource = EventosRepository.getInstance.getEventosByEstado("Pendiente");
             gvListaEventosAReservar.DataBind();     
         }
     }
