@@ -53,7 +53,7 @@ namespace Tp__PrograWeb3.main.cocineros
                 evento.estado = "PENDIENTE";
                 eventoRepositorio.add(evento);
                 
-                StatusLabel.Text = "Upload status: File uploaded!";
+                StatusLabel.Text = "Upload status: Guardado con éxito";
             }
             catch (Exception ex)
             {

@@ -241,7 +241,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="main\fotos\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Entidades\Entidades.csproj">
       <Project>{541e43d4-e31c-4ef7-9a35-918a1ef96c4f}</Project>

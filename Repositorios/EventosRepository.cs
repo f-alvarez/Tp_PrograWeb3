@@ -14,7 +14,11 @@ namespace Repositorios
         public void add(Evento evento)
         {
              Eventos.Add(evento);
-         }
+        }
 
+        public List<Evento> GetAllByUserId(int UserId)
+        {
+            return null;
+        }
     }
 }
