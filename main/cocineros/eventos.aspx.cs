@@ -89,7 +89,7 @@ namespace Tp__PrograWeb3.main.cocineros
                 try
                 {
                     this.filename = Guid.NewGuid().ToString() + Path.GetExtension(fotoId.FileName).ToString();
-                    fotoId.SaveAs(Server.MapPath("~/fotos/") + this.filename);
+                    fotoId.SaveAs(Server.MapPath("~/resources/img/") + this.filename);
                 }
                 catch (Exception ex)
                 {
