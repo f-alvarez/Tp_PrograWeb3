@@ -67,9 +67,6 @@ namespace Tp__PrograWeb3.main.cocineros
             eventosId.DataBind();
         }
 
-        protected void CancelarEvento(int id)
-        {
-            Console.Out.Write("hola");
-        }
+      
     }
 }
