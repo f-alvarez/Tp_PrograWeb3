@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventosRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecetasRepository.cs" />
     <Compile Include="ReservasRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,7 @@ namespace Repositorios
         public static List<Reserva> reservas = new List<Reserva>();      //static una sola instancia de esto // como es estatico
         //   public Dictionary<int,Empleado> emp
 
-        /* public void Crear(Empleado o)
+        /* c
          {
              Items.Add(o);
          }

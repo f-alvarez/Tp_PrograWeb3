@@ -5,12 +5,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Repositorios;
+using Entidades;
 
 namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class eventos : System.Web.UI.Page
     {
-        EventoRepositorio eventoRepositorio = new EventoRepositorio();
+        EventosRepository eventoRepositorio = new EventosRepository();
         string filename = "";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace Tp__PrograWeb3.main.cocineros
                 evento.foto = this.filename;
                 evento.precio = Double.Parse(precioId.Value);
                 evento.estado = "PENDIENTE";
-                eventoRepositorio.Crear(evento);
+                eventoRepositorio.add(evento);
                 
                 StatusLabel.Text = "Upload status: File uploaded!";
             }

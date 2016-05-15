@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Entidades;
 
-namespace Tp__PrograWeb3
+namespace Entidades
 {
     public class Evento
     {
