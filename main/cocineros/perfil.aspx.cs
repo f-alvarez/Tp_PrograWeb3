@@ -11,7 +11,7 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class perfil : System.Web.UI.Page
     {
-        EventosRepository EventosRepo = new EventosRepository();
+        EventosRepository EventosRepo = EventosRepository.getInstance;
         UsuariosRepository UsuariosRepo = new UsuariosRepository();
         RecetasRepository RecetasRepo = new RecetasRepository();
 

@@ -16,7 +16,7 @@ namespace Tp__PrograWeb3.main.master
 
                 if (!Session["userTipo"].ToString().Equals("1"))
                 {
-                    Response.Redirect(ResolveUrl("~/main/anonimo/default.aspx"));
+                    Response.Redirect(ResolveUrl("~/main/comensales/reservas.aspx"));
                 };
 
             }

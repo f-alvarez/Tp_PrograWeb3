@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,49 +14,9 @@ namespace Tp__PrograWeb3.main.comensales
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            List<Evento> ListEven = new List<Evento>();
-            List<Receta> recetas = new List<Receta>();
-            Receta receta = new Receta{nombre = "Pizza", tiempoDeCoccion = 30, descripcionYPasosDeRealizacion = "Amasar, poner pure de tomate, poner queso, wala!",
-            ingredientes = "Pure de Tomate, " + "Harina, " + "Queso", tipo = "Casera"};
-
-            List<Receta> recetas2 = new List<Receta>();
-            Receta receta2 = new Receta
-            {
-                nombre = "Milanesa napolitana con papas",
-                tiempoDeCoccion = 35,
-                descripcionYPasosDeRealizacion = "Freir milanesa, ponerle salsa y queso. Fritas papas",
-                ingredientes = "Pure de Tomate, " + "Papas, " +  "Queso, ",
-                tipo = "Casera"
-            };
-
-            int cantidadComensales = 3;
-            string ubicacion = "Lavalle 348";
-            string foto = "../resources/img/Evento1.jpeg";
-            double precio = 120.50;
-            string nombre = "Festival Raíz";
-            string fecha = "25/5/2016";
-            string descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            string estado = "Pendiente";
-            Evento evento1 = new Evento
-            {
-                recetas = new List<Receta> { receta, receta2 },
-                cantidadComensales = cantidadComensales,
-                ubicacion = ubicacion,
-                foto = foto,
-                precio = precio,
-                nombre = nombre,
-                fecha = fecha,
-                descripcion = descripcion,
-                estado = estado
-            };
-            ListEven.Add(evento1);
-            recetas.Add(receta);
-            recetas.Add(receta2);
-
-            gvRecetas.DataSource = recetas;
-            gvRecetas.DataBind();   
-            gvListaEventosARecervar.DataSource = ListEven;
-            gvListaEventosARecervar.DataBind();     
+            EventosRepository eventoRepo = EventosRepository.getInstance;
+            gvListaEventosAReservar.DataSource = eventoRepo.Eventos;
+            gvListaEventosAReservar.DataBind();     
         }
     }
 }

@@ -9,11 +9,26 @@ namespace Repositorios
 {
     public class EventosRepository
     {
-        public static List<Evento> Eventos = new List<Evento>();
+        public List<Evento> Eventos = new List<Evento>();
 
-        public void add(Evento evento)
+        private static EventosRepository EventosRepo;
+
+        private EventosRepository() { }
+
+        public static EventosRepository getInstance
         {
-             Eventos.Add(evento);
+            get 
+            {
+                if (EventosRepo == null)
+                {
+                    EventosRepo = new EventosRepository();
+                }
+                return EventosRepo;
+            }
+        }
+        public void agregarEvento(Evento evento)
+        {
+            this.Eventos.Add(evento);
         }
 
         public List<Evento> GetAllByUserId(int userId)

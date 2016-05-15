@@ -13,7 +13,7 @@ namespace Tp__PrograWeb3.main.master
     {
         UsuariosRepository UsuarioRepo = new UsuariosRepository();
         RecetasRepository recetaRepositorio = new RecetasRepository();
-        EventosRepository eventoRepositorio = new EventosRepository();
+        EventosRepository eventoRepositorio = EventosRepository.getInstance;
         static bool mockDataLoaded = false;
 
 
@@ -55,6 +55,7 @@ namespace Tp__PrograWeb3.main.master
         private void MockData() {
 
             Usuario nuevoUsuario = new Usuario();
+            nuevoUsuario.id = 1;
             nuevoUsuario.nombre = "pepe";
             nuevoUsuario.pass = "A123456789";
             nuevoUsuario.mail = "pepe@cocinero.com";
@@ -62,26 +63,78 @@ namespace Tp__PrograWeb3.main.master
             nuevoUsuario.tipo = 2;
             UsuarioRepo.add(nuevoUsuario);
 
-            Receta receta = new Receta();
-            receta.userId = UsuarioRepo.getByMailAndPass(nuevoUsuario.mail, nuevoUsuario.pass).id;
-            receta.nombre = "Pizza";
-            receta.tiempoDeCoccion = 30;
-            receta.descripcionYPasosDeRealizacion = "Hola soy una Pizza. Cociname.";
-            receta.tipo = "CASERA";
-            receta.ingredientes = "Harina, Tomate";
-            recetaRepositorio.add(receta);
+            Usuario nuevoUsuario2 = new Usuario();
+            nuevoUsuario.id = 2;
+            nuevoUsuario.nombre = "pepe";
+            nuevoUsuario.pass = "A123456789";
+            nuevoUsuario.mail = "pepe@comensal.com";
+            nuevoUsuario.fechaIngreso = DateTime.Now.ToString();
+            nuevoUsuario.tipo = 1;
+            UsuarioRepo.add(nuevoUsuario2);
 
-            var evento = new Evento();
-            evento.userId = UsuarioRepo.getByMailAndPass(nuevoUsuario.mail, nuevoUsuario.pass).id;
-            evento.nombre = "Pizzas al vapor";
-            evento.fecha = DateTime.Now.ToString();
-            evento.descripcion = "Hola soy un evento. Reservame.";
-            evento.cantidadComensales = 30;
-            evento.ubicacion = "GBA";
-            evento.foto = "/fotos/pizza.jpg";
-            evento.precio = Double.Parse("12.00");
-            evento.estado = "PENDIENTE";
-            eventoRepositorio.add(evento);
+            Receta receta = new Receta
+            {
+                userId = UsuarioRepo.getByMailAndPass(nuevoUsuario.mail, nuevoUsuario.pass).id,
+                nombre = "Pizza",
+                tiempoDeCoccion = 30,
+                descripcionYPasosDeRealizacion = "Amasar, poner pure de tomate, poner queso, wala!",
+                ingredientes = "Pure de Tomate, " + "Harina, " + "Queso",
+                tipo = "Casera"
+            };
+            Receta receta2 = new Receta
+            {
+                userId = UsuarioRepo.getByMailAndPass(nuevoUsuario.mail, nuevoUsuario.pass).id,
+                nombre = "Milanesa napolitana con papas",
+                tiempoDeCoccion = 35,
+                descripcionYPasosDeRealizacion = "Freir milanesa, ponerle salsa y queso. Fritas papas",
+                ingredientes = "Pure de Tomate, " + "Papas, " + "Queso, ",
+                tipo = "Casera"
+            };
+
+            int cantidadComensales = 10;
+            string ubicacion = "Lavalle 348";
+            string foto = "~/resources/img/02.jpg";
+            double precio = 120.50;
+            string nombre = "Festival Raíz";
+            string fecha = "25/5/2016";
+            string descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
+            string estado = "Pendiente";
+            Evento evento1 = new Evento
+            {
+                recetas = new List<Receta> { receta, receta2 },
+                cantidadComensales = cantidadComensales,
+                ubicacion = ubicacion,
+                foto = foto,
+                precio = precio,
+                nombre = nombre,
+                fecha = fecha,
+                descripcion = descripcion,
+                estado = estado
+            };
+
+            cantidadComensales = 3;
+            ubicacion = "Lavalle 2348";
+            foto = "~/resources/img/Evento1.jpeg";
+            precio = 220.50;
+            nombre = "La Festichola";
+            fecha = "15/12/2016";
+            descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
+            estado = "Pendiente";
+            Evento evento2 = new Evento
+            {
+                recetas = new List<Receta> { receta, receta2 },
+                cantidadComensales = cantidadComensales,
+                ubicacion = ubicacion,
+                foto = foto,
+                precio = precio,
+                nombre = nombre,
+                fecha = fecha,
+                descripcion = descripcion,
+                estado = estado
+            };
+
+            eventoRepositorio.agregarEvento(evento1);
+            eventoRepositorio.agregarEvento(evento2);
         
         
         }

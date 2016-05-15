@@ -15,8 +15,8 @@
       <a class="navbar-brand" href="#">Comensal</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="reservas.aspx?tipoUsuario=Comensal@gmail.com">Mis reservas</a></li>                  
-        <li><a href="reservar.aspx?tipoUsuario=Comensal@gmail.com">Reservar Evento</a></li>
+        <li><a href="reservas.aspx">Mis reservas</a></li>                  
+        <li><a href="reservar.aspx">Reservar Evento</a></li>
     </ul>
   </div>
 </nav>

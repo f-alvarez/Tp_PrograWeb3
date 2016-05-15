@@ -50,3 +50,8 @@
 .sinMarginBotton {
     margin-bottom: 0px !important;
 }
+
+.imgWidth {
+     width: 100% !important;
+     max-width: 200px;
+}
