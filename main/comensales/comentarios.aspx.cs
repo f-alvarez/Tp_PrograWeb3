@@ -11,7 +11,15 @@ namespace Tp__PrograWeb3.main.comensales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                listPuntu.Items.Add("1");
+                listPuntu.Items.Add("2");
+                listPuntu.Items.Add("3");
+                listPuntu.Items.Add("4");
+                listPuntu.Items.Add("5");
 
+            }
         }
     }
 }
