@@ -16,9 +16,18 @@ namespace Repositorios
              Eventos.Add(evento);
         }
 
-        public List<Evento> GetAllByUserId(int UserId)
+        public List<Evento> GetAllByUserId(int userId)
         {
-            return null;
+            List<Evento> eventosByUser = new List<Evento>();
+
+            foreach(Evento evento in Eventos){
+                if (evento.userId == userId)
+                {
+                    eventosByUser.Add(evento);
+                }
+            }
+            return eventosByUser;
+            
         }
     }
 }

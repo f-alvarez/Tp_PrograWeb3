@@ -87,11 +87,12 @@ campo Foto en la base de datos el Path relativo.--%>
                 <asp:ListItem Text="Grapes" />
                 <asp:ListItem Text="Papaya" />
             </asp:CheckBoxList>
-
-              <asp:CustomValidator ID="ValidadorRecetaId" runat="server" 
-                onservervalidate="ValidarRecetaSeleccionada" CssClass="has-error">
-                    <span class="help-block">Seleccione al menos una receta</span>
-              </asp:CustomValidator>
+            <asp:CustomValidator ID="validadorRecetas" runat="server" 
+                OnServerValidate="ValidarRecetaSeleccionada" 
+                ClientValidationFunction="verifyCheckboxList"
+                CssClass="has-error">
+                <span class="help-block">Seleccione al menos una receta</span>
+            </asp:CustomValidator>
           </div>
 
           <div class="form-group col-md-6">
@@ -134,7 +135,7 @@ campo Foto en la base de datos el Path relativo.--%>
           </div>
                
           <div class="form-group col-md-12">
-            <asp:Button runat="server" id="UploadButton" CssClass="btn btn-success pull-right" text="Guardar Evento" onclick="GuardarEventoClick" />
+            <asp:Button runat="server" id="saveButton" CssClass="btn btn-success pull-right" text="Guardar Evento" onclick="GuardarEventoClick" />
           </div>
           <div class="form-group col-md-12">
             <asp:Label runat="server" CssClass="pull-right" id="StatusLabel" text="" />

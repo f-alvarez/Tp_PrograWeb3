@@ -85,13 +85,13 @@ namespace Tp__PrograWeb3.main.cocineros {
         protected global::System.Web.UI.WebControls.CheckBoxList recetasListId;
         
         /// <summary>
-        /// Control ValidadorRecetaId.
+        /// Control validadorRecetas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidadorRecetaId;
+        protected global::System.Web.UI.WebControls.CustomValidator validadorRecetas;
         
         /// <summary>
         /// Control comensalesId.
@@ -175,13 +175,13 @@ namespace Tp__PrograWeb3.main.cocineros {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rexNumber;
         
         /// <summary>
-        /// Control UploadButton.
+        /// Control saveButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UploadButton;
+        protected global::System.Web.UI.WebControls.Button saveButton;
         
         /// <summary>
         /// Control StatusLabel.

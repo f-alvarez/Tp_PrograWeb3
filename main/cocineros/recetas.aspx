@@ -70,8 +70,11 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
           </div>
 
           <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-success pull-right">Guardar Receta</button>
-          </div> 
+            <asp:Button runat="server" id="saveButton" CssClass="btn btn-success pull-right" text="Guardar Receta" onclick="GuardarRecetaClick" />
+          </div>
+          <div class="form-group col-md-12">
+            <asp:Label runat="server" CssClass="pull-right" id="StatusLabel" text="" />
+          </div>
 
         </form>
     </div>

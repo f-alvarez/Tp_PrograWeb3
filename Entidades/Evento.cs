@@ -14,6 +14,7 @@ namespace Entidades
         public string foto { get; set; }
         public double precio { get; set; }
         public string nombre { get; set; }
+        public int userId { get; set; }
         public string fecha { get; set; }
         public string descripcion { get; set; }
         public string estado { get; set; }

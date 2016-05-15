@@ -13,11 +13,25 @@ namespace Tp__PrograWeb3.main.cocineros
     public partial class eventos : System.Web.UI.Page
     {
         EventosRepository eventoRepositorio = new EventosRepository();
+        UsuariosRepository UsuariosRepo = new UsuariosRepository();
+        RecetasRepository RecetasRepo = new RecetasRepository();
         string filename = "";
+        int userId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.userId = 1; //viene de la sesion
+            if (!IsPostBack) {
+                CargarRecetas();
+            }
 
+        }
+
+        private void CargarRecetas() {
+            recetasListId.DataSource = RecetasRepo.GetAllByUserId(this.userId);
+            recetasListId.DataTextField = "recetaId";
+            recetasListId.DataValueField = "nombre";
+            recetasListId.DataBind();
         }
 
         protected void ValidarRecetaSeleccionada(object source, ServerValidateEventArgs args)
@@ -39,27 +53,32 @@ namespace Tp__PrograWeb3.main.cocineros
 
         protected void GuardarEventoClick(object sender, EventArgs e)
         {
-            try
+
+            if (Page.IsValid)
             {
-                
-                var evento = new Evento();
-                evento.nombre = NombreId.Value;
-                evento.fecha = calendarId.ToString();
-                evento.descripcion = descripcionId.Value;
-                evento.cantidadComensales = Int32.Parse(comensalesId.Value);
-                evento.ubicacion = ubicacionId.Value;
-                evento.foto = this.filename;
-                evento.precio = Double.Parse(precioId.Value);
-                evento.estado = "PENDIENTE";
-                eventoRepositorio.add(evento);
-                
-                StatusLabel.Text = "Upload status: Guardado con éxito";
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Upload status: Error al guardar el evento: " + ex.Message;
-                throw;
-            }
+                try
+                {
+                    var evento = new Evento();
+                    evento.userId = 1;
+                    evento.nombre = NombreId.Value;
+                    evento.fecha = calendarId.ToString();
+                    evento.descripcion = descripcionId.Value;
+                    evento.cantidadComensales = Int32.Parse(comensalesId.Value);
+                    evento.ubicacion = ubicacionId.Value;
+                    evento.foto = this.filename;
+                    evento.precio = Double.Parse(precioId.Value);
+                    evento.estado = "PENDIENTE";
+                    eventoRepositorio.add(evento);
+
+                    StatusLabel.Text = "Upload status: Guardado con éxito";
+                }
+                catch (Exception ex)
+                {
+                    StatusLabel.Text = "Upload status: Error al guardar el evento: " + ex.Message;
+
+                }
+            };
+            
 
         }
 

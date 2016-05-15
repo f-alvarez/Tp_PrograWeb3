@@ -16,7 +16,7 @@ namespace Tp__PrograWeb3.main.comensales
             List<Evento> ListEven = new List<Evento>();
             List<Receta> recetas = new List<Receta>();
             Receta receta = new Receta{nombre = "Pizza", tiempoDeCoccion = 30, descripcionYPasosDeRealizacion = "Amasar, poner pure de tomate, poner queso, wala!",
-            ingredientes = new List<string>(new string[] { "Pure de Tomate", "Harina", "Queso" }), tipo = "Casera"};
+            ingredientes = "Pure de Tomate, " + "Harina, " + "Queso", tipo = "Casera"};
 
             int cantidadComensales = 3;
             string ubicacion = "Lavalle 348";

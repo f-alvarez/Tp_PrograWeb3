@@ -17,6 +17,19 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                     <div class="panel-heading">Eventos</div>
                     <ul class="list-group">
                         <li class="list-group-item">
+
+
+                            <asp:Repeater id="eventosId" runat="server">
+                            
+                                <ItemTemplate>
+                                    <div class="panel-body">
+                                        <%# Eval("nombre")%>
+                            
+                                    </div>                            
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+
                             <div class="panel-body">
                                 <p><b>Cocina Chano</b></p>
                                 <p>Fecha: 21/09/16</p>
@@ -36,9 +49,11 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                 <div class="panel panel-default titles text-center">
                     <div class="panel-heading">Recetas</div>
                     <ul class="list-group">
-                        <li class="list-group-item">Arroz con queso</li>
-                        <li class="list-group-item">Fideos con queso</li>
-                        <li class="list-group-item">Queso con queso</li>
+                            <asp:Repeater id="recetasId" runat="server">
+                                <ItemTemplate>
+                                    <li class="list-group-item"><%# Eval("nombre")%></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                     </ul>
                 </div>
             </div>
@@ -55,9 +70,9 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <b>Juan Perez</b>
-                            <p>Miembro desde: 12 de Abril de 1878</p>
-                            <p>Correo: juanperez@gmail.com</p>
+                            <p><asp:Label id="nombreId" Text="" runat="server" /></p>
+                            <p><b>Miembro desde: </b> <asp:Label id="fechaIngresoId" Text="" runat="server" /></p>
+                            <p><asp:Label id="mailId" Text="" runat="server" /></p>
                         </div>
                     </div>
                 </div>
