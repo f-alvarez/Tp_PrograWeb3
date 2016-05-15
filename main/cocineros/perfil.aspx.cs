@@ -11,7 +11,15 @@ namespace Tp__PrograWeb3.main.cocineros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CargarPerfil();
+            }
+        }
 
+        private void CargarPerfil()
+        {
+            
         }
     }
 }

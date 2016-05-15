@@ -10,6 +10,9 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class eventos : System.Web.UI.Page
     {
+        EventoRepositorio eventoRepositorio = new EventoRepositorio();
+        string filename = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -36,12 +39,23 @@ namespace Tp__PrograWeb3.main.cocineros
         {
             try
             {
-                GuardarFoto();
+                
+                var evento = new Evento();
+                evento.nombre = NombreId.Value;
+                evento.fecha = calendarId.ToString();
+                evento.descripcion = descripcionId.Value;
+                evento.cantidadComensales = Int32.Parse(comensalesId.Value);
+                evento.ubicacion = ubicacionId.Value;
+                evento.foto = this.filename;
+                evento.precio = Double.Parse(precioId.Value);
+                evento.estado = "PENDIENTE";
+                eventoRepositorio.Crear(evento);
+                
                 StatusLabel.Text = "Upload status: File uploaded!";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                StatusLabel.Text = "Upload status: Error al guardar el evento: " + ex.Message;
                 throw;
             }
 
@@ -53,8 +67,8 @@ namespace Tp__PrograWeb3.main.cocineros
             {
                 try
                 {
-                    string filename = Guid.NewGuid().ToString() + Path.GetExtension(fotoId.FileName).ToString();
-                    fotoId.SaveAs(Server.MapPath("~/fotos/") + filename);
+                    this.filename = Guid.NewGuid().ToString() + Path.GetExtension(fotoId.FileName).ToString();
+                    fotoId.SaveAs(Server.MapPath("~/fotos/") + this.filename);
                 }
                 catch (Exception ex)
                 {
