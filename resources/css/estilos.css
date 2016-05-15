@@ -47,9 +47,6 @@
 	}
 }
 
-.left {
-    text-align: left !important;
-}
-.right {
-    text-align: right !important;
+.sinMarginBotton {
+    margin-bottom: 0px !important;
 }

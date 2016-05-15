@@ -17,6 +17,15 @@ namespace Tp__PrograWeb3.main.comensales
             List<Receta> recetas = new List<Receta>();
             Receta receta = new Receta{nombre = "Pizza", tiempoDeCoccion = 30, descripcionYPasosDeRealizacion = "Amasar, poner pure de tomate, poner queso, wala!",
             ingredientes = new List<string>(new string[] { "Pure de Tomate", "Harina", "Queso" }), tipo = "Casera"};
+            List<Receta> recetas2 = new List<Receta>();
+            Receta receta2 = new Receta
+            {
+                nombre = "Milanesa napolitana con papas",
+                tiempoDeCoccion = 35,
+                descripcionYPasosDeRealizacion = "Freir milanesa, ponerle salsa y queso. Fritas papas",
+                ingredientes = new List<string>(new string[] { "Pure de Tomate", "Papas", "Queso" }),
+                tipo = "Casera"
+            };
 
             int cantidadComensales = 3;
             string ubicacion = "Lavalle 348";
@@ -28,7 +37,7 @@ namespace Tp__PrograWeb3.main.comensales
             string estado = "Pendiente";
             Evento evento1 = new Evento
             {
-                recetas = new List<Receta>{receta},
+                recetas = new List<Receta> { receta, receta2 },
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,
@@ -40,8 +49,10 @@ namespace Tp__PrograWeb3.main.comensales
             };
             ListEven.Add(evento1);
             recetas.Add(receta);
-            GridView1.DataSource = recetas;
-            GridView1.DataBind();   
+            recetas.Add(receta2);
+
+            gvRecetas.DataSource = recetas;
+            gvRecetas.DataBind();   
             gvListaEventosARecervar.DataSource = ListEven;
             gvListaEventosARecervar.DataBind();     
         }
