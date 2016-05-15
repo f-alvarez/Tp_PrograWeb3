@@ -77,8 +77,15 @@
     <Content Include="resources\css\bootstrap.css" />
     <Content Include="resources\css\bootstrap.min.css" />
     <Content Include="resources\css\estilos.css" />
+    <Content Include="resources\img\01.jpg" />
+    <Content Include="resources\img\02.jpg" />
+    <Content Include="resources\img\03.jpg" />
+    <Content Include="resources\img\04.jpg" />
+    <Content Include="resources\img\05.jpg" />
+    <Content Include="resources\img\06.jpg" />
     <Content Include="resources\img\Evento1.jpeg" />
     <Content Include="resources\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="resources\img\Evento2.jpeg" />
     <Content Include="resources\js\js-bootstrap\bootstrap.js" />
     <Content Include="resources\js\js-bootstrap\bootstrap.min.js" />
     <Content Include="resources\js\js-bootstrap\npm.js" />

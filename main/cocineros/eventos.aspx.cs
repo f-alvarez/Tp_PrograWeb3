@@ -12,7 +12,7 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class eventos : System.Web.UI.Page
     {
-        EventosRepository eventoRepositorio = new EventosRepository();
+        EventosRepository eventoRepositorio = EventosRepository.getInstance;
         UsuariosRepository UsuariosRepo = new UsuariosRepository();
         RecetasRepository RecetasRepo = new RecetasRepository();
         string filename = "";
@@ -67,7 +67,7 @@ namespace Tp__PrograWeb3.main.cocineros
                     evento.foto = this.filename;
                     evento.precio = Double.Parse(precioId.Value);
                     evento.estado = "PENDIENTE";
-                    eventoRepositorio.add(evento);
+                    eventoRepositorio.agregarEvento(evento);
 
                     StatusLabel.Text = "Upload status: Guardado con éxito";
                     Response.Redirect("perfil.aspx");
