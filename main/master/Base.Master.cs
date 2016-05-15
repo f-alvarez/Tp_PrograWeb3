@@ -101,6 +101,7 @@ namespace Tp__PrograWeb3.main.master
             {
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
                 recetas = new List<Receta> { receta, receta2 },
+                eventoId = "1",
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,
@@ -123,6 +124,7 @@ namespace Tp__PrograWeb3.main.master
             {
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
                 recetas = new List<Receta> { receta, receta2 },
+                eventoId = "2",
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,
@@ -145,6 +147,7 @@ namespace Tp__PrograWeb3.main.master
             {
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
                 recetas = new List<Receta> { receta, receta2 },
+                eventoId = "3",
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
                 foto = foto,

@@ -46,7 +46,6 @@ namespace Tp__PrograWeb3.main
                     urlDestino = String.Format("../comensales/reservas.aspx");
                     break;
                 case "2":
-                    //urlDestino = String.Format("../cocineros/perfil.aspx?tipoUsuario={0}", tipoUsuario);
                     urlDestino = String.Format("../cocineros/perfil.aspx");
                     break;
                 default:
