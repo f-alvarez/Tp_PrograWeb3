@@ -11,8 +11,26 @@ namespace Repositorios
     {
         public static List<Usuario> Usuarios = new List<Usuario>();
 
+        private static UsuariosRepository UsuariosRepo;
+
+        private UsuariosRepository() { }
+
+        public static UsuariosRepository getInstance
+        {
+            get 
+            {
+                if (UsuariosRepo == null)
+                {
+                    UsuariosRepo = new UsuariosRepository();
+                }
+                return UsuariosRepo;
+            }
+        }
+
         public void add(Usuario usuario)
         {
+            usuario.id = Usuarios.Count; //ESTO FUNCIONA SIEMPRE Y CUANDO NO SE ELIMINEN RECETAS
+
             Usuarios.Add(usuario);
         }
 

@@ -11,7 +11,7 @@ namespace Tp__PrograWeb3.main
 {
     public partial class login : System.Web.UI.Page
     {
-        UsuariosRepository UsuarioRepo = new UsuariosRepository();
+        UsuariosRepository UsuarioRepo = UsuariosRepository.getInstance;
 
         protected void Page_Load(object sender, EventArgs e)
         {

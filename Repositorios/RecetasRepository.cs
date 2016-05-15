@@ -11,6 +11,22 @@ namespace Repositorios
     {
         public static List<Receta> Recetas = new List<Receta>();
 
+        private static RecetasRepository RecetaRepo;
+
+        private RecetasRepository() { }
+
+        public static RecetasRepository getInstance
+        {
+            get 
+            {
+                if (RecetaRepo == null)
+                {
+                    RecetaRepo = new RecetasRepository();
+                }
+                return RecetaRepo;
+            }
+        }
+
         public void add(Receta receta)
         {
             receta.recetaId = Recetas.Count; //ESTO FUNCIONA SIEMPRE Y CUANDO NO SE ELIMINEN RECETAS

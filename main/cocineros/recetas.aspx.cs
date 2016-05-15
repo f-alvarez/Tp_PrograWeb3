@@ -11,7 +11,7 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class recetas : System.Web.UI.Page
     {
-        RecetasRepository recetaRepositorio = new RecetasRepository();
+        RecetasRepository recetaRepositorio = RecetasRepository.getInstance;
         int userId;
 
         protected void Page_Load(object sender, EventArgs e)

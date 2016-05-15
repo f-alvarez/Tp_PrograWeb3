@@ -13,8 +13,8 @@ namespace Tp__PrograWeb3.main.cocineros
     public partial class eventos : System.Web.UI.Page
     {
         EventosRepository eventoRepositorio = EventosRepository.getInstance;
-        UsuariosRepository UsuariosRepo = new UsuariosRepository();
-        RecetasRepository RecetasRepo = new RecetasRepository();
+        UsuariosRepository UsuariosRepo = UsuariosRepository.getInstance;
+        RecetasRepository RecetasRepo = RecetasRepository.getInstance;
         string filename = "";
         int userId;
 

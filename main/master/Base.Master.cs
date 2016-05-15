@@ -11,8 +11,8 @@ namespace Tp__PrograWeb3.main.master
 {
     public partial class Base : System.Web.UI.MasterPage
     {
-        UsuariosRepository UsuarioRepo = new UsuariosRepository();
-        RecetasRepository recetaRepositorio = new RecetasRepository();
+        UsuariosRepository UsuarioRepo = UsuariosRepository.getInstance;
+        RecetasRepository recetaRepositorio = RecetasRepository.getInstance;
         EventosRepository eventoRepositorio = EventosRepository.getInstance;
         static bool mockDataLoaded = false;
 
@@ -54,27 +54,25 @@ namespace Tp__PrograWeb3.main.master
 
         private void MockData() {
 
-            Usuario nuevoUsuario = new Usuario();
-            nuevoUsuario.id = 1;
-            nuevoUsuario.nombre = "pepe";
-            nuevoUsuario.pass = "A123456789";
-            nuevoUsuario.mail = "pepe@cocinero.com";
-            nuevoUsuario.fechaIngreso = DateTime.Now.ToString();
-            nuevoUsuario.tipo = 2;
-            UsuarioRepo.add(nuevoUsuario);
+            Usuario usuarioCocinero = new Usuario();
+            usuarioCocinero.nombre = "pepe";
+            usuarioCocinero.pass = "A123456789";
+            usuarioCocinero.mail = "pepe@cocinero.com";
+            usuarioCocinero.fechaIngreso = DateTime.Now.ToString();
+            usuarioCocinero.tipo = 2;
+            UsuarioRepo.add(usuarioCocinero);
 
-            Usuario nuevoUsuario2 = new Usuario();
-            nuevoUsuario.id = 2;
-            nuevoUsuario.nombre = "pepe";
-            nuevoUsuario.pass = "A123456789";
-            nuevoUsuario.mail = "pepe@comensal.com";
-            nuevoUsuario.fechaIngreso = DateTime.Now.ToString();
-            nuevoUsuario.tipo = 1;
-            UsuarioRepo.add(nuevoUsuario2);
+            Usuario usuarioComensal = new Usuario();
+            usuarioComensal.nombre = "pepe";
+            usuarioComensal.pass = "A123456789";
+            usuarioComensal.mail = "pepe@comensal.com";
+            usuarioComensal.fechaIngreso = DateTime.Now.ToString();
+            usuarioComensal.tipo = 1;
+            UsuarioRepo.add(usuarioComensal);
 
             Receta receta = new Receta
             {
-                userId = UsuarioRepo.getByMailAndPass(nuevoUsuario.mail, nuevoUsuario.pass).id,
+                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
                 nombre = "Pizza",
                 tiempoDeCoccion = 30,
                 descripcionYPasosDeRealizacion = "Amasar, poner pure de tomate, poner queso, wala!",
@@ -83,7 +81,7 @@ namespace Tp__PrograWeb3.main.master
             };
             Receta receta2 = new Receta
             {
-                userId = UsuarioRepo.getByMailAndPass(nuevoUsuario.mail, nuevoUsuario.pass).id,
+                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
                 nombre = "Milanesa napolitana con papas",
                 tiempoDeCoccion = 35,
                 descripcionYPasosDeRealizacion = "Freir milanesa, ponerle salsa y queso. Fritas papas",
@@ -93,7 +91,7 @@ namespace Tp__PrograWeb3.main.master
 
             int cantidadComensales = 10;
             string ubicacion = "Lavalle 348";
-            string foto = "~/resources/img/02.jpg";
+            string foto = "~/main/fotos/02.jpg";
             double precio = 120.50;
             string nombre = "Festival Raíz";
             string fecha = "25/5/2016";
@@ -101,6 +99,7 @@ namespace Tp__PrograWeb3.main.master
             string estado = "Pendiente";
             Evento evento1 = new Evento
             {
+                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
                 recetas = new List<Receta> { receta, receta2 },
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
@@ -114,7 +113,7 @@ namespace Tp__PrograWeb3.main.master
 
             cantidadComensales = 3;
             ubicacion = "San Martin 347";
-            foto = "~/resources/img/Evento1.jpeg";
+            foto = "~/main/fotos/Evento1.jpeg";
             precio = 220.50;
             nombre = "La Festichola";
             fecha = "15/12/2016";
@@ -122,6 +121,7 @@ namespace Tp__PrograWeb3.main.master
             estado = "Cancelado";
             Evento evento2 = new Evento
             {
+                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
                 recetas = new List<Receta> { receta, receta2 },
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,
@@ -135,7 +135,7 @@ namespace Tp__PrograWeb3.main.master
 
             cantidadComensales = 3;
             ubicacion = "Av.Corrientes 2348";
-            foto = "~/resources/img/05.jpg";
+            foto = "~/main/fotos/05.jpg";
             precio = 300;
             nombre = "Sabores Etnicos";
             fecha = "24/05/2016";
@@ -143,6 +143,7 @@ namespace Tp__PrograWeb3.main.master
             estado = "Realizado";
             Evento evento3 = new Evento
             {
+                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
                 recetas = new List<Receta> { receta, receta2 },
                 cantidadComensales = cantidadComensales,
                 ubicacion = ubicacion,

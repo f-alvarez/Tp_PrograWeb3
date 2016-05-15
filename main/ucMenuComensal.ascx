@@ -17,6 +17,7 @@
     <ul class="nav navbar-nav">
         <li><a href="reservas.aspx">Mis reservas</a></li>                  
         <li><a href="reservar.aspx">Reservar Evento</a></li>
+        <li><a id="A1" href="#" runat="server" onserverclick="Logout">Cerrar Sesión</a></li>
     </ul>
   </div>
 </nav>

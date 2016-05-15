@@ -13,5 +13,16 @@ namespace Tp__PrograWeb3.main
         {
 
         }
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+
+            if (Session["userId"] == null)
+            {
+                Response.Redirect(ResolveUrl("~/main/anonimo/login.aspx"));
+            }
+        }
     }
 }
