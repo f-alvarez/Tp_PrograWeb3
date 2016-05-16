@@ -72,6 +72,7 @@ namespace Tp__PrograWeb3.main.master
 
             Receta receta = new Receta
             {
+                recetaId = 33,
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
                 nombre = "Pizza",
                 tiempoDeCoccion = 30,
@@ -81,6 +82,7 @@ namespace Tp__PrograWeb3.main.master
             };
             Receta receta2 = new Receta
             {
+                recetaId = 44,
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
                 nombre = "Milanesa napolitana con papas",
                 tiempoDeCoccion = 35,

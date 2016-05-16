@@ -70,7 +70,7 @@ namespace Tp__PrograWeb3.main.comensales
 
                 Response.Redirect( ResolveUrl("~/main/comensales/reservas.aspx"));
             }
-
         }
+
     }
 }
