@@ -9,46 +9,74 @@ namespace Repositorios
 {
     public class ReservasRepository
     {
-        //TODO todo... copiastear
-        public static List<Reserva> reservas = new List<Reserva>();      //static una sola instancia de esto // como es estatico
-        //   public Dictionary<int,Empleado> emp
+        public List<Reserva> Reservas = new List<Reserva>();
 
-        /* c
-         {
-             Items.Add(o);
-         }
+        private static ReservasRepository ReservasRepo;
 
-         public void Eliminar(Empleado o)            // buscar con constis
-         {
-             Items.Remove(o);
-         }
+        private ReservasRepository() { }
 
-         public void Modificar(Empleado o)            // buscar con constis
-         {
-             Empleado empViejo = Obtener(o.Legajo);
-             if (empViejo != null)
-             {
-                 empViejo = o;
-             }
-         }
+        public static ReservasRepository getInstance
+        {
+            get 
+            {
+                if (ReservasRepo == null)
+                {
+                    ReservasRepo = new ReservasRepository();
+                }
+                return ReservasRepo;
+            }
+        }
 
-         public List<Empleado> ObtenerTodos()
-         {
-             return Items;           // puedo hacer publica la variable Items o crear este metodo
-         }
+        public void add(Reserva reserva)
+        {
+            reserva.id = Reservas.Count;
+            Reservas.Add(reserva);
+        }
 
-         public Empleado Obtener(int Legajo)
-         {
-             foreach (Empleado em in Items)
-             {
-                 if (em.Legajo == Legajo)
-                 {
-                     return em;
-                 }
+        public List<Reserva> GetAllByUserId(int userId)
+        {
+            List<Reserva> reservasByUser = new List<Reserva>();
 
-             }
-             // throw new Exception("Empleado no encontrado");
-             return null;
-         }*/
+            foreach(Reserva reserva in Reservas){
+                if (reserva.userId == userId)
+                {
+                    reservasByUser.Add(reserva);
+                }
+            }
+            return reservasByUser;
+            
+        }
+
+        public List<Reserva> getAllReservas()
+        {
+            return Reservas;
+        }
+
+        public List<Reserva> getReservasByUserId(int userId) {
+            List<Reserva> reservasByUserId = new List<Reserva>();
+
+            foreach (Reserva reserva in Reservas)
+            {
+                if (reserva.userId == userId) {
+                    reservasByUserId.Add(reserva);
+                }
+            }
+
+            return reservasByUserId;
+        }
+
+        public Reserva GetReservaById(int id) 
+        {
+            Reserva reservaById = new Reserva();
+
+            foreach (Reserva reserva in Reservas)
+            {
+                if (reserva.id == id)
+                {
+                    reservaById = reserva;
+                }
+            }
+            return reservaById;
+        }
     }
 }
