@@ -94,7 +94,7 @@ namespace Tp__PrograWeb3.main.master
             string foto = "~/main/fotos/02.jpg";
             double precio = 120.50;
             string nombre = "Festival Raíz";
-            string fecha = "25/5/2016";
+            string fecha = "25/05/2016";
             string descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
             string estado = "Pendiente";
             Evento evento1 = new Evento
@@ -119,7 +119,7 @@ namespace Tp__PrograWeb3.main.master
             nombre = "La Festichola";
             fecha = "15/12/2016";
             descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            estado = "Cancelado";
+            estado = "Pendiente";
             Evento evento2 = new Evento
             {
                 userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 

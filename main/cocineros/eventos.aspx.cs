@@ -60,13 +60,13 @@ namespace Tp__PrograWeb3.main.cocineros
                     var evento = new Evento();
                     evento.userId = userId;
                     evento.nombre = NombreId.Value;
-                    evento.fecha = calendarId.ToString();
+                    evento.fecha = calendarId.SelectedDate.ToString("dd/MM/yyyy");
                     evento.descripcion = descripcionId.Value;
                     evento.cantidadComensales = Int32.Parse(comensalesId.Value);
                     evento.ubicacion = ubicacionId.Value;
                     evento.foto = this.filename;
                     evento.precio = Double.Parse(precioId.Value);
-                    evento.estado = "PENDIENTE";
+                    evento.estado = "Pendiente";
                     eventoRepositorio.agregarEvento(evento);
 
                     StatusLabel.Text = "Upload status: Guardado con éxito";

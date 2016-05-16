@@ -28,6 +28,7 @@ namespace Repositorios
         }
         public void agregarEvento(Evento evento)
         {
+            evento.eventoId = Eventos.Count.ToString();
             Eventos.Add(evento);
         }
 
@@ -75,5 +76,17 @@ namespace Repositorios
             }
             return eventoById;
         }
+
+        public void CancelEvent(string id)
+        {
+            Evento evento = new Evento();
+            evento = GetEventoById(id);
+
+            if (Convert.ToDateTime(evento.fecha) > DateTime.Now && string.Equals(evento.estado, "Pendiente"))
+            {
+                evento.estado = "Cancelado";
+            }
+        }
+
     }
 }
