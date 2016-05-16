@@ -32,6 +32,25 @@ namespace Repositorios
             Eventos.Add(evento);
         }
 
+        public void update(Evento eventoUpdated) {
+            foreach (Evento evento in Eventos)
+            {
+                if (evento.eventoId == eventoUpdated.eventoId)
+                {
+                    evento.cantidadComensales = eventoUpdated.cantidadComensales;
+                    evento.recetas = eventoUpdated.recetas;
+                    evento.reservas = eventoUpdated.reservas;
+                    evento.ubicacion = eventoUpdated.ubicacion;
+                    evento.foto = eventoUpdated.foto;
+                    evento.nombre = eventoUpdated.nombre;
+                    evento.fecha = eventoUpdated.fecha;
+                    evento.descripcion = eventoUpdated.descripcion;
+                    evento.estado = eventoUpdated.estado;
+                }
+            }
+        
+        }
+
         public List<Evento> GetAllByUserId(int userId)
         {
             List<Evento> eventosByUser = new List<Evento>();
