@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="main\anonimo\comentarios.aspx" />
     <Content Include="main\anonimo\default.aspx" />
     <Content Include="main\cocineros\cancelar.aspx" />
     <Content Include="main\cocineros\eventos.aspx" />
@@ -94,6 +95,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="main\anonimo\comentarios.aspx.cs">
+      <DependentUpon>comentarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\anonimo\comentarios.aspx.designer.cs">
+      <DependentUpon>comentarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="main\anonimo\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
