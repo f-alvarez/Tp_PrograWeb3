@@ -40,7 +40,7 @@ eliminar el registro de la base de datos.--%>
                                                 <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
                                                 <p>Cantidad de reservas: <%# Eval("reservas")%></p>
                                                 <p>Estado: <%# Eval("estado")%></p>
-                                                <asp:LinkButton ID="LinkButton1"  CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "eventoId")%>' runat="server">
+                                                <asp:LinkButton ID="LinkButton1" Visible=<%# string.Equals(Eval("estado"),"Pendiente") %> CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "eventoId")%>' runat="server">
                                                     Cancelar
                                                 </asp:LinkButton>   
                                             </div>     
