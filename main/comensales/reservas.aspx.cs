@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using Repositorios;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.comensales
 {
@@ -26,11 +26,11 @@ namespace Tp__PrograWeb3.main.comensales
 
         private void CargarReservas() {
 
-            List<Reserva> reservas = reservasRepo.getReservasByUserId(userId);
-            List<Evento> eventosReservados = new List<Evento>();
+            List<Reservas> reservas = reservasRepo.getReservasByUserId(userId);
+            List<Eventos> eventosReservados = new List<Eventos>();
 
-            foreach (Reserva reserva in reservas) {
-                Evento evento = eventosRepo.GetEventoById(reserva.eventoId.ToString());
+            foreach (Reservas reserva in reservas) {
+                Eventos evento = eventosRepo.GetEventoById(reserva.IdEvento);
                 eventosReservados.Add(evento);
             }
 

@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Repositorios;
-using Entidades;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.cocineros
 {
@@ -57,16 +57,16 @@ namespace Tp__PrograWeb3.main.cocineros
             {
                 try
                 {
-                    var evento = new Evento();
-                    evento.userId = userId;
-                    evento.nombre = NombreId.Value;
-                    evento.fecha = calendarId.SelectedDate.ToString("dd/MM/yyyy");
-                    evento.descripcion = descripcionId.Value;
-                    evento.cantidadComensales = Int32.Parse(comensalesId.Value);
-                    evento.ubicacion = ubicacionId.Value;
-                    evento.foto = this.filename;
-                    evento.precio = Double.Parse(precioId.Value);
-                    evento.estado = "Pendiente";
+                    var evento = new Eventos();
+                    evento.IdUsuario = userId;
+                    evento.Nombre = NombreId.Value;
+                    evento.Fecha = calendarId.SelectedDate;
+                    evento.Descripcion = descripcionId.Value;
+                    evento.CantidadComensales = Int32.Parse(comensalesId.Value);
+                    evento.Ubicacion = ubicacionId.Value;
+                    evento.NombreFoto = this.filename;
+                    evento.Precio = Decimal.Parse(precioId.Value);
+                    evento.Estado = 1;
                     eventoRepositorio.agregarEvento(evento);
 
                     StatusLabel.Text = "Upload status: Guardado con éxito";

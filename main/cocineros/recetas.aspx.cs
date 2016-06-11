@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using Repositorios;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.cocineros
 {
@@ -26,13 +26,13 @@ namespace Tp__PrograWeb3.main.cocineros
         {
             try
             {
-                Receta receta = new Receta();
-                receta.userId = userId;
-                receta.nombre = nombreId.Value;
-                receta.tiempoDeCoccion = Int32.Parse(tiempoId.Value);
-                receta.descripcionYPasosDeRealizacion = descripcionId.Value;
-                receta.tipo = tipoId.Text;
-                receta.ingredientes = ingredientesId.Value;
+                Recetas receta = new Recetas();
+                receta.IdUsuario = userId;
+                receta.Nombre = nombreId.Value;
+                receta.TiempoCoccion = Int32.Parse(tiempoId.Value);
+                receta.Descripcion = descripcionId.Value;
+                receta.Tipo = Byte.Parse(tipoId.Text);
+                receta.Ingredientes = ingredientesId.Value;
                 recetaRepositorio.add(receta);
 
                 StatusLabel.Text = "Upload status: Guardado con éxito";

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using Repositorios;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main
 {
@@ -26,16 +26,16 @@ namespace Tp__PrograWeb3.main
             {
                 try
                 {
-                    Usuario usuario = UsuarioRepo.getByMail(ucLabelTextoEmail.TextoTextBox);
+                    Usuarios usuario = UsuarioRepo.getByMail(ucLabelTextoEmail.TextoTextBox);
 
                     if (usuario == null)
                     {
-                        Usuario nuevoUsuario = new Usuario();
-                        nuevoUsuario.nombre = ucLabelTextoNombre.TextoTextBox;
-                        nuevoUsuario.pass = ucLabelTextoPass.TextoTextBox;
-                        nuevoUsuario.mail = ucLabelTextoEmail.TextoTextBox;
-                        nuevoUsuario.fechaIngreso = DateTime.Now.ToString();
-                        nuevoUsuario.tipo = Int32.Parse(RadioButtonTipoUser.SelectedValue);
+                        Usuarios nuevoUsuario = new Usuarios();
+                        nuevoUsuario.Nombre = ucLabelTextoNombre.TextoTextBox;
+                        nuevoUsuario.Password = ucLabelTextoPass.TextoTextBox;
+                        nuevoUsuario.Email = ucLabelTextoEmail.TextoTextBox;
+                        nuevoUsuario.FechaRegistracion = DateTime.Now;
+                        nuevoUsuario.IdTipoUsuario = Byte.Parse(RadioButtonTipoUser.SelectedValue);
                         UsuarioRepo.add(nuevoUsuario);
                         StatusLabel.Text = "Estado: Usuario creado";
                         Response.Redirect("../anonimo/login.aspx");

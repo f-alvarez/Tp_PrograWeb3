@@ -1,15 +1,15 @@
-﻿using System;
+﻿using AccesoADatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
 
 namespace Repositorios
 {
     public class UsuariosRepository
     {
-        public static List<Usuario> Usuarios = new List<Usuario>();
+        public static List<Usuarios> Usuarios = new List<Usuarios>();
 
         private static UsuariosRepository UsuariosRepo;
 
@@ -27,16 +27,16 @@ namespace Repositorios
             }
         }
 
-        public void add(Usuario usuario)
+        public void add(Usuarios usuario)
         {
-            usuario.id = Usuarios.Count; //ESTO FUNCIONA SIEMPRE Y CUANDO NO SE ELIMINEN RECETAS
+            usuario.IdUsuario = Usuarios.Count; //ESTO FUNCIONA SIEMPRE Y CUANDO NO SE ELIMINEN RECETAS
 
             Usuarios.Add(usuario);
         }
 
-        public Usuario getById(int id)
+        public Usuarios getById(int id)
         {
-            int index = Usuarios.FindIndex(usuario => usuario.id == id);
+            int index = Usuarios.FindIndex(usuario => usuario.IdUsuario == id);
             if (index < 0)
             {
                 return null;
@@ -47,10 +47,10 @@ namespace Repositorios
             }   
         }
 
-        public Usuario getByMail(string mail)
+        public Usuarios getByMail(string mail)
         {
 
-            int index = Usuarios.FindIndex(usuario => usuario.mail == mail);
+            int index = Usuarios.FindIndex(usuario => usuario.Email == mail);
             if (index < 0)
             {
                 return null;
@@ -61,9 +61,10 @@ namespace Repositorios
             }
         }
 
-        public Usuario getByMailAndPass(string mail, string pass) {
-            
-            int index = Usuarios.FindIndex(usuario => (usuario.mail == mail && usuario.pass == pass));
+        public Usuarios getByMailAndPass(string mail, string pass)
+        {
+
+            int index = Usuarios.FindIndex(usuario => (usuario.Email == mail && usuario.Password == pass));
             if (index < 0)
             {
                 return null;

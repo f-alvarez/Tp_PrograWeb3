@@ -1,15 +1,15 @@
-﻿using System;
+﻿using AccesoADatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
 
 namespace Repositorios
 {
     public class ReservasRepository
     {
-        public List<Reserva> Reservas = new List<Reserva>();
+        public List<Reservas> Reservas = new List<Reservas>();
 
         private static ReservasRepository ReservasRepo;
 
@@ -27,18 +27,18 @@ namespace Repositorios
             }
         }
 
-        public void add(Reserva reserva)
+        public void add(Reservas reserva)
         {
-            reserva.id = Reservas.Count;
+            reserva.IdReserva = Reservas.Count;
             Reservas.Add(reserva);
         }
 
-        public List<Reserva> GetAllByUserId(int userId)
+        public List<Reservas> GetAllByUserId(int userId)
         {
-            List<Reserva> reservasByUser = new List<Reserva>();
+            List<Reservas> reservasByUser = new List<Reservas>();
 
-            foreach(Reserva reserva in Reservas){
-                if (reserva.userId == userId)
+            foreach(Reservas reserva in Reservas){
+                if (reserva.IdUsuario == userId)
                 {
                     reservasByUser.Add(reserva);
                 }
@@ -47,17 +47,18 @@ namespace Repositorios
             
         }
 
-        public List<Reserva> getAllReservas()
+        public List<Reservas> getAllReservas()
         {
             return Reservas;
         }
 
-        public List<Reserva> getReservasByUserId(int userId) {
-            List<Reserva> reservasByUserId = new List<Reserva>();
+        public List<Reservas> getReservasByUserId(int userId) {
+            List<Reservas> reservasByUserId = new List<Reservas>();
 
-            foreach (Reserva reserva in Reservas)
+            foreach (Reservas reserva in Reservas)
             {
-                if (reserva.userId == userId) {
+                if (reserva.IdUsuario == userId)
+                {
                     reservasByUserId.Add(reserva);
                 }
             }
@@ -65,13 +66,13 @@ namespace Repositorios
             return reservasByUserId;
         }
 
-        public Reserva GetReservaById(int id) 
+        public Reservas GetReservaById(int id) 
         {
-            Reserva reservaById = new Reserva();
+            Reservas reservaById = new Reservas();
 
-            foreach (Reserva reserva in Reservas)
+            foreach (Reservas reserva in Reservas)
             {
-                if (reserva.id == id)
+                if (reserva.IdReserva == id)
                 {
                     reservaById = reserva;
                 }

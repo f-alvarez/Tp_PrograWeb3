@@ -1,15 +1,15 @@
-﻿using System;
+﻿using AccesoADatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
 
 namespace Repositorios
 {
     public class EventosRepository
     {
-        public List<Evento> Eventos = new List<Evento>();
+        public List<Eventos> Eventos = new List<Eventos>();
 
         private static EventosRepository EventosRepo;
 
@@ -26,37 +26,38 @@ namespace Repositorios
                 return EventosRepo;
             }
         }
-        public void agregarEvento(Evento evento)
+        public void agregarEvento(Eventos evento)
         {
-            evento.eventoId = Eventos.Count.ToString();
+            evento.IdEvento = Eventos.Count;
             Eventos.Add(evento);
         }
-
-        public void update(Evento eventoUpdated) {
-            foreach (Evento evento in Eventos)
+       
+        public void update(Eventos eventoUpdated)
+        {
+            foreach (Eventos evento in Eventos)
             {
-                if (evento.eventoId == eventoUpdated.eventoId)
+                if (evento.IdEvento == eventoUpdated.IdEvento)
                 {
-                    evento.cantidadComensales = eventoUpdated.cantidadComensales;
-                    evento.recetas = eventoUpdated.recetas;
-                    evento.reservas = eventoUpdated.reservas;
-                    evento.ubicacion = eventoUpdated.ubicacion;
-                    evento.foto = eventoUpdated.foto;
-                    evento.nombre = eventoUpdated.nombre;
-                    evento.fecha = eventoUpdated.fecha;
-                    evento.descripcion = eventoUpdated.descripcion;
-                    evento.estado = eventoUpdated.estado;
+                    evento.CantidadComensales = eventoUpdated.CantidadComensales;
+                    evento.Recetas = eventoUpdated.Recetas;
+                    evento.Reservas = eventoUpdated.Reservas;
+                    evento.Ubicacion = eventoUpdated.Ubicacion;
+                    evento.NombreFoto = eventoUpdated.NombreFoto;
+                    evento.Nombre = eventoUpdated.Nombre;
+                    evento.Fecha = eventoUpdated.Fecha;
+                    evento.Descripcion = eventoUpdated.Descripcion;
+                    evento.Estado = eventoUpdated.Estado;
                 }
             }
-        
         }
 
-        public List<Evento> GetAllByUserId(int userId)
+        public List<Eventos> GetAllByUserId(int userId)
         {
-            List<Evento> eventosByUser = new List<Evento>();
+            List<Eventos> eventosByUser = new List<Eventos>();
 
-            foreach(Evento evento in Eventos){
-                if (evento.userId == userId)
+            foreach (Eventos evento in Eventos)
+            {
+                if (evento.IdUsuario == userId)
                 {
                     eventosByUser.Add(evento);
                 }
@@ -65,17 +66,18 @@ namespace Repositorios
             
         }
 
-        public List<Evento> getAllEventos(){
+        public List<Eventos> getAllEventos()
+        {
             return Eventos;
         }
 
-        public List<Evento> getEventosByEstado(string estado)
+        public List<Eventos> getEventosByEstado(string estado)
         {
-            List<Evento> eventosFilter = new List<Evento>();
+            List<Eventos> eventosFilter = new List<Eventos>();
 
-            foreach (Evento evento in Eventos)
+            foreach (Eventos evento in Eventos)
             {
-                if (evento.estado.Equals(estado))
+                if (evento.Estado.Equals(estado))
                 {
                     eventosFilter.Add(evento);
                 }
@@ -83,12 +85,13 @@ namespace Repositorios
             return eventosFilter;
         }
 
-        public Evento GetEventoById(string id) 
-        { 
-            Evento eventoById = new Evento();
+        public Eventos GetEventoById(int id) 
+        {
+            Eventos eventoById = new Eventos();
 
-             foreach(Evento evento in Eventos){
-                if (evento.eventoId == id)
+            foreach (Eventos evento in Eventos)
+            {
+                if (evento.IdEvento == id)
                 {
                     eventoById = evento;
                 }
@@ -96,14 +99,14 @@ namespace Repositorios
             return eventoById;
         }
 
-        public void CancelEvent(string id)
+        public void CancelEvent(int id)
         {
-            Evento evento = new Evento();
+            Eventos evento = new Eventos();
             evento = GetEventoById(id);
 
-            if (Convert.ToDateTime(evento.fecha) > DateTime.Now && string.Equals(evento.estado, "Pendiente"))
+            if (Convert.ToDateTime(evento.Fecha) > DateTime.Now && string.Equals(evento.Estado, 1))
             {
-                evento.estado = "Cancelado";
+                evento.Estado = 2;
             }
         }
 

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using Repositorios;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.cocineros
 {
@@ -29,10 +29,10 @@ namespace Tp__PrograWeb3.main.cocineros
         private void CargarPerfil()
         {
 
-            Usuario usuario = UsuariosRepo.getById(userId);
-            nombreId.Text = usuario.nombre;
-            fechaIngresoId.Text = usuario.fechaIngreso;
-            mailId.Text = usuario.mail;
+            Usuarios usuario = UsuariosRepo.getById(userId);
+            nombreId.Text = usuario.Nombre;
+            fechaIngresoId.Text = usuario.FechaRegistracion.ToString();
+            mailId.Text = usuario.Email;
             
             CargarRecetas();
             CargarEventos();

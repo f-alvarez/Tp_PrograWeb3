@@ -45,6 +45,12 @@
     <Compile Include="Reserva.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AccesoADatos\AccesoADatos.csproj">
+      <Project>{d8679e92-3e2b-4010-baff-4ea9d1ec33c0}</Project>
+      <Name>AccesoADatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

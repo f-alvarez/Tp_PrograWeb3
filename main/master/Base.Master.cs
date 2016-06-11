@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using Repositorios;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.master
 {
@@ -54,110 +54,125 @@ namespace Tp__PrograWeb3.main.master
 
         private void MockData() {
 
-            Usuario usuarioCocinero = new Usuario();
-            usuarioCocinero.nombre = "pepe";
-            usuarioCocinero.pass = "A123456789";
-            usuarioCocinero.mail = "pepe@cocinero.com";
-            usuarioCocinero.fechaIngreso = DateTime.Now.ToString();
-            usuarioCocinero.tipo = 2;
+            Usuarios usuarioCocinero = new Usuarios();
+            usuarioCocinero.Nombre = "pepe";
+            usuarioCocinero.Password = "A123456789";
+            usuarioCocinero.Email = "pepe@cocinero.com";
+            usuarioCocinero.FechaRegistracion = DateTime.Now;
+            usuarioCocinero.IdTipoUsuario = 2;
             UsuarioRepo.add(usuarioCocinero);
 
-            Usuario usuarioComensal = new Usuario();
-            usuarioComensal.nombre = "pepe";
-            usuarioComensal.pass = "A123456789";
-            usuarioComensal.mail = "pepe@comensal.com";
-            usuarioComensal.fechaIngreso = DateTime.Now.ToString();
-            usuarioComensal.tipo = 1;
+            Usuarios usuarioComensal = new Usuarios();
+            usuarioComensal.Nombre = "pepe";
+            usuarioComensal.Password = "A123456789";
+            usuarioComensal.Email = "pepe@comensal.com";
+            usuarioComensal.FechaRegistracion = DateTime.Now;
+            usuarioComensal.IdTipoUsuario = 1;
             UsuarioRepo.add(usuarioComensal);
 
-            Receta receta = new Receta
+            Recetas receta = new Recetas
             {
-                recetaId = 33,
-                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
-                nombre = "Pizza",
-                tiempoDeCoccion = 30,
-                descripcionYPasosDeRealizacion = "Amasar, poner pure de tomate, poner queso, wala!",
-                ingredientes = "Pure de Tomate, " + "Harina, " + "Queso",
-                tipo = "Casera"
+                IdReceta = 33,
+                IdUsuario = UsuarioRepo.getByMailAndPass(usuarioCocinero.Email, usuarioCocinero.Password).IdUsuario,
+                Nombre = "Pizza",
+                TiempoCoccion = 30,
+                Descripcion = "Amasar, poner pure de tomate, poner queso, wala!",
+                Ingredientes = "Pure de Tomate, " + "Harina, " + "Queso",
+                Tipo = 1
             };
-            Receta receta2 = new Receta
+            Recetas receta2 = new Recetas
             {
-                recetaId = 44,
-                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id,
-                nombre = "Milanesa napolitana con papas",
-                tiempoDeCoccion = 35,
-                descripcionYPasosDeRealizacion = "Freir milanesa, ponerle salsa y queso. Fritas papas",
-                ingredientes = "Pure de Tomate, " + "Papas, " + "Queso, ",
-                tipo = "Casera"
+                IdReceta = 44,
+                IdUsuario = UsuarioRepo.getByMailAndPass(usuarioCocinero.Email, usuarioCocinero.Password).IdUsuario,
+                Nombre = "Milanesa napolitana con papas",
+                TiempoCoccion = 35,
+                Descripcion = "Freir milanesa, ponerle salsa y queso. Fritas papas",
+                Ingredientes = "Pure de Tomate, " + "Papas, " + "Queso, ",
+                Tipo = 1
             };
 
             int cantidadComensales = 10;
             string ubicacion = "Lavalle 348";
             string foto = "~/resources/img/02.jpg";
-            double precio = 120.50;
+            decimal precio = 120.50m;
             string nombre = "Festival Raíz";
-            string fecha = "25/05/2016";
+            DateTime fecha = DateTime.Parse("25/05/2016");
             string descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            string estado = "Pendiente";
-            Evento evento1 = new Evento
+            byte estado = 1;
+            /*  public int IdEvento { get; set; }
+                public int IdUsuario { get; set; }
+                public string Nombre { get; set; }
+                public System.DateTime Fecha { get; set; }
+                public string Descripcion { get; set; }
+                public int CantidadComensales { get; set; }
+                public string Ubicacion { get; set; }
+                public string NombreFoto { get; set; }
+                public decimal Precio { get; set; }
+                public byte Estado { get; set; }
+    
+                public virtual ICollection<Comentarios> Comentarios { get; set; }
+                public virtual Usuarios Usuarios { get; set; }
+                public virtual ICollection<Reservas> Reservas { get; set; }
+                public virtual ICollection<Recetas> Recetas { get; set; }*/
+            Eventos evento1 = new Eventos
             {
-                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
-                recetas = new List<Receta> { receta, receta2 },
-                eventoId = "1",
-                cantidadComensales = cantidadComensales,
-                ubicacion = ubicacion,
-                foto = foto,
-                precio = precio,
-                nombre = nombre,
-                fecha = fecha,
-                descripcion = descripcion,
-                estado = estado
+                IdUsuario = UsuarioRepo.getByMailAndPass(usuarioCocinero.Email, usuarioCocinero.Password).IdUsuario,
+                Recetas = new List<Recetas> { receta, receta2 },
+                IdEvento = 1,
+                CantidadComensales = cantidadComensales,
+                Ubicacion = ubicacion,
+                NombreFoto = foto,
+                Precio = precio,
+                Nombre = nombre,
+                Fecha = fecha,
+                Descripcion = descripcion,
+                Estado = estado
             };
 
             cantidadComensales = 3;
             ubicacion = "San Martin 347";
             foto = "~/resources/img/Evento1.jpeg";
-            precio = 220.50;
+            precio = 220.50m;
             nombre = "La Festichola";
-            fecha = "15/12/2016";
+            fecha = DateTime.Parse("15/12/2016");
             descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            estado = "Pendiente";
-            Evento evento2 = new Evento
+            estado = 1;
+            Eventos evento2 = new Eventos
             {
-                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
-                recetas = new List<Receta> { receta, receta2 },
-                eventoId = "2",
-                cantidadComensales = cantidadComensales,
-                ubicacion = ubicacion,
-                foto = foto,
-                precio = precio,
-                nombre = nombre,
-                fecha = fecha,
-                descripcion = descripcion,
-                estado = estado
+                IdUsuario = UsuarioRepo.getByMailAndPass(usuarioCocinero.Email, usuarioCocinero.Password).IdUsuario,
+                Recetas = new List<Recetas> { receta, receta2 },
+                IdEvento = 2,
+                CantidadComensales = cantidadComensales,
+                Ubicacion = ubicacion,
+                NombreFoto = foto,
+                Precio = precio,
+                Nombre = nombre,
+                Fecha = fecha,
+                Descripcion = descripcion,
+                Estado = estado
             };
 
             cantidadComensales = 3;
             ubicacion = "Av.Corrientes 2348";
             foto = "~/resources/img/05.jpg";
-            precio = 300;
+            precio = 300m;
             nombre = "Sabores Etnicos";
-            fecha = "24/05/2016";
+            fecha = DateTime.Parse("24/05/2016");
             descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur nulla ac metus dictum, ac porta purus lacinia. In et erat urna.";
-            estado = "Realizado";
-            Evento evento3 = new Evento
+            estado = 3;
+            Eventos evento3 = new Eventos
             {
-                userId = UsuarioRepo.getByMailAndPass(usuarioCocinero.mail, usuarioCocinero.pass).id, 
-                recetas = new List<Receta> { receta, receta2 },
-                eventoId = "3",
-                cantidadComensales = cantidadComensales,
-                ubicacion = ubicacion,
-                foto = foto,
-                precio = precio,
-                nombre = nombre,
-                fecha = fecha,
-                descripcion = descripcion,
-                estado = estado
+                IdUsuario = UsuarioRepo.getByMailAndPass(usuarioCocinero.Email, usuarioCocinero.Password).IdUsuario,
+                Recetas = new List<Recetas> { receta, receta2 },
+                IdEvento = 3,
+                CantidadComensales = cantidadComensales,
+                Ubicacion = ubicacion,
+                NombreFoto = foto,
+                Precio = precio,
+                Nombre = nombre,
+                Fecha = fecha,
+                Descripcion = descripcion,
+                Estado = estado
             };
 
             eventoRepositorio.agregarEvento(evento1);

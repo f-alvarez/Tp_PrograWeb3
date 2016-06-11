@@ -266,9 +266,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="Entidades\Entidades.csproj">
-      <Project>{541e43d4-e31c-4ef7-9a35-918a1ef96c4f}</Project>
-      <Name>Entidades</Name>
+    <ProjectReference Include="..\AccesoADatos\AccesoADatos.csproj">
+      <Project>{d8679e92-3e2b-4010-baff-4ea9d1ec33c0}</Project>
+      <Name>AccesoADatos</Name>
     </ProjectReference>
     <ProjectReference Include="Repositorios\Repositorios.csproj">
       <Project>{83d15c58-2987-4d7e-8b6e-ec5e830a70d0}</Project>

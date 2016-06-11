@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Repositorios;
-using Entidades;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.comensales
 {
@@ -14,10 +14,10 @@ namespace Tp__PrograWeb3.main.comensales
         ReservasRepository reservasRepo = ReservasRepository.getInstance;
         EventosRepository eventosRepo = EventosRepository.getInstance;
         static int userId;
-        static int cantidadReservas;
+        static ICollection<Reservas> cantidadReservas;
         static int eventoId;
         static int cantidadMaximaReservas;
-        static Evento evento;
+        static Eventos evento;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,15 +29,15 @@ namespace Tp__PrograWeb3.main.comensales
         }
 
         private void CargarEvento() {
-            string Id = Request.QueryString["idEvento"];
+            int Id = int.Parse(Request.QueryString["idEvento"]);
             evento = eventosRepo.GetEventoById(Id);
 
-            eventoNombreLabel.Text = evento.nombre;
-            cantidadReservas = evento.reservas;
-            cantidadMaximaReservas = evento.cantidadComensales;
-            eventoId = Int32.Parse(evento.eventoId);
+            eventoNombreLabel.Text = evento.Nombre;
+            cantidadReservas = evento.Reservas;
+            cantidadMaximaReservas = evento.CantidadComensales;
+            eventoId = evento.IdEvento;
 
-            recetasRadioListId.DataSource = evento.recetas;
+            recetasRadioListId.DataSource = evento.Recetas;
             recetasRadioListId.DataTextField = "nombre";
             recetasRadioListId.DataValueField = "recetaId";
             recetasRadioListId.DataBind();
@@ -45,7 +45,7 @@ namespace Tp__PrograWeb3.main.comensales
 
         protected void ValidateComensales(object sender, ServerValidateEventArgs args)
         {
-            if ((Int64.Parse(comensalesId.Value) + cantidadReservas) > cantidadMaximaReservas)
+            if ((Int64.Parse(comensalesId.Value) + cantidadReservas.Count) > cantidadMaximaReservas)
             {
                 args.IsValid = false;
             }
@@ -58,14 +58,14 @@ namespace Tp__PrograWeb3.main.comensales
         protected void Reservar(object sender, EventArgs e)
         {
             if (Page.IsValid) {
-                Reserva reserva = new Reserva();
-                reserva.userId = userId;
-                reserva.eventoId = eventoId;
-                reserva.recetaId = Int32.Parse(recetasRadioListId.SelectedValue);
-                reserva.cantidadComensales = Int32.Parse(comensalesId.Value);
+                Reservas reserva = new Reservas();
+                reserva.IdUsuario = userId;
+                reserva.IdEvento = eventoId;
+                reserva.IdReceta = Int32.Parse(recetasRadioListId.SelectedValue);
+                reserva.Cantidad = Int32.Parse(comensalesId.Value);
                 reservasRepo.add(reserva);
 
-                evento.reservas = evento.reservas + reserva.cantidadComensales;
+                evento.Reservas.Add(reserva);
                 eventosRepo.update(evento);
 
                 Response.Redirect( ResolveUrl("~/main/comensales/reservas.aspx"));

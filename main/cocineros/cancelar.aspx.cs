@@ -1,5 +1,4 @@
-﻿using Entidades;
-using Repositorios;
+﻿using Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +35,10 @@ namespace Tp__PrograWeb3.main.cocineros
         }
 
         protected void cancel_command(object sender, RepeaterCommandEventArgs e)
-        {          
-            EventosRepo.CancelEvent(e.CommandArgument.ToString());
+        {
+            int index;
+            int.TryParse(e.CommandArgument.ToString(), out index);
+            EventosRepo.CancelEvent(index);
             Response.Redirect("cancelar.aspx");
         }
 

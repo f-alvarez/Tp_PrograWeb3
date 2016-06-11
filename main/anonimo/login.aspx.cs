@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Repositorios;
-using Entidades;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main
 {
@@ -30,13 +30,13 @@ namespace Tp__PrograWeb3.main
 
         protected void btnIngresarLogin_Click(object sender, EventArgs e)
         {
-            Usuario usuario = UsuarioRepo.getByMailAndPass(ucLabelTextoEmail.TextoTextBox, ucLabelTextoPass.TextoTextBox);
+            Usuarios usuario = UsuarioRepo.getByMailAndPass(ucLabelTextoEmail.TextoTextBox, ucLabelTextoPass.TextoTextBox);
 
             if (usuario != null)
             {
-                Session["userNombre"] = usuario.nombre;
-                Session["userId"] = usuario.id;
-                Session["userTipo"] = usuario.tipo;
+                Session["userNombre"] = usuario.Nombre;
+                Session["userId"] = usuario.IdUsuario;
+                Session["userTipo"] = usuario.IdTipoUsuario;
 
                 Redireccion();
             }
