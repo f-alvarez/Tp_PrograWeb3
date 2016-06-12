@@ -11,7 +11,7 @@ namespace Tp__PrograWeb3.main.master
 {
     public partial class Base : System.Web.UI.MasterPage
     {
-        UsuariosRepository UsuarioRepo = UsuariosRepository.getInstance;
+        UsuariosRepository UsuarioRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
         RecetasRepository recetaRepositorio = RecetasRepository.getInstance;
         EventosRepository eventoRepositorio = EventosRepository.getInstance;
         static bool mockDataLoaded = false;

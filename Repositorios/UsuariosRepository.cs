@@ -9,34 +9,22 @@ namespace Repositorios
 {
     public class UsuariosRepository
     {
-        public static List<Usuarios> Usuarios = new List<Usuarios>();
+        PW3_TP_20161CEntities contexto;
 
-        private static UsuariosRepository UsuariosRepo;
-
-        private UsuariosRepository() { }
-
-        public static UsuariosRepository getInstance
+        public UsuariosRepository(PW3_TP_20161CEntities context)
         {
-            get 
-            {
-                if (UsuariosRepo == null)
-                {
-                    UsuariosRepo = new UsuariosRepository();
-                }
-                return UsuariosRepo;
-            }
+            contexto = context;
         }
 
         public void add(Usuarios usuario)
         {
-            usuario.IdUsuario = Usuarios.Count; //ESTO FUNCIONA SIEMPRE Y CUANDO NO SE ELIMINEN RECETAS
-
-            Usuarios.Add(usuario);
+            contexto.Usuarios.Add(usuario);
+            contexto.SaveChanges();
         }
 
         public Usuarios getById(int id)
         {
-            int index = Usuarios.FindIndex(usuario => usuario.IdUsuario == id);
+            /*int index = Usuarios.FindIndex(usuario => usuario.IdUsuario == id);
             if (index < 0)
             {
                 return null;
@@ -44,27 +32,20 @@ namespace Repositorios
             else
             {
                 return Usuarios.ElementAt(index);             
-            }   
+            }   */
+            return new Usuarios();
         }
 
         public Usuarios getByMail(string mail)
         {
-
-            int index = Usuarios.FindIndex(usuario => usuario.Email == mail);
-            if (index < 0)
-            {
-                return null;
-            }
-            else
-            {
-                return Usuarios.ElementAt(index);
-            }
+            var empleado = (from e in contexto.Usuarios where e.Email == mail select e).FirstOrDefault();
+            return empleado;
         }
 
         public Usuarios getByMailAndPass(string mail, string pass)
         {
 
-            int index = Usuarios.FindIndex(usuario => (usuario.Email == mail && usuario.Password == pass));
+            /*int index = Usuarios.FindIndex(usuario => (usuario.Email == mail && usuario.Password == pass));
             if (index < 0)
             {
                 return null;
@@ -72,7 +53,9 @@ namespace Repositorios
             else
             {
                 return Usuarios.ElementAt(index);
-            }
+            }*/
+
+            return new Usuarios();
         }
     }
 }
