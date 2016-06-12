@@ -24,38 +24,20 @@ namespace Repositorios
 
         public Usuarios getById(int id)
         {
-            /*int index = Usuarios.FindIndex(usuario => usuario.IdUsuario == id);
-            if (index < 0)
-            {
-                return null;
-            }
-            else
-            {
-                return Usuarios.ElementAt(index);             
-            }   */
-            return new Usuarios();
+            var usuario = (from e in contexto.Usuarios where e.IdUsuario == id select e).FirstOrDefault();
+            return usuario;
         }
 
         public Usuarios getByMail(string mail)
         {
-            var empleado = (from e in contexto.Usuarios where e.Email == mail select e).FirstOrDefault();
-            return empleado;
+            var usuario = (from e in contexto.Usuarios where e.Email == mail select e).FirstOrDefault();
+            return usuario;
         }
 
         public Usuarios getByMailAndPass(string mail, string pass)
         {
-
-            /*int index = Usuarios.FindIndex(usuario => (usuario.Email == mail && usuario.Password == pass));
-            if (index < 0)
-            {
-                return null;
-            }
-            else
-            {
-                return Usuarios.ElementAt(index);
-            }*/
-
-            return new Usuarios();
+            var usuario = (from e in contexto.Usuarios where e.Email == mail where e.Password == pass select e).FirstOrDefault();
+            return usuario;
         }
     }
 }
