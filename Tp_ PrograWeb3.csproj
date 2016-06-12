@@ -274,8 +274,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\AccesoADatos\AccesoADatos.csproj">
-      <Project>{d8679e92-3e2b-4010-baff-4ea9d1ec33c0}</Project>
+    <ProjectReference Include="AccesoADatos\AccesoADatos.csproj">
+      <Project>{c8aa5f87-b0ce-4282-8811-59c3929461f4}</Project>
       <Name>AccesoADatos</Name>
     </ProjectReference>
     <ProjectReference Include="Repositorios\Repositorios.csproj">
