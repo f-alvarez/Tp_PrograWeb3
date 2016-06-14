@@ -9,43 +9,23 @@ namespace Repositorios
 {
     public class RecetasRepository
     {
-        public static List<Recetas> Recetas = new List<Recetas>();
+        PW3_TP_20161CEntities contexto;
 
-        private static RecetasRepository RecetaRepo;
-
-        private RecetasRepository() { }
-
-        public static RecetasRepository getInstance
+        public RecetasRepository(PW3_TP_20161CEntities context)
         {
-            get 
-            {
-                if (RecetaRepo == null)
-                {
-                    RecetaRepo = new RecetasRepository();
-                }
-                return RecetaRepo;
-            }
+            contexto = context;
         }
 
         public void add(Recetas receta)
         {
-            receta.IdReceta = Recetas.Count; //ESTO FUNCIONA SIEMPRE Y CUANDO NO SE ELIMINEN RECETAS
-            Recetas.Add(receta);
+            contexto.Recetas.Add(receta);
+            contexto.SaveChanges();
         }
 
         public List<Recetas> GetAllByUserId(int userId)
         {
-            List<Recetas> recetasByUser = new List<Recetas>();
-
-            foreach (Recetas receta in Recetas)
-            {
-                if (receta.IdUsuario == userId)
-                {
-                    recetasByUser.Add(receta);
-                }
-            }
-            return recetasByUser;
-
+            var usuario = (from e in contexto.Usuarios where e.IdUsuario == userId select e).FirstOrDefault();
+            return usuario.Recetas.ToList();
         }
     }
 }

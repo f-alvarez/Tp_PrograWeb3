@@ -31,24 +31,6 @@ namespace Tp__PrograWeb3.main.cocineros {
         protected global::System.Web.UI.WebControls.Repeater eventosId;
         
         /// <summary>
-        /// Control labelRecetas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelRecetas;
-        
-        /// <summary>
-        /// Control recetasId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater recetasId;
-        
-        /// <summary>
         /// Control nombreId.
         /// </summary>
         /// <remarks>
@@ -74,5 +56,23 @@ namespace Tp__PrograWeb3.main.cocineros {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label mailId;
+        
+        /// <summary>
+        /// Control labelRecetas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelRecetas;
+        
+        /// <summary>
+        /// Control recetasId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater recetasId;
     }
 }

@@ -13,7 +13,7 @@ namespace Tp__PrograWeb3.main.cocineros
     {
         EventosRepository EventosRepo = EventosRepository.getInstance;
         UsuariosRepository UsuariosRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
-        RecetasRepository RecetasRepo = RecetasRepository.getInstance;
+        RecetasRepository RecetasRepo = new RecetasRepository(new PW3_TP_20161CEntities());
 
         static int userId;
 

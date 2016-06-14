@@ -13,7 +13,7 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
         </div>
         <div class="col-md-6">
             <div class="col-md-12">
-                <div class="panel panel-default titles text-center">
+                <div class="panel panel-primary titles text-center">
                     <div class="panel-heading">Eventos</div>
                     <ul class="list-group">
                         <asp:Label ID="labelEventos" Text="No hay eventos para mostrar" runat="server" />
@@ -37,24 +37,10 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                     </ul>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="panel panel-default titles text-center">
-                    <div class="panel-heading">Recetas</div>
-                    <ul class="list-group">
-                        <asp:Label ID="labelRecetas" Text="No hay recetas para mostrar" runat="server" />
-
-                            <asp:Repeater id="recetasId" runat="server">
-                                <ItemTemplate>
-                                    <li class="list-group-item"><%# Eval("nombre")%></li>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                    </ul>
-                </div>
-            </div>
         </div>
         <div class="col-md-6 text-center">
             <div class="col-md-12">
-                <div class="panel panel-default titles text-center">
+                <div class="panel panel-primary titles text-center">
                     <div class="panel-heading">Datos</div>
                     <div class="panel-body">
                         <div class="col-md-12">
@@ -69,6 +55,20 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                             <p><asp:Label id="mailId" Text="" runat="server" /></p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-primary titles text-center">
+                    <div class="panel-heading">Recetas</div>
+                    <ul class="list-group">
+                        <asp:Label ID="labelRecetas" Text="No hay recetas para mostrar" runat="server" />
+
+                            <asp:Repeater id="recetasId" runat="server">
+                                <ItemTemplate>
+                                    <li class="list-group-item"><%# Eval("nombre")%></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ namespace Tp__PrograWeb3.main.cocineros
     {
         EventosRepository eventoRepositorio = EventosRepository.getInstance;
         UsuariosRepository UsuariosRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
-        RecetasRepository RecetasRepo = RecetasRepository.getInstance;
+        RecetasRepository RecetasRepo = new RecetasRepository(new PW3_TP_20161CEntities());
         string filename = "";
         static int userId;
 
@@ -28,8 +28,8 @@ namespace Tp__PrograWeb3.main.cocineros
 
         private void CargarRecetas() {
             recetasListId.DataSource = RecetasRepo.GetAllByUserId(userId);
-            recetasListId.DataTextField = "nombre";
-            recetasListId.DataValueField = "recetaId";
+            recetasListId.DataTextField = "Nombre";
+            recetasListId.DataValueField = "IdReceta";
             recetasListId.DataBind();
         }
 
