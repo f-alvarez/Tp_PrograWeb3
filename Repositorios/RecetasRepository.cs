@@ -27,5 +27,9 @@ namespace Repositorios
             var usuario = (from e in contexto.Usuarios where e.IdUsuario == userId select e).FirstOrDefault();
             return usuario.Recetas.ToList();
         }
+
+        public Recetas GetById(int id) {
+            return (from e in contexto.Recetas where e.IdReceta == id select e).First();
+        }
     }
 }

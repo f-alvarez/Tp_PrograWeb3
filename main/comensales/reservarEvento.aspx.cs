@@ -11,8 +11,9 @@ namespace Tp__PrograWeb3.main.comensales
 {
     public partial class reservarEvento : System.Web.UI.Page
     {
-        ReservasRepository reservasRepo = ReservasRepository.getInstance;
-        EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
+        static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
+        ReservasRepository reservasRepo = new ReservasRepository(contexto);
+        EventosRepository EventosRepo = new EventosRepository(contexto);
         static int userId;
         static ICollection<Reservas> cantidadReservas;
         static int eventoId;
@@ -39,7 +40,7 @@ namespace Tp__PrograWeb3.main.comensales
 
             recetasRadioListId.DataSource = evento.Recetas;
             recetasRadioListId.DataTextField = "nombre";
-            recetasRadioListId.DataValueField = "recetaId";
+            recetasRadioListId.DataValueField = "idReceta";
             recetasRadioListId.DataBind();
         }
 

@@ -12,9 +12,10 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class eventos : System.Web.UI.Page
     {
-        EventosRepository eventoRepositorio = new EventosRepository(new PW3_TP_20161CEntities());
-        UsuariosRepository UsuariosRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
-        RecetasRepository RecetasRepo = new RecetasRepository(new PW3_TP_20161CEntities());
+        static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
+        EventosRepository eventoRepositorio = new EventosRepository(contexto);
+        UsuariosRepository UsuariosRepo = new UsuariosRepository(contexto);
+        RecetasRepository RecetasRepo = new RecetasRepository(contexto);
         string filename = "";
         static int userId;
 
@@ -67,6 +68,15 @@ namespace Tp__PrograWeb3.main.cocineros
                     evento.NombreFoto = this.filename;
                     evento.Precio = Decimal.Parse(precioId.Value);
                     evento.Estado = 1;
+
+                    foreach (ListItem item in recetasListId.Items)
+                    {
+                        if (item.Selected)
+                        {
+                            evento.Recetas.Add(RecetasRepo.GetById(Int32.Parse(item.Value)));
+                        }
+                    }
+
                     eventoRepositorio.agregarEvento(evento);
 
                     StatusLabel.Text = "Upload status: Guardado con éxito";

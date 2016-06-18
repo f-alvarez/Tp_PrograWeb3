@@ -9,75 +9,40 @@ namespace Repositorios
 {
     public class ReservasRepository
     {
-        public List<Reservas> Reservas = new List<Reservas>();
+        PW3_TP_20161CEntities contexto;
 
-        private static ReservasRepository ReservasRepo;
-
-        private ReservasRepository() { }
-
-        public static ReservasRepository getInstance
-        {
-            get 
-            {
-                if (ReservasRepo == null)
-                {
-                    ReservasRepo = new ReservasRepository();
-                }
-                return ReservasRepo;
-            }
+        public ReservasRepository(PW3_TP_20161CEntities context) {
+            contexto = context;
         }
 
         public void add(Reservas reserva)
         {
-            reserva.IdReserva = Reservas.Count;
-            Reservas.Add(reserva);
+            contexto.Reservas.Add(reserva);
+            contexto.SaveChanges();
         }
 
         public List<Reservas> GetAllByUserId(int userId)
         {
-            List<Reservas> reservasByUser = new List<Reservas>();
+            Usuarios usuario = (from e in contexto.Usuarios where e.IdUsuario == userId select e).FirstOrDefault();
 
-            foreach(Reservas reserva in Reservas){
-                if (reserva.IdUsuario == userId)
-                {
-                    reservasByUser.Add(reserva);
-                }
-            }
-            return reservasByUser;
+            return usuario.Reservas.ToList();
             
         }
 
         public List<Reservas> getAllReservas()
         {
-            return Reservas;
+            return (from e in contexto.Reservas select e).ToList();
         }
 
         public List<Reservas> getReservasByUserId(int userId) {
-            List<Reservas> reservasByUserId = new List<Reservas>();
 
-            foreach (Reservas reserva in Reservas)
-            {
-                if (reserva.IdUsuario == userId)
-                {
-                    reservasByUserId.Add(reserva);
-                }
-            }
-
-            return reservasByUserId;
+            return GetAllByUserId(userId);
         }
 
         public Reservas GetReservaById(int id) 
         {
-            Reservas reservaById = new Reservas();
+            return (from e in contexto.Reservas where e.IdReserva == id select e).First();
 
-            foreach (Reservas reserva in Reservas)
-            {
-                if (reserva.IdReserva == id)
-                {
-                    reservaById = reserva;
-                }
-            }
-            return reservaById;
         }
     }
 }

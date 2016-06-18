@@ -11,7 +11,7 @@
             <Columns>
                 <asp:BoundField DataField="cantidadComensales" HeaderText="Cantidad de comensales" />
                 <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
-                <asp:ImageField dataimageurlfield="foto"
+                <asp:ImageField dataimageurlfield="NombreFoto"
                 alternatetext="Foto Evento"
                 nulldisplaytext="Imagen no encontrada"
                 headertext="Foto"  
@@ -21,7 +21,7 @@
                 <asp:BoundField DataField="fecha" HeaderText="Fecha" />
                 <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
-                <asp:HyperLinkField Text="Concurrir" ControlStyle-CssClass="btn btn-success" DataNavigateUrlFields="eventoId" DataNavigateUrlFormatString="reservarEvento.aspx?idEvento={0}"/>
+                <asp:HyperLinkField Text="Concurrir" ControlStyle-CssClass="btn btn-success" DataNavigateUrlFields="idEvento" DataNavigateUrlFormatString="reservarEvento.aspx?idEvento={0}"/>
             </Columns> 
         </asp:GridView>
     </form>

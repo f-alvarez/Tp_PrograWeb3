@@ -11,7 +11,7 @@ namespace Tp__PrograWeb3.main.comensales
 {
     public partial class reservas : System.Web.UI.Page
     {
-        ReservasRepository reservasRepo = ReservasRepository.getInstance;
+        ReservasRepository reservasRepo = new ReservasRepository(new PW3_TP_20161CEntities());
         EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
         static int userId;
 
