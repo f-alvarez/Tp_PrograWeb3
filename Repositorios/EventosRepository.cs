@@ -9,105 +9,70 @@ namespace Repositorios
 {
     public class EventosRepository
     {
-        public List<Eventos> Eventos = new List<Eventos>();
+        PW3_TP_20161CEntities contexto;
 
-        private static EventosRepository EventosRepo;
-
-        private EventosRepository() { }
-
-        public static EventosRepository getInstance
-        {
-            get 
-            {
-                if (EventosRepo == null)
-                {
-                    EventosRepo = new EventosRepository();
-                }
-                return EventosRepo;
-            }
+        public EventosRepository(PW3_TP_20161CEntities context) {
+            contexto = context;
         }
+
         public void agregarEvento(Eventos evento)
         {
-            evento.IdEvento = Eventos.Count;
-            Eventos.Add(evento);
+            contexto.Eventos.Add(evento);
+            contexto.SaveChanges();
         }
        
         public void update(Eventos eventoUpdated)
         {
-            foreach (Eventos evento in Eventos)
-            {
-                if (evento.IdEvento == eventoUpdated.IdEvento)
-                {
-                    evento.CantidadComensales = eventoUpdated.CantidadComensales;
-                    evento.Recetas = eventoUpdated.Recetas;
-                    evento.Reservas = eventoUpdated.Reservas;
-                    evento.Ubicacion = eventoUpdated.Ubicacion;
-                    evento.NombreFoto = eventoUpdated.NombreFoto;
-                    evento.Nombre = eventoUpdated.Nombre;
-                    evento.Fecha = eventoUpdated.Fecha;
-                    evento.Descripcion = eventoUpdated.Descripcion;
-                    evento.Estado = eventoUpdated.Estado;
-                }
-            }
+            Eventos evento = (from e in contexto.Eventos where e.IdEvento == eventoUpdated.IdEvento select e).First();
+            evento.CantidadComensales = eventoUpdated.CantidadComensales;
+            evento.Recetas = eventoUpdated.Recetas;
+            evento.Reservas = eventoUpdated.Reservas;
+            evento.Ubicacion = eventoUpdated.Ubicacion;
+            evento.NombreFoto = eventoUpdated.NombreFoto;
+            evento.Nombre = eventoUpdated.Nombre;
+            evento.Fecha = eventoUpdated.Fecha;
+            evento.Descripcion = eventoUpdated.Descripcion;
+            evento.Estado = eventoUpdated.Estado;
+            evento.Precio = eventoUpdated.Precio;
+            evento.Comentarios = eventoUpdated.Comentarios;
+            evento.Usuarios = eventoUpdated.Usuarios;
+
+            contexto.SaveChanges();
         }
 
         public List<Eventos> GetAllByUserId(int userId)
         {
-            List<Eventos> eventosByUser = new List<Eventos>();
+            Usuarios usuario = (from e in contexto.Usuarios where e.IdUsuario == userId select e).FirstOrDefault();
 
-            foreach (Eventos evento in Eventos)
-            {
-                if (evento.IdUsuario == userId)
-                {
-                    eventosByUser.Add(evento);
-                }
-            }
-            return eventosByUser;
+            return usuario.Eventos.ToList();
             
         }
 
         public List<Eventos> getAllEventos()
         {
-            return Eventos;
+            return (from e in contexto.Eventos select e).ToList();
         }
 
-        public List<Eventos> getEventosByEstado(string estado)
+        public List<Eventos> getEventosByEstado(byte estado)
         {
-            List<Eventos> eventosFilter = new List<Eventos>();
-
-            foreach (Eventos evento in Eventos)
-            {
-                if (evento.Estado.Equals(estado))
-                {
-                    eventosFilter.Add(evento);
-                }
-            }
-            return eventosFilter;
+            return (from e in contexto.Eventos where e.Estado == estado select e).ToList();
         }
 
         public Eventos GetEventoById(int id) 
         {
-            Eventos eventoById = new Eventos();
-
-            foreach (Eventos evento in Eventos)
-            {
-                if (evento.IdEvento == id)
-                {
-                    eventoById = evento;
-                }
-            }
-            return eventoById;
+            return (from e in contexto.Eventos where e.IdEvento == id select e).First();
         }
 
         public void CancelEvent(int id)
         {
-            Eventos evento = new Eventos();
-            evento = GetEventoById(id);
+            Eventos evento = GetEventoById(id);
 
             if (Convert.ToDateTime(evento.Fecha) > DateTime.Now && string.Equals(evento.Estado, 1))
             {
                 evento.Estado = 2;
             }
+
+            contexto.SaveChanges();
         }
 
     }

@@ -13,7 +13,7 @@ namespace Tp__PrograWeb3.main.master
     {
         UsuariosRepository UsuarioRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
         RecetasRepository recetaRepositorio = new RecetasRepository(new PW3_TP_20161CEntities());
-        EventosRepository eventoRepositorio = EventosRepository.getInstance;
+        EventosRepository eventoRepositorio = new EventosRepository(new PW3_TP_20161CEntities());
         static bool mockDataLoaded = false;
 
 

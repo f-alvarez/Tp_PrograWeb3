@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AccesoADatos;
 
 namespace Tp__PrograWeb3.main.comensales
 {
@@ -12,7 +13,7 @@ namespace Tp__PrograWeb3.main.comensales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvListaEventosAReservar.DataSource = EventosRepository.getInstance.getEventosByEstado("Pendiente");
+            gvListaEventosAReservar.DataSource = new EventosRepository(new PW3_TP_20161CEntities()).getEventosByEstado(1);
             gvListaEventosAReservar.DataBind();     
         }
     }

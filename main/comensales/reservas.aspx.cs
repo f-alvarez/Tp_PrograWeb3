@@ -12,7 +12,7 @@ namespace Tp__PrograWeb3.main.comensales
     public partial class reservas : System.Web.UI.Page
     {
         ReservasRepository reservasRepo = ReservasRepository.getInstance;
-        EventosRepository eventosRepo = EventosRepository.getInstance;
+        EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
         static int userId;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace Tp__PrograWeb3.main.comensales
             List<Eventos> eventosReservados = new List<Eventos>();
 
             foreach (Reservas reserva in reservas) {
-                Eventos evento = eventosRepo.GetEventoById(reserva.IdEvento);
+                Eventos evento = EventosRepo.GetEventoById(reserva.IdEvento);
                 eventosReservados.Add(evento);
             }
 

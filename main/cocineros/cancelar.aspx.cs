@@ -1,4 +1,5 @@
-﻿using Repositorios;
+﻿using AccesoADatos;
+using Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class cancelar : System.Web.UI.Page
     {
-        EventosRepository EventosRepo = EventosRepository.getInstance;
+        EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
 
         static int userId;
 

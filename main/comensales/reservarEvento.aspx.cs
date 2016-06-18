@@ -12,7 +12,7 @@ namespace Tp__PrograWeb3.main.comensales
     public partial class reservarEvento : System.Web.UI.Page
     {
         ReservasRepository reservasRepo = ReservasRepository.getInstance;
-        EventosRepository eventosRepo = EventosRepository.getInstance;
+        EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
         static int userId;
         static ICollection<Reservas> cantidadReservas;
         static int eventoId;
@@ -30,7 +30,7 @@ namespace Tp__PrograWeb3.main.comensales
 
         private void CargarEvento() {
             int Id = int.Parse(Request.QueryString["idEvento"]);
-            evento = eventosRepo.GetEventoById(Id);
+            evento = EventosRepo.GetEventoById(Id);
 
             eventoNombreLabel.Text = evento.Nombre;
             cantidadReservas = evento.Reservas;
@@ -66,7 +66,7 @@ namespace Tp__PrograWeb3.main.comensales
                 reservasRepo.add(reserva);
 
                 evento.Reservas.Add(reserva);
-                eventosRepo.update(evento);
+                EventosRepo.update(evento);
 
                 Response.Redirect( ResolveUrl("~/main/comensales/reservas.aspx"));
             }
