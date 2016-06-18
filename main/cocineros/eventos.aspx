@@ -67,9 +67,7 @@ campo Foto en la base de datos el Path relativo.--%>
           
           <div class="form-group col-md-12">
             <label>Descripción:</label>
-            <textarea class="form-control" rows="5" id="descripcionId" placeholder="Ingrese Descripción" runat="server">
-
-            </textarea>
+            <textarea class="form-control" rows="5" id="descripcionId" placeholder="Ingrese Descripción" runat="server"></textarea>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ControlToValidate="descripcionId" CssClass="has-error">
                 <span class="help-block">Ingrese una descripcion</span>
             </asp:RequiredFieldValidator>

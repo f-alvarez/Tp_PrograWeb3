@@ -36,6 +36,8 @@ namespace Tp__PrograWeb3.main.cocineros
                 recetaRepositorio.add(receta);
 
                 StatusLabel.Text = "Upload status: Guardado con éxito";
+                Response.Redirect("perfil.aspx");
+
             }
             catch (Exception ex)
             {

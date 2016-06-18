@@ -13,57 +13,21 @@ namespace Tp__PrograWeb3.main.anonimo {
     public partial class _default {
         
         /// <summary>
-        /// Control ucEventosInicio.
+        /// Control labelEventos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Tp__PrograWeb3.main.userControls.ucEventosInicio ucEventosInicio;
+        protected global::System.Web.UI.WebControls.Label labelEventos;
         
         /// <summary>
-        /// Control ucEventosInicio1.
+        /// Control eventosId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Tp__PrograWeb3.main.userControls.ucEventosInicio ucEventosInicio1;
-        
-        /// <summary>
-        /// Control ucEventosInicio2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Tp__PrograWeb3.main.userControls.ucEventosInicio ucEventosInicio2;
-        
-        /// <summary>
-        /// Control ucEventosInicio3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Tp__PrograWeb3.main.userControls.ucEventosInicio ucEventosInicio3;
-        
-        /// <summary>
-        /// Control ucEventosInicio4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Tp__PrograWeb3.main.userControls.ucEventosInicio ucEventosInicio4;
-        
-        /// <summary>
-        /// Control ucEventosInicio5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Tp__PrograWeb3.main.userControls.ucEventosInicio ucEventosInicio5;
+        protected global::System.Web.UI.WebControls.Repeater eventosId;
     }
 }

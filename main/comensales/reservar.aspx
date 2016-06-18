@@ -12,6 +12,7 @@
                 <asp:BoundField DataField="cantidadComensales" HeaderText="Cantidad de comensales" />
                 <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
                 <asp:ImageField dataimageurlfield="NombreFoto"
+                DataImageUrlFormatString="~/resources/img/{0}"
                 alternatetext="Foto Evento"
                 nulldisplaytext="Imagen no encontrada"
                 headertext="Foto"  

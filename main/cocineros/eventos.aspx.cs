@@ -97,7 +97,7 @@ namespace Tp__PrograWeb3.main.cocineros
             {
                 try
                 {
-                    filename = "~/resources/img/" + fotoId.FileName;
+                    filename = fotoId.FileName;
                     fotoId.SaveAs(Server.MapPath("~/resources/img/") + fotoId.FileName);
                 }
                 catch (Exception ex)

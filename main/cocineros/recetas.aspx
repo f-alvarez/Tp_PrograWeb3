@@ -36,9 +36,7 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
 
           <div class="form-group col-md-12">
             <label>Descripción y pasos de realición:</label>
-            <textarea class="form-control" rows="5" id="descripcionId" placeholder="Ingrese Descripción" runat="server">
-
-            </textarea>
+            <textarea class="form-control" rows="5" id="descripcionId" placeholder="Ingrese Descripción" runat="server"></textarea>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ControlToValidate="descripcionId" CssClass="has-error">
                 <span class="help-block">Ingrese una descripcion</span>
             </asp:RequiredFieldValidator>
@@ -46,9 +44,7 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
 
           <div class="form-group col-md-12">
             <label>Ingredientes:</label>
-            <textarea class="form-control" rows="5" id="ingredientesId" placeholder="Ingrese ingredientes" runat="server">
-
-            </textarea>
+            <textarea class="form-control" rows="5" id="ingredientesId" placeholder="Ingrese ingredientes" runat="server"></textarea>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Display="Dynamic" ControlToValidate="ingredientesId" CssClass="has-error">
                 <span class="help-block">Ingrese ingredientes</span>
             </asp:RequiredFieldValidator>
@@ -57,14 +53,15 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
 
           <div class="form-group col-md-6">
             <label>Tipo:</label>
-              <asp:DropDownList ID="tipoId" runat="server">
+              <asp:DropDownList ID="tipoId" runat="server" AutoPostBack="True">
+                    <asp:ListItem Selected="True" Value="seleccione" >Seleccione</asp:ListItem>
                   <asp:ListItem Value="1">Gourmet</asp:ListItem>
                   <asp:ListItem Value="2">Diet</asp:ListItem>
                   <asp:ListItem Value="3">Casera</asp:ListItem>
                   <asp:ListItem Value="4">Vegetariana</asp:ListItem>
 
               </asp:DropDownList>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Display="Dynamic" ControlToValidate="tipoId" CssClass="has-error">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" InitialValue="seleccione" runat="server" Display="Dynamic" ControlToValidate="tipoId" CssClass="has-error">
                 <span class="help-block">Seleccione un tipo</span>
             </asp:RequiredFieldValidator>
           </div>

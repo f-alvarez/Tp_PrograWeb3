@@ -11,10 +11,11 @@ namespace Tp__PrograWeb3.main.master
 {
     public partial class Base : System.Web.UI.MasterPage
     {
-        UsuariosRepository UsuarioRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
-        RecetasRepository recetaRepositorio = new RecetasRepository(new PW3_TP_20161CEntities());
-        EventosRepository eventoRepositorio = new EventosRepository(new PW3_TP_20161CEntities());
-        static bool mockDataLoaded = false;
+        static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
+        UsuariosRepository UsuarioRepo = new UsuariosRepository(contexto);
+        RecetasRepository recetaRepositorio = new RecetasRepository(contexto);
+        EventosRepository eventoRepositorio = new EventosRepository(contexto);
+        static bool mockDataLoaded = true;
 
 
 
@@ -93,7 +94,7 @@ namespace Tp__PrograWeb3.main.master
 
             int cantidadComensales = 10;
             string ubicacion = "Lavalle 348";
-            string foto = "~/resources/img/02.jpg";
+            string foto = "02.jpg";
             decimal precio = 120.50m;
             string nombre = "Festival Raíz";
             DateTime fecha = DateTime.Parse("25/05/2016");
@@ -131,7 +132,7 @@ namespace Tp__PrograWeb3.main.master
 
             cantidadComensales = 3;
             ubicacion = "San Martin 347";
-            foto = "~/resources/img/Evento1.jpeg";
+            foto = "Evento1.jpeg";
             precio = 220.50m;
             nombre = "La Festichola";
             fecha = DateTime.Parse("15/12/2016");
@@ -154,7 +155,7 @@ namespace Tp__PrograWeb3.main.master
 
             cantidadComensales = 3;
             ubicacion = "Av.Corrientes 2348";
-            foto = "~/resources/img/05.jpg";
+            foto = "05.jpg";
             precio = 300m;
             nombre = "Sabores Etnicos";
             fecha = DateTime.Parse("24/05/2016");

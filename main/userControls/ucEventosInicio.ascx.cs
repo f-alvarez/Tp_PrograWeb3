@@ -13,7 +13,7 @@ namespace Tp__PrograWeb3.main.userControls
         public String imgSrcUrl
         {
             get { return ImgEvento.ImageUrl; }
-            set { ImgEvento.ImageUrl = value; }
+            set { ImgEvento.ImageUrl = "../../resources/img/" + value; }
         }
         public String imgLink
         {
