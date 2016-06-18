@@ -26,7 +26,6 @@ namespace Tp__PrograWeb3.main.comensales
                 userId = Int32.Parse(Session["userId"].ToString());
                 CargarEvento();
             }
-            
         }
 
         private void CargarEvento() {

@@ -65,7 +65,7 @@ namespace Tp__PrograWeb3.main.cocineros
                     evento.Descripcion = descripcionId.Value;
                     evento.CantidadComensales = Int32.Parse(comensalesId.Value);
                     evento.Ubicacion = ubicacionId.Value;
-                    evento.NombreFoto = this.filename;
+                    evento.NombreFoto = GuardarFoto();
                     evento.Precio = Decimal.Parse(precioId.Value);
                     evento.Estado = 1;
 
@@ -88,24 +88,25 @@ namespace Tp__PrograWeb3.main.cocineros
 
                 }
             };
-            
-
         }
 
-        protected void GuardarFoto()
+        protected String GuardarFoto()
         {
+            String filename = "";
             if (fotoId.HasFile)
             {
                 try
                 {
-                    this.filename = Guid.NewGuid().ToString() + Path.GetExtension(fotoId.FileName).ToString();
-                    fotoId.SaveAs(Server.MapPath("~/resources/img/") + this.filename);
+                    filename = "~/resources/img/" + fotoId.FileName;
+                    fotoId.SaveAs(Server.MapPath("~/resources/img/") + fotoId.FileName);
                 }
                 catch (Exception ex)
                 {
                     StatusLabel.Text = "Upload status: Error al subir la imagen: " + ex.Message;
                 }
             }
+            return filename;
         }
+
     }
 }
