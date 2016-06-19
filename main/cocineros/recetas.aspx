@@ -28,7 +28,7 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
 
           <div class="form-group col-md-6">
             <label>Tiempo de cocción en minutos:</label>
-            <input type="number" class="form-control" runat="server" id="tiempoId">
+            <input type="number" class="form-control" runat="server" id="tiempoId" min="1">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic" ControlToValidate="nombreId" CssClass="has-error">
                 <span class="help-block">Ingrese el tiempo de cocción</span>
             </asp:RequiredFieldValidator>
