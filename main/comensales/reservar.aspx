@@ -21,7 +21,7 @@
                 <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="fecha" HeaderText="Fecha" />
                 <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
-                <asp:BoundField DataField="estado" HeaderText="Estado" />
+                <asp:BoundField DataField="estadoString" HeaderText="Estado" />
                 <asp:HyperLinkField Text="Concurrir" ControlStyle-CssClass="btn btn-success" DataNavigateUrlFields="idEvento" DataNavigateUrlFormatString="reservarEvento.aspx?idEvento={0}"/>
             </Columns> 
         </asp:GridView>

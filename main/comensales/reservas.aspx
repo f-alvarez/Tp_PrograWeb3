@@ -13,7 +13,7 @@
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="fecha" HeaderText="Fecha" />
                     <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
-                    <asp:BoundField DataField="estado" HeaderText="Estado" />
+                    <asp:BoundField DataField="estadoString" HeaderText="Estado" />
                     <asp:HyperLinkField NavigateUrl="~/main/comensales/comentarios.aspx" Text="Calificar" />
                 </Columns> 
             </asp:GridView> 

@@ -79,12 +79,12 @@ namespace Tp__PrograWeb3.main.cocineros
 
                     eventoRepositorio.agregarEvento(evento);
 
-                    StatusLabel.Text = "Upload status: Guardado con éxito";
+                    StatusLabel.Text = "Guardado con éxito";
                     Response.Redirect("perfil.aspx");
                 }
                 catch (Exception ex)
                 {
-                    StatusLabel.Text = "Upload status: Error al guardar el evento: " + ex.Message;
+                    StatusLabel.Text = "Error al guardar el evento: " + ex.Message;
 
                 }
             };
