@@ -34,11 +34,9 @@ namespace Tp__PrograWeb3.main.comensales
                 eventosReservados.Add(evento);
             }
 
-            gvListaEventos.DataSource = eventosReservados;
-            gvListaEventos.DataBind();  
+            eventosReservadosId.DataSource = eventosReservados;
+            eventosReservadosId.DataBind();  
         }
-
-
 
 
 
