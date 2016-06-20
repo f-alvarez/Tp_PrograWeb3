@@ -102,7 +102,7 @@ namespace Tp__PrograWeb3.main.cocineros
                 }
                 catch (Exception ex)
                 {
-                    StatusLabel.Text = "Upload status: Error al subir la imagen: " + ex.Message;
+                    StatusLabel.Text = "Error al subir la imagen: " + ex.Message;
                 }
             }
             return filename;

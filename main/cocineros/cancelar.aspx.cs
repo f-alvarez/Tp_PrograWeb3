@@ -23,8 +23,9 @@ namespace Tp__PrograWeb3.main.cocineros
 
         private void CargarEventos()
         {
-            eventosId.DataSource = EventosRepo.GetAllByUserId(userId);
-            if (eventosId.Items.Count == 0)
+            List<Eventos> eventosFiltrados = EventosRepo.GetAllByUserId(userId).Where(x => x.Fecha > DateTime.Today && x.EstadoString.Equals("Pendiente")).ToList();
+            eventosId.DataSource = eventosFiltrados;
+            if (eventosFiltrados.Count != 0)
             {
                 labelEventos.Visible = false;
             }
@@ -35,12 +36,11 @@ namespace Tp__PrograWeb3.main.cocineros
             eventosId.DataBind();
         }
 
-        protected void cancel_command(object sender, RepeaterCommandEventArgs e)
+        protected void btnShowPopup_Click(object sender, EventArgs e)
         {
             int index;
-            int.TryParse(e.CommandArgument.ToString(), out index);
-            EventosRepo.CancelEvent(index);
-            Response.Redirect("cancelar.aspx");
+            int.TryParse(((LinkButton)(sender)).CommandArgument.ToString(), out index);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + index + "');", true);
         }
 
 

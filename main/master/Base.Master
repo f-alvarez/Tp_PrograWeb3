@@ -16,6 +16,12 @@
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" type="text/css" href="~/resources/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="~/resources/css/estilos.css"/>
+    <link href="../../resources/css/jquery-ui.css" rel="stylesheet" />
+    <link href="../../resources/css/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="../../resources/css/jquery-ui.theme.min.css" rel="stylesheet" />
+    <script src="../../resources/js/jquery-1.10.2.js"></script>
+    <script src="../../resources/js/jquery-ui.js"></script>
+    <script src="../../resources/js/funciones.js"></script>
 </head>
 <body>
     <uc1:ucMenuAnonimo runat="server" ID="ucMenuAnonimo" />

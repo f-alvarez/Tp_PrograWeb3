@@ -33,7 +33,7 @@ namespace Tp__PrograWeb3.main.comensales
                 Eventos evento = EventosRepo.GetEventoById(reserva.IdEvento);
                 eventosReservados.Add(evento);
             }
-
+            
             eventosReservadosId.DataSource = eventosReservados;
             eventosReservadosId.DataBind();  
         }
