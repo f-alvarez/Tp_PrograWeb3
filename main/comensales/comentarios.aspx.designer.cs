@@ -22,13 +22,13 @@ namespace Tp__PrograWeb3.main.comensales {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// Control listPuntu.
+        /// Control listCalificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listPuntu;
+        protected global::System.Web.UI.WebControls.ListBox listCalificacion;
         
         /// <summary>
         /// Control RequiredFieldValidator1.
@@ -40,13 +40,13 @@ namespace Tp__PrograWeb3.main.comensales {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Control comentId.
+        /// Control comentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea comentId;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea comentario;
         
         /// <summary>
         /// Control RequiredFieldValidator2.

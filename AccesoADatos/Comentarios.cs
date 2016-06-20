@@ -22,5 +22,6 @@ namespace AccesoADatos
     
         public virtual Eventos Eventos { get; set; }
         public virtual Usuarios Usuarios { get; set; }
+        public virtual string nombreUsuario { get; set; }
     }
 }
