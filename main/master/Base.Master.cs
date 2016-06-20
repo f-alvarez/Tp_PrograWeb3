@@ -11,9 +11,14 @@ namespace Tp__PrograWeb3.main.master
 {
     public partial class Base : System.Web.UI.MasterPage
     {
+        EventosRepository eventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack) {
+                FinalizarEventosOutOfDate();
+            }
             ucMenuCocinero.Visible = false;
             ucMenuComensal.Visible = false;
             ucMenuAnonimo.Visible = false;
@@ -35,5 +40,17 @@ namespace Tp__PrograWeb3.main.master
             }
             
         }
+
+        private void FinalizarEventosOutOfDate() {
+            List<Eventos> eventosPendientes = eventosRepo.getEventosByEstado(1);
+
+            foreach(Eventos evento in eventosPendientes){
+                if (evento.Fecha < DateTime.Now) {
+                    evento.Estado = 3;
+                    eventosRepo.update(evento);
+                }
+            }
+        }
     }
+
 }
