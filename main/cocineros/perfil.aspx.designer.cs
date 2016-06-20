@@ -67,6 +67,15 @@ namespace Tp__PrograWeb3.main.cocineros {
         protected global::System.Web.UI.WebControls.Label labelRecetas;
         
         /// <summary>
+        /// Control labelCantidadRecetas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelCantidadRecetas;
+        
+        /// <summary>
         /// Control recetasId.
         /// </summary>
         /// <remarks>

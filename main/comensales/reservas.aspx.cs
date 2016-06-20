@@ -13,6 +13,7 @@ namespace Tp__PrograWeb3.main.comensales
     {
         ReservasRepository reservasRepo = new ReservasRepository(new PW3_TP_20161CEntities());
         EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
+        ComentariosRepository comentariosRepo = new ComentariosRepository(new PW3_TP_20161CEntities());
         static int userId;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,8 +32,11 @@ namespace Tp__PrograWeb3.main.comensales
 
             foreach (Reservas reserva in reservas) {
                 Eventos evento = EventosRepo.GetEventoById(reserva.IdEvento);
+                evento.eventoComentado = comentariosRepo.verificarComentarioExistente(userId, reserva.IdEvento);
                 eventosReservados.Add(evento);
+
             }
+
             
             eventosReservadosId.DataSource = eventosReservados;
             eventosReservadosId.DataBind();  

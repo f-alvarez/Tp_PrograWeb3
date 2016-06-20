@@ -42,15 +42,17 @@ namespace Tp__PrograWeb3.main.cocineros
         private void CargarRecetas()
         {
             recetasId.DataSource = RecetasRepo.GetAllByUserId(userId);
-            if (recetasId.Items.Count == 0)
+            recetasId.DataBind();
+
+            if (recetasId.Items.Count > 0)
             {
                 labelRecetas.Visible = false;
+                labelCantidadRecetas.Text = labelCantidadRecetas.Text + (recetasId.Items.Count).ToString();
             }
             else
             {
                 labelRecetas.Visible = true;
             }
-            recetasId.DataBind();
         }
 
         private void CargarEventos()

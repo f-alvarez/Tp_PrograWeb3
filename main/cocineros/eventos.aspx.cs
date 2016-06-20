@@ -66,7 +66,7 @@ namespace Tp__PrograWeb3.main.cocineros
                     evento.CantidadComensales = Int32.Parse(comensalesId.Value);
                     evento.Ubicacion = ubicacionId.Value;
                     evento.NombreFoto = GuardarFoto();
-                    evento.Precio = Decimal.Parse(precioId.Value);
+                    evento.Precio = System.Convert.ToDecimal(precioId.Value.Replace(".", ","));
                     evento.Estado = 1;
 
                     foreach (ListItem item in recetasListId.Items)

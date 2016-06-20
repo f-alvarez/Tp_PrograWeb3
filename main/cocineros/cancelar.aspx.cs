@@ -24,6 +24,7 @@ namespace Tp__PrograWeb3.main.cocineros
         private void CargarEventos()
         {
             List<Eventos> eventosFiltrados = EventosRepo.GetAllByUserId(userId).Where(x => x.Fecha > DateTime.Today && x.EstadoString.Equals("Pendiente")).ToList();
+
             eventosId.DataSource = eventosFiltrados;
             if (eventosFiltrados.Count != 0)
             {

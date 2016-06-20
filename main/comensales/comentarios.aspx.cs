@@ -13,6 +13,7 @@ namespace Tp__PrograWeb3.main.comensales
     {
         static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
         ComentariosRepository comentariosRepo = new ComentariosRepository(contexto);
+        EventosRepository eventosRepo = new EventosRepository(contexto);
         static int userId;
         static int evento;
 
@@ -20,21 +21,50 @@ namespace Tp__PrograWeb3.main.comensales
         {
             if (!IsPostBack) 
             {
-                listCalificacion.Items.Add("1");
-                listCalificacion.Items.Add("2");
-                listCalificacion.Items.Add("3");
-                listCalificacion.Items.Add("4");
-                listCalificacion.Items.Add("5");
                 userId = Int32.Parse(Session["userId"].ToString());
                 evento = Convert.ToInt32(Request.QueryString["eventoId"]);
+                cargarListBoxPuntuacion();
+                mostrarInfoEvento(evento);
             }
+        }
+
+        private void mostrarInfoEvento(int evento)
+        {
+            var eventoInfo = eventosRepo.GetEventoById(evento);
+            lblEventoNombre.Text = eventoInfo.Nombre;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e) 
         {
-            int calificacion = Convert.ToInt32(listCalificacion.SelectedValue);
-            string com = comentario.Value;
-            comentariosRepo.SaveComent(calificacion, com, evento, userId);
+            if (Page.IsValid)
+            {
+                int calificacion = Convert.ToInt32(listCalificacion.SelectedValue);
+                string com = comentario.Value;
+
+                if (!comentariosRepo.verificarComentarioExistente(userId, evento))
+                {
+
+                    comentariosRepo.SaveComent(calificacion, com, evento, userId);
+                    Response.Redirect("reservas.aspx");
+
+                }
+                else
+                {
+                    Response.Redirect("comentarios.aspx");
+                }
+
+               
+                
+            }
+        }
+
+        private void cargarListBoxPuntuacion()
+        {
+            for (var i = 1; i <= 5; i++)
+            {
+                listCalificacion.Items.Add(i.ToString());
+            }
+       
         }
     }
 }

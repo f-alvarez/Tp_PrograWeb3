@@ -12,7 +12,7 @@
                             LabelPrecio='<%# Eval("precio")%>'
                             urlLink='<%# Eval("IdEvento","~/main/anonimo/comentarios.aspx?eventoId={0}") %>'
                             imgSrcUrl='<%# Eval("NombreFoto")%>'
-                            imgLink="~/main/anonimo/comentarios.aspx"
+                            imgLink='<%# Eval("IdEvento","~/main/anonimo/comentarios.aspx?eventoId={0}") %>'
                             TextLink='<%# Eval("Nombre")%>'/>                     
                     </div>
                 </ItemTemplate>

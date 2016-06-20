@@ -55,3 +55,7 @@
      width: 100% !important;
      max-width: 200px;
 }
+
+.cancelado {
+    background:#d0d1d5;
+}

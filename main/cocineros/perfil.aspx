@@ -59,10 +59,21 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                     <div class="panel-heading">Recetas</div>
                     <ul class="list-group">
                         <asp:Label ID="labelRecetas" Text="No hay recetas para mostrar" runat="server" />
+                        <asp:Label ID="labelCantidadRecetas" Text="Cantidad de Recetas: " runat="server" />
+
 
                             <asp:Repeater id="recetasId" runat="server">
                                 <ItemTemplate>
-                                    <li class="list-group-item"><%# Eval("nombre")%></li>
+                                    <li class="list-group-item">
+                                        <div class="panel-body">
+                                            <p><b><%# Eval("nombre")%></b></p>
+                                            <p><b>Tipo: </b><%# Eval("TipoString")%></p>
+                                            <p><b>Descripcion: </b><%# Eval("descripcion")%></p>
+                                            <p><b>Ingredientes: </b><%# Eval("ingredientes")%></p>
+                                            <p><b>Tiempo de Coccion: </b><%# Eval("tiempoCoccion")%> minutos</p>
+                                        </div>
+                                    </li>
+                                    
                                 </ItemTemplate>
                             </asp:Repeater>
                     </ul>

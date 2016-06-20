@@ -46,5 +46,6 @@ namespace AccesoADatos
                                                  } 
             set { this.EstadoString = value; } }
         public virtual ICollection<Recetas> Recetas { get; set; }
+        public virtual bool eventoComentado { get; set; }
     }
 }
