@@ -53,9 +53,49 @@ namespace Repositorios
             return (from e in contexto.Eventos select e).ToList();
         }
 
+        public List<Eventos> getAllOrFirtsSixEventosFiltrados()
+        {
+            var query = (from e in contexto.Eventos where e.Comentarios.Count > 0 where e.Estado == 3 select e);
+            List<Eventos> lista = query.ToList();
+            if (lista.Count > 6)
+            {
+                return query.Take(6).ToList();
+            }
+            else {
+                return lista;
+            }
+        }
+
         public List<Eventos> getEventosByEstado(byte estado)
         {
             return (from e in contexto.Eventos where e.Estado == estado select e).ToList();
+        }
+
+        public List<Eventos> getEventosByEstadoYDisponibilidad(byte estado)
+        {
+            List<Eventos> listaRetornada = new List<Eventos>();
+            List<Eventos> listaEventos = (from e in contexto.Eventos where e.Estado == estado select e).ToList();
+
+            foreach (var evento in listaEventos)
+            {
+                List<Reservas> listaReservas = (from r in contexto.Reservas where r.IdEvento == evento.IdEvento select r).ToList();
+                if (listaReservas.Count > 0)
+                {
+                    foreach (var reserva in listaReservas)
+                    {
+                        if (reserva.Cantidad < evento.CantidadComensales)
+                        {
+                            listaRetornada.Add(evento);
+                        }
+                    }
+                }
+                else {
+                    listaRetornada.Add(evento);
+                }
+                
+            }
+
+            return listaRetornada;
         }
 
         public Eventos GetEventoById(int id) 

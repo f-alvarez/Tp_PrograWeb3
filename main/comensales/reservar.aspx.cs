@@ -13,7 +13,7 @@ namespace Tp__PrograWeb3.main.comensales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvListaEventosAReservar.DataSource = new EventosRepository(new PW3_TP_20161CEntities()).getEventosByEstado(1);
+            gvListaEventosAReservar.DataSource = new EventosRepository(new PW3_TP_20161CEntities()).getEventosByEstadoYDisponibilidad(1);
             gvListaEventosAReservar.DataBind();     
         }
     }

@@ -22,7 +22,7 @@ namespace Tp__PrograWeb3.main.anonimo
         }
 
         private void CargarEventos() {
-            var eventosFiltrados = EventosRepo.getAllEventos().Where(x => x.Comentarios.Count > 0 && x.Estado == 3);
+            var eventosFiltrados = EventosRepo.getAllOrFirtsSixEventosFiltrados();
             var prom = 0.00;
             foreach (var evento in eventosFiltrados)
             {

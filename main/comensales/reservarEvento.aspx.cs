@@ -15,7 +15,7 @@ namespace Tp__PrograWeb3.main.comensales
         ReservasRepository reservasRepo = new ReservasRepository(contexto);
         EventosRepository EventosRepo = new EventosRepository(contexto);
         static int userId;
-        static ICollection<Reservas> cantidadReservas;
+        static int cantidadReservas;
         static int eventoId;
         static int cantidadMaximaReservas;
         static Eventos evento;
@@ -31,9 +31,11 @@ namespace Tp__PrograWeb3.main.comensales
         private void CargarEvento() {
             int Id = int.Parse(Request.QueryString["idEvento"]);
             evento = EventosRepo.GetEventoById(Id);
-
             eventoNombreLabel.Text = evento.Nombre;
-            cantidadReservas = evento.Reservas;
+            foreach (var item in evento.Reservas)
+            {
+                cantidadReservas += item.Cantidad;
+            }
             cantidadMaximaReservas = evento.CantidadComensales;
             eventoId = evento.IdEvento;
 
@@ -45,13 +47,13 @@ namespace Tp__PrograWeb3.main.comensales
 
         protected void ValidateComensales(object sender, ServerValidateEventArgs args)
         {
-            if ((Int64.Parse(comensalesId.Value) + cantidadReservas.Count) > cantidadMaximaReservas)
+            if ((Int32.Parse(comensalesId.Value) + cantidadReservas) <= cantidadMaximaReservas)
             {
-                args.IsValid = false;
+                args.IsValid = true;
             }
             else
             {
-                args.IsValid = true;
+                args.IsValid = false;
             }
         }
 
