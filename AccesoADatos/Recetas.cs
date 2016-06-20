@@ -31,5 +31,19 @@ namespace AccesoADatos
         public virtual Usuarios Usuarios { get; set; }
         public virtual ICollection<Reservas> Reservas { get; set; }
         public virtual ICollection<Eventos> Eventos { get; set; }
+
+        public virtual string TipoString
+        {
+            get
+            {
+                Dictionary<int, string> dic = new Dictionary<int, string>();
+                dic.Add(1, "Gourmet");
+                dic.Add(2, "Diet");
+                dic.Add(3, "Casera");
+                dic.Add(4, "Vegetariana");
+                return dic[this.Tipo];
+            }
+            set { this.TipoString = value; }
+        }
     }
 }
