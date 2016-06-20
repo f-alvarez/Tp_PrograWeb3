@@ -14,7 +14,7 @@
                         <h4>Puntuaci&oacute;n</h4>
                     </div>
                     <div class="panel-body">
-                        <asp:ListBox ID="listCalificacion" runat="server" AutoPostBack="True" SelectionMode="Single" CssClass="list-group-item" Rows="5">
+                        <asp:ListBox  class="form-control" ID="listCalificacion" runat="server" AutoPostBack="True" SelectionMode="Single" CssClass="list-group-item" Rows="5">
                         </asp:ListBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="listCalificacion" CssClass="has-error">
                             <span class="alert-danger">Calificacion</span>
@@ -26,7 +26,7 @@
                         <h4>Comentario</h4>
                     </div>
                     <div class="panel-body">
-                        <textarea class="form-control" rows="5" id="comentario" placeholder="Ingrese Comentario" runat="server">
+                        <textarea class="form-control" rows="3" cols="25" id="comentario" placeholder="Ingrese Comentario" runat="server">
                         </textarea>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="comentario"> 
                             <span class="alert-danger">Ingrese un Comentario</span>

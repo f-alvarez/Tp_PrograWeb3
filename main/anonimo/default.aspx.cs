@@ -22,7 +22,15 @@ namespace Tp__PrograWeb3.main.anonimo
         }
 
         private void CargarEventos() {
-            List<Eventos> eventosFiltrados = EventosRepo.getAllEventos().Where(x => x.Comentarios.Count > 0 && x.Estado == 3).ToList();
+            var eventosFiltrados = EventosRepo.getAllEventos().Where(x => x.Comentarios.Count > 0 && x.Estado == 3);
+            var prom = 0.00;
+            foreach (var evento in eventosFiltrados)
+            {
+                evento.Promedio = evento.Comentarios.Average(x => x.Puntuacion);
+           
+            }
+
+
             eventosId.DataSource = eventosFiltrados;
             if (eventosId.Items.Count == 0)
             {

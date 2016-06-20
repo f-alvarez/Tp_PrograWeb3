@@ -34,7 +34,7 @@ namespace Tp__PrograWeb3.main.comensales
         {
             int calificacion = Convert.ToInt32(listCalificacion.SelectedValue);
             string com = comentario.Value;
-            comentariosRepo.SaveComent(calificacion, com, evento, userId);git
+            comentariosRepo.SaveComent(calificacion, com, evento, userId);
         }
     }
 }

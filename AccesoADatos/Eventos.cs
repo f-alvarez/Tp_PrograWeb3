@@ -31,7 +31,8 @@ namespace AccesoADatos
         public string NombreFoto { get; set; }
         public decimal Precio { get; set; }
         public byte Estado { get; set; }
-    
+
+        public virtual double Promedio { get; set; } 
         public virtual ICollection<Comentarios> Comentarios { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual ICollection<Reservas> Reservas { get; set; }

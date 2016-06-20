@@ -22,10 +22,19 @@ namespace Repositorios
             contexto.SaveChanges();
         }
 
-        public ICollection<Comentarios> GetAllByEventId(int eventId)
+     
+        public List<Comentarios> GetAllByEventId(int eventId)
         {
-            var evento = (from e in contexto.Eventos where e.IdEvento == eventId select e).FirstOrDefault();
-            return evento.Comentarios.ToList();
+
+            var cmt = (from c in contexto.Comentarios where c.IdEvento == eventId select c);
+
+            foreach (var comment in cmt)
+            {
+                comment.nombreUsuario = (from u in contexto.Usuarios where u.IdUsuario == comment.IdUsuario select u.Nombre).FirstOrDefault();
+            }
+
+            return cmt.ToList();
+           
         }
 
         public Comentarios GetById(int id)
