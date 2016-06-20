@@ -25,12 +25,13 @@ Comentario: Al cancelar un evento se deberá cambiar el estado del mismo. No se 
 eliminar el registro de la base de datos.--%>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
-<div class="panel panel-default titles text-center">
+<div id="errorAjax" style="color: red; font-weight: bold;"></div>
+<div class="panel panel-primary titles text-center">
                     <div class="panel-heading">Eventos</div>
                         <form runat="server">
                             <ul class="list-group">
                                 <asp:Label ID="labelEventos" Text="No hay eventos para mostrar" runat="server" />
-                                <asp:Repeater id="eventosId" OnItemCommand="cancel_command" runat="server">                            
+                                <asp:Repeater id="eventosId" runat="server">                            
                                     <ItemTemplate>
                                         <li class="list-group-item">
                                             <div class="panel-body">                      
@@ -38,9 +39,9 @@ eliminar el registro de la base de datos.--%>
                                                 <p><%# Eval("fecha")%></p>
                                                 <p><%# Eval("descripcion")%></p>
                                                 <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
-                                                <p>Cantidad de reservas: <%# Eval("reservas")%></p>
-                                                <p>Estado: <%# Eval("estado")%></p>
-                                                <asp:LinkButton ID="LinkButton1" Visible=<%# string.Equals(Eval("estado"),"Pendiente") %> CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "IdEvento")%>' runat="server">
+                                                <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
+                                                <p>Estado: <%# Eval("estadoString")%></p>
+                                                <asp:LinkButton ID="LinkButton1" Visible=<%# string.Equals(Eval("estadoString"),"Pendiente") %> CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "IdEvento")%>' runat="server" OnClick="btnShowPopup_Click">
                                                     Cancelar
                                                 </asp:LinkButton>   
                                             </div>     
@@ -50,4 +51,5 @@ eliminar el registro de la base de datos.--%>
                             </ul>
                         </form>
                 </div>
+    <div id="dialog"></div>
 </asp:Content>
