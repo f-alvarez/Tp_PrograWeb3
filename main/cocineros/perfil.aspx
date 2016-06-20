@@ -27,9 +27,6 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                                         <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
                                         <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
                                         <p>Estado: <%# Eval("estadoString")%></p>
-                                        <div class="text-right">
-                                                <a class="text-right" href="#">Opciones</a>
-                                        </div>
                                     </div>     
                                 </li>                       
                             </ItemTemplate>

@@ -67,7 +67,7 @@ namespace Repositorios
         {
             Eventos evento = GetEventoById(id);
 
-            if (Convert.ToDateTime(evento.Fecha) > DateTime.Now && string.Equals(evento.Estado, 1))
+            if (Convert.ToDateTime(evento.Fecha) > DateTime.Today && evento.Estado.Equals(1))
             {
                 evento.Estado = 2;
             }
