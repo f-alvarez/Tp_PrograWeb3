@@ -12,11 +12,11 @@
             <asp:Repeater ID="eventosReservadosId" runat="server">
                 <ItemTemplate>
                     <li class="list-group-item">
-                        <div class="panel-body">
+                        <div class='<%# (byte)Eval("estado") == 2 ? "panel-body cancelado":"panel-body"%>'>
                             <p><b><%# Eval("nombre")%></b></p>
                             <p><%# Eval("fecha")%></p>
                             <p><%# Eval("descripcion")%></p>
-                            <p>Estado: <%# (byte)Eval("estado") == 1 ? "Pendiente" : (byte)Eval("estado") == 2 ? "Cancelado" : "Finalizado" %></p>
+                            <p>Estado: <%# Eval("EstadoString")%></p>
                             <div>  
                             <asp:LinkButton ID="LinkButton1" Visible='<%# (byte)Eval("estado") == 3 && !(bool)Eval("eventoComentado") %>'
                               href='<%# Eval("IdEvento","./comentarios.aspx?eventoId={0}") %>' 
@@ -28,5 +28,4 @@
             </asp:Repeater>
         </form>
     </div>
-
 </asp:Content>
