@@ -6,6 +6,9 @@
 <div class="ContenedorFormulario">
 <div class="ContenedorFormularioInterior">
     <form id="Form1" class="form-horizontal" runat="server">
+        <div id="ErrorLogin" runat="server" class="ErrorSpan">
+            Usuario y/o Contraseña inválidos
+        </div>
         <asp:ValidationSummary ID="ResumenValidaciones" CssClass="alert alert-danger" runat="server"/>
         <div class="form-group">
             <uc1:ucLabelTexto runat="server" ID="ucLabelTextoEmail" TextoLabel="Email" TxtType="Email"/>

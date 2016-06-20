@@ -59,3 +59,10 @@
 .cancelado {
     background:#d0d1d5;
 }
+
+.ErrorSpan {
+    color: red; 
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}

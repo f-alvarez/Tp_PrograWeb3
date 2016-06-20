@@ -25,6 +25,9 @@ namespace Tp__PrograWeb3.main
                     Response.Redirect(ResolveUrl("~/main/anonimo/login.aspx"));
                 }
             }
+            if (!IsPostBack) {
+                ErrorLogin.Visible = false;
+            }
 
         }
 
@@ -41,7 +44,7 @@ namespace Tp__PrograWeb3.main
                 Redireccion();
             }
             else {
-                 //PADRE, DAME CODIGO
+                ErrorLogin.Visible = true;
             }
             
         }

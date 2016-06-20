@@ -22,6 +22,15 @@ namespace Tp__PrograWeb3.main {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
+        /// Control ErrorLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorLogin;
+        
+        /// <summary>
         /// Control ResumenValidaciones.
         /// </summary>
         /// <remarks>

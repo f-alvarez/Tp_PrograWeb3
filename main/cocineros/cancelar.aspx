@@ -25,7 +25,7 @@ Comentario: Al cancelar un evento se deberá cambiar el estado del mismo. No se 
 eliminar el registro de la base de datos.--%>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
-<div id="errorAjax" style="color: red; font-weight: bold;"></div>
+<div id="errorAjax" class="ErrorSpan"></div>
 <div class="panel panel-primary titles text-center">
                     <div class="panel-heading">Eventos</div>
                         <form runat="server">
