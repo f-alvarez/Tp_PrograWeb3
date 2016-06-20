@@ -44,6 +44,9 @@ campo Foto en la base de datos el Path relativo.--%>
         <div class="text-center col-md-12">
             <h1>EVENTOS</h1>
         </div>
+         <div class="form-group col-md-12">
+            <asp:Label runat="server" CssClass="pull-left" id="StatusLabel" text="" />
+          </div>    
         <form id="Form1" class="form" runat="server">
           <div class="form-group col-md-6">
             <label>Nombre del evento:</label>
@@ -129,10 +132,7 @@ campo Foto en la base de datos el Path relativo.--%>
                
           <div class="form-group col-md-12">
             <asp:Button runat="server" id="saveButton" CssClass="btn btn-success pull-right" text="Guardar Evento" onclick="GuardarEventoClick" />
-          </div>
-          <div class="form-group col-md-12">
-            <asp:Label runat="server" CssClass="pull-right" id="StatusLabel" text="" />
-          </div>            
+          </div>   
                      
         </form>
     </div>

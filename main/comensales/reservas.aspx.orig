@@ -1,0 +1,45 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main/master/Comensal.Master" AutoEventWireup="true" CodeBehind="reservas.aspx.cs" Inherits="Tp__PrograWeb3.main.comensales.reservas" %>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyComensales" runat="server">
+
+    <div class="col-md-12">
+        <div class="text-center col-md-12">
+            <h1>Mis Reservas</h1>
+        </div>
+<<<<<<< HEAD
+        <form id="gv" class="form-horizontal" runat="server">
+
+            <asp:Repeater ID="eventosReservadosId" runat="server">
+                <ItemTemplate>
+                    <li class="list-group-item">
+                        <div class="panel-body">
+                            <p><b><%# Eval("nombre")%></b></p>
+                            <p><%# Eval("fecha")%></p>
+                            <p><%# Eval("descripcion")%></p>
+                            <p>Estado: <%# Eval("estado")%></p>
+                            <div>  
+                            <asp:LinkButton ID="LinkButton1" Visible='<%# (byte)Eval("estado") == 1%>'
+                              href='<%# Eval("IdEvento","./comentarios.aspx?eventoId={0}") %>' 
+                              runat="server">Calificar</asp:LinkButton>                                        
+                            </div>
+                        </div>
+                    </li>
+                </ItemTemplate>
+            </asp:Repeater>
+=======
+        <form id="gv" class="form-horizontal" runat="server"  >
+            <asp:GridView ID="gvListaEventos" runat="server" CssClass="table table-striped table-bordered table-condensed"  AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="fecha" HeaderText="Fecha" />
+                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
+                    <asp:BoundField DataField="estadoString" HeaderText="Estado" />
+                    <asp:HyperLinkField NavigateUrl="~/main/comensales/comentarios.aspx" Text="Calificar" />
+                </Columns> 
+            </asp:GridView> 
+>>>>>>> 31fd192c91d01b652c40a9c5f02a3fcb0b449a7b
+        </form>
+    </div>
+
+</asp:Content>

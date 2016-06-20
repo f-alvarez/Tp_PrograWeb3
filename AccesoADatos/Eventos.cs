@@ -35,6 +35,15 @@ namespace AccesoADatos
         public virtual ICollection<Comentarios> Comentarios { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual ICollection<Reservas> Reservas { get; set; }
+        public virtual int CantidadReservas { get { return this.Reservas.Count; } set { this.CantidadReservas = value; } }
+        public virtual string EstadoString { get {
+                                                    Dictionary<int, string> dic = new Dictionary<int, string>();
+                                                    dic.Add(1, "Pendiente");
+                                                    dic.Add(2, "Cancelado");
+                                                    dic.Add(3, "Finalizado");
+                                                    return dic[this.Estado];
+                                                 } 
+            set { this.EstadoString = value; } }
         public virtual ICollection<Recetas> Recetas { get; set; }
     }
 }

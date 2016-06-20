@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Para obtener más información sobre cómo configurar la aplicación de ASP.NET, visite
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+  </system.web>
+  <appSettings>
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+  </appSettings>
+  <connectionStrings>
+<<<<<<< HEAD
+    <add name="PW3_TP_20161CEntities" connectionString="metadata=res://*/EDMPW3.csdl|res://*/EDMPW3.ssdl|res://*/EDMPW3.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=Z97X\SQLEXPRESS;initial catalog=PW3_TP_20161C;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+=======
+    <add name="PW3_TP_20161CEntities" connectionString="metadata=res://*/EDMPW3.csdl|res://*/EDMPW3.ssdl|res://*/EDMPW3.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=FEDERICO-PC\SQLEXPRESS;initial catalog=PW3_TP_20161C;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+>>>>>>> 31fd192c91d01b652c40a9c5f02a3fcb0b449a7b
+  </connectionStrings>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+</configuration>

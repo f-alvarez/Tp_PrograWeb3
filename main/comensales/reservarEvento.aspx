@@ -26,7 +26,7 @@
 
         <div class="form-group col-md-6">
             <label>Cantidad de comensales:</label>
-              <input type="number" class="form-control" id="comensalesId" runat="server" min="0">
+              <input type="number" class="form-control" id="comensalesId" runat="server" min="1">
 
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Display="Dynamic" ControlToValidate="comensalesId" CssClass="has-error">
                     <span class="help-block">Seleccione la cantidad de comensales</span>
