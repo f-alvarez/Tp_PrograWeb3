@@ -18,7 +18,7 @@
                             <p><%# Eval("descripcion")%></p>
                             <p>Estado: <%# (byte)Eval("estado") == 1 ? "Pendiente" : (byte)Eval("estado") == 2 ? "Cancelado" : "Finalizado" %></p>
                             <div>  
-                            <asp:LinkButton ID="LinkButton1" Visible='<%# (byte)Eval("estado") == 3%>'
+                            <asp:LinkButton ID="LinkButton1" Visible='<%# (byte)Eval("estado") == 3 && !(bool)Eval("eventoComentado") %>'
                               href='<%# Eval("IdEvento","./comentarios.aspx?eventoId={0}") %>' 
                               runat="server">Calificar</asp:LinkButton>                                        
                             </div>

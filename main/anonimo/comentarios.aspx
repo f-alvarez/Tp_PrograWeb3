@@ -14,7 +14,6 @@
                             <p>Calificacion: <b class="puntuacion"><%# Eval("Puntuacion")%></b></p>
                             <p>Comentario: <%# Eval("Comentarios1")%></p>
                             <p><b>Usuario: @<%# Eval("nombreUsuario")%></b></p>
-
                         </div>
                     </li>
                 </ItemTemplate>

@@ -39,7 +39,7 @@ namespace Repositorios
 
         public Comentarios GetById(int id)
         {
-            return (from e in contexto.Comentarios where e.IdEvento == id select e).First();
+            return (from e in contexto.Comentarios where e.IdEvento == id select e).FirstOrDefault();
         }
 
         public void SaveComent(int calificacion, string com, int evento, int user)
@@ -52,6 +52,22 @@ namespace Repositorios
             contexto.Comentarios.Add(comentario);
             contexto.SaveChanges();
 
+        }
+
+
+
+        public bool verificarComentarioExistente(int userId, int evento)
+        {
+            try
+            {
+                var comentario = (from c in contexto.Comentarios where c.IdEvento == evento && c.IdUsuario == userId select c).First();
+                return true;
+            }
+            catch (Exception)
+            {     
+               return false;
+            }
+           
         }
     }
 }

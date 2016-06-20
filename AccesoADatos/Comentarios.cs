@@ -11,7 +11,7 @@ namespace AccesoADatos
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Comentarios
     {
         public int IdComentario { get; set; }
@@ -19,9 +19,10 @@ namespace AccesoADatos
         public int IdUsuario { get; set; }
         public byte Puntuacion { get; set; }
         public string Comentarios1 { get; set; }
-    
+
         public virtual Eventos Eventos { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual string nombreUsuario { get; set; }
     }
+
 }
