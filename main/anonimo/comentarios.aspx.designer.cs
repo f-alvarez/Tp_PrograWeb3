@@ -22,6 +22,24 @@ namespace Tp__PrograWeb3.main.anonimo {
         protected global::System.Web.UI.HtmlControls.HtmlForm gv;
         
         /// <summary>
+        /// Control lblevento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblevento;
+        
+        /// <summary>
+        /// Control lblnombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblnombre;
+        
+        /// <summary>
         /// Control comentariosRepeater.
         /// </summary>
         /// <remarks>
