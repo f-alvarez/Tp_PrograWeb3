@@ -75,24 +75,18 @@ namespace Repositorios
         {
             List<Eventos> listaRetornada = new List<Eventos>();
             List<Eventos> listaEventos = (from e in contexto.Eventos where e.Estado == estado select e).ToList();
+            int cantidadComensalesAsistentes;
 
-            foreach (var evento in listaEventos)
+            foreach (Eventos evento in listaEventos)
             {
-                List<Reservas> listaReservas = (from r in contexto.Reservas where r.IdEvento == evento.IdEvento select r).ToList();
-                if (listaReservas.Count > 0)
-                {
-                    foreach (var reserva in listaReservas)
-                    {
-                        if (reserva.Cantidad < evento.CantidadComensales)
-                        {
-                            listaRetornada.Add(evento);
-                        }
-                    }
+                cantidadComensalesAsistentes = 0;
+                foreach (Reservas reserva in evento.Reservas) {
+                    cantidadComensalesAsistentes = cantidadComensalesAsistentes + reserva.Cantidad;
                 }
-                else {
-                    listaRetornada.Add(evento);
+
+                if (evento.CantidadComensales > cantidadComensalesAsistentes) {
+                    listaRetornada.Add(evento);                
                 }
-                
             }
 
             return listaRetornada;
