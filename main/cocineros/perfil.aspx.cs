@@ -47,11 +47,13 @@ namespace Tp__PrograWeb3.main.cocineros
             if (recetasId.Items.Count > 0)
             {
                 labelRecetas.Visible = false;
+                labelCantidadRecetas.Visible = true;
                 labelCantidadRecetas.Text = labelCantidadRecetas.Text + (recetasId.Items.Count).ToString();
             }
             else
             {
                 labelRecetas.Visible = true;
+                labelCantidadRecetas.Visible = false;
             }
         }
 

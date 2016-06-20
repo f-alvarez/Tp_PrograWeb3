@@ -34,7 +34,7 @@
                         </asp:Repeater>
                     </div>
                 </div>
-                <asp:HyperLink href="default.aspx" ID="HyperLink1" runat="server">Volver</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/main/anonimo/default.aspx">Volver</asp:HyperLink>
 
             </form>
         </div>
