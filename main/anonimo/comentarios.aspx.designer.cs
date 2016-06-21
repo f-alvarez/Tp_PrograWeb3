@@ -40,15 +40,6 @@ namespace Tp__PrograWeb3.main.anonimo {
         protected global::System.Web.UI.WebControls.Label lblnombre;
         
         /// <summary>
-        /// Control comentariosRepeater.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater comentariosRepeater;
-        
-        /// <summary>
         /// Control HyperLink1.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace Tp__PrograWeb3.main.anonimo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        
+        /// <summary>
+        /// Control comentariosRepeater.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater comentariosRepeater;
     }
 }

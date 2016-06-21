@@ -3,7 +3,7 @@
     
     <div class="col-md-12">
         <h3>
-            <asp:Label Text="" ID="eventoNombreLabel" runat="server" />
+            <asp:Label Text="" ID="eventoNombreLabel" CssClass="titulo" runat="server" />
         </h3>
     </div>
 

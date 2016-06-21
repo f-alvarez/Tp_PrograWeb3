@@ -20,12 +20,12 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                         <asp:Repeater id="eventosId" runat="server">                            
                             <ItemTemplate>                              
                                     <div class="well well-lg">                      
-                                        <p class="text-info"><b><%# Eval("nombre")%></b></p>
+                                        <p class="titulo"><%# Eval("nombre")%></p>
                                         <p><%# Eval("fecha")%></p>
                                         <p><%# Eval("descripcion")%></p>
                                         <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
                                         <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
-                                        <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-info" %>'>
+                                        <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-warning" %>'>
                                             <%# Eval("estadoString")%>
                                         </p>
                                     </div>                                                         
@@ -48,7 +48,7 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
 
                         <div class="col-md-12 text-center">
                             <p><asp:Label id="nombreId" Text="" runat="server" /></p>
-                            <p><b>Miembro desde: </b> <asp:Label id="fechaIngresoId" Text="" runat="server" /></p>
+                            <p>Miembro desde: <asp:Label id="fechaIngresoId" Text="" runat="server" /></p>
                             <p><asp:Label id="mailId" Text="" runat="server" /></p>
                         </div>
                     </div>
@@ -61,16 +61,15 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                         <asp:Label ID="labelRecetas" Text="No hay recetas para mostrar" runat="server" />
                         <asp:Label ID="labelCantidadRecetas" Text="Cantidad de Recetas: " runat="server" />
 
-
                             <asp:Repeater id="recetasId" runat="server">
                                 <ItemTemplate>
                                  
                                         <div class="well well-lg">
-                                            <p class="text-info"><b><%# Eval("nombre")%></b></p>
-                                            <p><b>Tipo: </b><%# Eval("TipoString")%></p>
-                                            <p><b>Descripcion: </b><%# Eval("descripcion")%></p>
-                                            <p><b>Ingredientes: </b><%# Eval("ingredientes")%></p>
-                                            <p><b>Tiempo de Coccion: </b><%# Eval("tiempoCoccion")%> minutos</p>
+                                            <p class="titulo"><%# Eval("nombre")%></p>
+                                            <p>Tipo: </b><%# Eval("TipoString")%></p>
+                                            <p>Descripcion: </b><%# Eval("descripcion")%></p>
+                                            <p>Ingredientes: </b><%# Eval("ingredientes")%></p>
+                                            <p>Tiempo de Coccion: </b><%# Eval("tiempoCoccion")%> minutos</p>
                                         </div>
                               
                                     

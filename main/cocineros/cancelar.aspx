@@ -35,12 +35,12 @@ eliminar el registro de la base de datos.--%>
                     <ItemTemplate>
                         <li class="list-group-item">
                             <div class="panel-body">
-                                <p class="text-info"><b><%# Eval("nombre")%></b></p>
+                                <p class="titulo"><%# Eval("nombre")%></p>
                                 <p><%# Eval("fecha")%></p>
                                 <p><%# Eval("descripcion")%></p>
                                 <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
                                 <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
-                                <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-info" %>'><%# Eval("estadoString")%></p>
+                                <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-warning" %>'><%# Eval("estadoString")%></p>
                                 <asp:LinkButton ID="LinkButton1" Visible='<%# string.Equals(Eval("estadoString"),"Pendiente") %>' CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "IdEvento")%>'                                              runat="server" OnClick="btnShowPopup_Click">
                                                     Cancelar
                                 </asp:LinkButton>

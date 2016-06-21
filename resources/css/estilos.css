@@ -57,7 +57,10 @@
 }
 
 .cancelado {
-    background:#d0d1d5;
+    border: 2px solid #FF4C4C;
+}
+.text-danger, .text-danger:hover {
+    color: #FF4C4C !important;
 }
 
 .ErrorSpan {
@@ -65,6 +68,40 @@
     font-weight: bold;
     text-align: center;
     padding-bottom: 10px;
+}
+
+.titulo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #B2B87C;
+    font-family: sans-serif;
+}
+
+table>thead>tr>th, .table>thead>tr>th, table>tbody>tr>th, .table>tbody>tr>th, table>tfoot>tr>th, .table>tfoot>tr>th, table>thead>tr>td, .table>thead>tr>td, table>tbody>tr>td, .table>tbody>tr>td, table>tfoot>tr>td, .table>tfoot>tr>td {
+    border-color: #df6924 !important;
+}
+
+label, .radio label, .checkbox label, .help-block {
+    font-size: 14px !important;
+}
+
+table, .table {
+    font-size: 15px !important;
+}
+
+.well-lg {
+    padding: 10px 0px 0px 10px !important;
+}
+.well {
+    margin-bottom: 0px !important;
+}
+
+.lista {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    border: 1px solid transparent;
 }
 
 .keygen, select, select[size="0"], select[size="1"] {

@@ -5,7 +5,7 @@
 
         <form id="Form1" runat="server">
             <div class="form-group-center col-md-12 ">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h4>Calificar <asp:Label ID="lblEventoNombre" runat="server" Text="Label"></asp:Label></h4>                    
                     </div>
@@ -20,7 +20,7 @@
                         </div>
                          <div class="col-md-4">
                             Calificacion
-                            <asp:ListBox  class="form-control" ID="listCalificacion" runat="server" AutoPostBack="True" SelectionMode="Single" CssClass="list-group-item" Rows="5">
+                            <asp:ListBox  CssClass="lista form-control" ID="listCalificacion" runat="server" AutoPostBack="True" SelectionMode="Single" Rows="5">
                             </asp:ListBox>  
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="listCalificacion" CssClass="has-error">
                             <span class="alert-danger">Seleccione Calificacion</span>
@@ -29,8 +29,7 @@
                         <asp:Button ID="btnSubmit" runat="server" Text="Calificar" CssClass="btn btn-success  pull-right" OnClick="btnSubmit_Click" />
                     </div>
                 </div>
-              
-            </div>
+             </div>
         </form>
   
 </asp:Content>
