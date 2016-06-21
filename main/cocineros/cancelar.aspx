@@ -24,32 +24,32 @@ true)]en el método.
 Comentario: Al cancelar un evento se deberá cambiar el estado del mismo. No se deberá
 eliminar el registro de la base de datos.--%>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
-<div id="errorAjax" class="ErrorSpan"></div>
-<div class="panel panel-primary titles text-center">
-                    <div class="panel-heading">Eventos</div>
-                        <form runat="server">
-                            <ul class="list-group">
-                                <asp:Label ID="labelEventos" Text="No hay eventos para mostrar" runat="server" />
-                                <asp:Repeater id="eventosId" runat="server">                            
-                                    <ItemTemplate>
-                                        <li class="list-group-item">
-                                            <div class="panel-body">                      
-                                                <p><b><%# Eval("nombre")%></b></p>
-                                                <p><%# Eval("fecha")%></p>
-                                                <p><%# Eval("descripcion")%></p>
-                                                <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
-                                                <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
-                                                <p>Estado: <%# Eval("estadoString")%></p>
-                                                <asp:LinkButton ID="LinkButton1" Visible=<%# string.Equals(Eval("estadoString"),"Pendiente") %> CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "IdEvento")%>' runat="server" OnClick="btnShowPopup_Click">
+<asp:Content ID="Content3" ContentPlaceHolderID="main" runat="Server">
+    <div id="errorAjax" class="ErrorSpan"></div>
+    <div class="panel panel-primary titles text-center">
+        <div class="panel-heading">Eventos</div>
+        <form runat="server">
+            <ul class="list-group">
+                <asp:Label ID="labelEventos" Text="No hay eventos para mostrar" runat="server" />
+                <asp:Repeater ID="eventosId" runat="server">
+                    <ItemTemplate>
+                        <li class="list-group-item">
+                            <div class="panel-body">
+                                <p class="text-info"><b><%# Eval("nombre")%></b></p>
+                                <p><%# Eval("fecha")%></p>
+                                <p><%# Eval("descripcion")%></p>
+                                <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
+                                <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
+                                <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-info" %>'><%# Eval("estadoString")%></p>
+                                <asp:LinkButton ID="LinkButton1" Visible='<%# string.Equals(Eval("estadoString"),"Pendiente") %>' CommandArgument='<%#  DataBinder.Eval(Container.DataItem, "IdEvento")%>'                                              runat="server" OnClick="btnShowPopup_Click">
                                                     Cancelar
-                                                </asp:LinkButton>   
-                                            </div>     
-                                        </li>                       
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </ul>
-                        </form>
-                </div>
+                                </asp:LinkButton>
+                            </div>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </form>
+    </div>
     <div id="dialog"></div>
 </asp:Content>

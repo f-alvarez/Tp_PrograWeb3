@@ -61,7 +61,7 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
                   <asp:ListItem Value="4">Vegetariana</asp:ListItem>
 
               </asp:DropDownList>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" InitialValue="seleccione" runat="server" Display="Dynamic" ControlToValidate="tipoId" CssClass="has-error">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" InitialValue="seleccione" runat="server" Display="Dynamic" ControlToValidate="tipoId" CssClass="has-error form-control">
                 <span class="help-block">Seleccione un tipo</span>
             </asp:RequiredFieldValidator>
           </div>

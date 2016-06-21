@@ -18,17 +18,17 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                     <ul class="list-group">
                         <asp:Label ID="labelEventos" Text="No hay eventos para mostrar" runat="server" />
                         <asp:Repeater id="eventosId" runat="server">                            
-                            <ItemTemplate>
-                                <li class="list-group-item">
-                                    <div class="panel-body">                      
-                                        <p><b><%# Eval("nombre")%></b></p>
+                            <ItemTemplate>                              
+                                    <div class="well well-lg">                      
+                                        <p class="text-info"><b><%# Eval("nombre")%></b></p>
                                         <p><%# Eval("fecha")%></p>
                                         <p><%# Eval("descripcion")%></p>
                                         <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
                                         <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
-                                        <p>Estado: <%# Eval("estadoString")%></p>
-                                    </div>     
-                                </li>                       
+                                        <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-info" %>'>
+                                            <%# Eval("estadoString")%>
+                                        </p>
+                                    </div>                                                         
                             </ItemTemplate>
                         </asp:Repeater>
                     </ul>
@@ -64,15 +64,15 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
 
                             <asp:Repeater id="recetasId" runat="server">
                                 <ItemTemplate>
-                                    <li class="list-group-item">
-                                        <div class="panel-body">
-                                            <p><b><%# Eval("nombre")%></b></p>
+                                 
+                                        <div class="well well-lg">
+                                            <p class="text-info"><b><%# Eval("nombre")%></b></p>
                                             <p><b>Tipo: </b><%# Eval("TipoString")%></p>
                                             <p><b>Descripcion: </b><%# Eval("descripcion")%></p>
                                             <p><b>Ingredientes: </b><%# Eval("ingredientes")%></p>
                                             <p><b>Tiempo de Coccion: </b><%# Eval("tiempoCoccion")%> minutos</p>
                                         </div>
-                                    </li>
+                              
                                     
                                 </ItemTemplate>
                             </asp:Repeater>

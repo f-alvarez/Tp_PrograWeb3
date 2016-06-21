@@ -7,7 +7,7 @@
             <div class="form-group-center col-md-12 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Calificar Evento: "<asp:Label ID="lblEventoNombre" runat="server" Text="Label"></asp:Label>"</h4>                    
+                        <h4>Calificar <asp:Label ID="lblEventoNombre" runat="server" Text="Label"></asp:Label></h4>                    
                     </div>
                     <div class="panel-body">
                         <div class="col-md-8">
