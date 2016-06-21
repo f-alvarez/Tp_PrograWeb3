@@ -66,3 +66,7 @@
     text-align: center;
     padding-bottom: 10px;
 }
+
+.keygen, select, select[size="0"], select[size="1"] {
+    color: #2b3e50 !important;
+}
