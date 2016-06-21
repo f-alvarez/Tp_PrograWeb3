@@ -3,35 +3,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyAnonimo" runat="server">
 
     <div class="col-md-12">
-
+        <div class="row">
         <div class="text-center col-md-12">
             <h2>COMENTARIOS</h2>
         </div>
-
+        </div>
 
         <div class="col-md-12">
             <form id="gv" class="form-horizontal" runat="server">
 
-
-                <h3>
-                    <asp:Label ID="lblevento" runat="server" Text=""></asp:Label>
-
-                </h3>
-
-                <div class="panel text-center">
+                <div class="jumbotron">
+                    <h3>Evento: 
+                        <asp:Label ID="lblevento" runat="server" Text=""></asp:Label>
+                    </h3>
                     <h4>Cocinero: 
-                            <asp:Label ID="lblnombre" runat="server" Text=""></asp:Label></h4>
+                        <asp:Label ID="lblnombre" runat="server" Text=""></asp:Label>
+                    </h4>
                 </div>
+               
                 <div class="text-left">
                     <asp:Repeater ID="comentariosRepeater" runat="server">
                         <ItemTemplate>
                             <div class="well well-lg">
-
-                                <p>Calificacion: <b class="puntuacion"><%# Eval("Puntuacion")%></b></p>
-                                <p>Comentario: <%# Eval("Comentarios1")%></p>
                                 <p><b>Usuario: @<%# Eval("nombreUsuario")%></b></p>
-
-
+                                <p>Calificacion: <b class="puntuacion"><%# Eval("Puntuacion")%></b></p>
+                                <p>Comentario: <%# Eval("Comentarios1")%></p>                               
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>

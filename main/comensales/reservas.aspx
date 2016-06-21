@@ -14,7 +14,7 @@
                 <ItemTemplate>
                     <div class="well well-lg">
                         <div class='<%# (byte)Eval("estado") == 2 ? "panel-body cancelado":"panel-body"%>'>
-                            <p class="text-info" ><b><%# Eval("nombre")%></b></p>
+                            <h4><p class="text-info" >Evento: <%# Eval("nombre")%></p></h4>
                             <p><%# Eval("fecha")%></p>
                             <p><%# Eval("descripcion")%></p>
                             <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-info" %>'><%# Eval("EstadoString")%></p>
