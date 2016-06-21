@@ -15,9 +15,9 @@ namespace Tp__PrograWeb3.main.comensales
         ReservasRepository reservasRepo = new ReservasRepository(contexto);
         EventosRepository EventosRepo = new EventosRepository(contexto);
         static int userId;
-        static int cantidadReservas;
+        static int cantidadReservas = 0;
         static int eventoId;
-        static int cantidadMaximaReservas;
+        static int cantidadMaximaReservas = 0;
         static Eventos evento;
 
         protected void Page_Load(object sender, EventArgs e)
