@@ -15,15 +15,17 @@ namespace Tp__PrograWeb3.main.comensales
         ReservasRepository reservasRepo = new ReservasRepository(contexto);
         EventosRepository EventosRepo = new EventosRepository(contexto);
         static int userId;
-        static int cantidadReservas = 0;
+        static int cantidadReservas;
         static int eventoId;
-        static int cantidadMaximaReservas = 0;
+        static int cantidadMaximaReservas;
         static Eventos evento;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
                 userId = Int32.Parse(Session["userId"].ToString());
+                cantidadReservas = 0;
+                cantidadMaximaReservas = 0;
                 CargarEvento();
             }
         }
