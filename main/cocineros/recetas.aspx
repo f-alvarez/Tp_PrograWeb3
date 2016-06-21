@@ -54,14 +54,13 @@ Las recetas deberán asociadas al cocinero que las haya creado.--%>
           <div class="form-group col-md-6">
             <label>Tipo:</label>
               <asp:DropDownList ID="tipoId" runat="server" AutoPostBack="True">
-                    <asp:ListItem Selected="True" Value="seleccione" >Seleccione</asp:ListItem>
+                  <asp:ListItem Selected="True" Value="seleccione" >Seleccione</asp:ListItem>
                   <asp:ListItem Value="1">Gourmet</asp:ListItem>
                   <asp:ListItem Value="2">Diet</asp:ListItem>
                   <asp:ListItem Value="3">Casera</asp:ListItem>
                   <asp:ListItem Value="4">Vegetariana</asp:ListItem>
-
               </asp:DropDownList>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" InitialValue="seleccione" runat="server" Display="Dynamic" ControlToValidate="tipoId" CssClass="has-error form-control">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" InitialValue="seleccione" runat="server" Display="Dynamic" ControlToValidate="tipoId" CssClass="has-error">
                 <span class="help-block">Seleccione un tipo</span>
             </asp:RequiredFieldValidator>
           </div>

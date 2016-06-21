@@ -62,11 +62,11 @@ namespace Tp__PrograWeb3.main.cocineros
             eventosId.DataSource = EventosRepo.GetAllByUserId(userId);
             if (eventosId.Items.Count == 0)
             {
-                labelEventos.Visible = false;
+                labelEventos.Visible = true;
             }
             else
             {
-                labelEventos.Visible = true;
+                labelEventos.Visible = false;
             }
             eventosId.DataBind();
         }
