@@ -66,6 +66,8 @@ namespace Tp__PrograWeb3.main.cocineros
         private void CargarEventos()
         {
             eventosId.DataSource = EventosRepo.GetAllByUserId(userId);
+            eventosId.DataBind();
+
             if (eventosId.Items.Count == 0)
             {
                 labelEventos.Visible = true;
@@ -74,7 +76,6 @@ namespace Tp__PrograWeb3.main.cocineros
             {
                 labelEventos.Visible = false;
             }
-            eventosId.DataBind();
         }
 
       

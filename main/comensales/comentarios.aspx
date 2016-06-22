@@ -12,8 +12,7 @@
                     <div class="panel-body">
                         <div class="col-md-8">
                             Comentario
-                              <textarea class="form-control" rows="5"  id="comentario" placeholder="Ingrese Comentario" runat="server">
-                            </textarea>
+                              <textarea class="form-control" rows="5"  id="comentario" placeholder="Ingrese Comentario" runat="server"></textarea>
                              <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="comentario" CssClass="has-error"> 
                             <span class="alert-danger">Ingrese un Comentario</span>
                         </asp:RequiredFieldValidator>
