@@ -11,9 +11,9 @@ namespace Tp__PrograWeb3.main.comensales
 {
     public partial class comentarios : System.Web.UI.Page
     {
-        static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
-        ComentariosRepository comentariosRepo = new ComentariosRepository(contexto);
-        EventosRepository eventosRepo = new EventosRepository(contexto);
+        static PW3_TP_20161CEntities contexto;
+        static ComentariosRepository comentariosRepo;
+        static EventosRepository eventosRepo;
         static int userId;
         static int evento;
 
@@ -21,6 +21,10 @@ namespace Tp__PrograWeb3.main.comensales
         {
             if (!IsPostBack) 
             {
+                contexto = new PW3_TP_20161CEntities();
+                comentariosRepo = new ComentariosRepository(contexto);
+                eventosRepo = new EventosRepository(contexto);
+
                 userId = Int32.Parse(Session["userId"].ToString());
                 evento = Convert.ToInt32(Request.QueryString["eventoId"]);
                 cargarListBoxPuntuacion();

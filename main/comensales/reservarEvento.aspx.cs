@@ -11,9 +11,9 @@ namespace Tp__PrograWeb3.main.comensales
 {
     public partial class reservarEvento : System.Web.UI.Page
     {
-        static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
-        ReservasRepository reservasRepo = new ReservasRepository(contexto);
-        EventosRepository EventosRepo = new EventosRepository(contexto);
+        static PW3_TP_20161CEntities contexto;
+        static ReservasRepository reservasRepo;
+        static EventosRepository EventosRepo;
         static int userId;
         static int cantidadReservas;
         static int eventoId;
@@ -23,6 +23,10 @@ namespace Tp__PrograWeb3.main.comensales
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
+                contexto = new PW3_TP_20161CEntities();
+                reservasRepo = new ReservasRepository(contexto);
+                EventosRepo = new EventosRepository(contexto);
+
                 userId = Int32.Parse(Session["userId"].ToString());
                 cantidadReservas = 0;
                 cantidadMaximaReservas = 0;

@@ -11,14 +11,21 @@ namespace Tp__PrograWeb3.main.comensales
 {
     public partial class reservas : System.Web.UI.Page
     {
-        ReservasRepository reservasRepo = new ReservasRepository(new PW3_TP_20161CEntities());
-        EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
-        ComentariosRepository comentariosRepo = new ComentariosRepository(new PW3_TP_20161CEntities());
+        static PW3_TP_20161CEntities contexto;
+        static ReservasRepository reservasRepo;
+        static EventosRepository EventosRepo;
+        static ComentariosRepository comentariosRepo;
         static int userId;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
+                contexto = new PW3_TP_20161CEntities();
+                reservasRepo = new ReservasRepository(new PW3_TP_20161CEntities());
+                EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
+                comentariosRepo = new ComentariosRepository(new PW3_TP_20161CEntities());
+
                 userId = Int32.Parse(Session["userId"].ToString());
                 CargarReservas();
             }

@@ -11,9 +11,10 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class perfil : System.Web.UI.Page
     {
-        EventosRepository EventosRepo = new EventosRepository(new PW3_TP_20161CEntities());
-        UsuariosRepository UsuariosRepo = new UsuariosRepository(new PW3_TP_20161CEntities());
-        RecetasRepository RecetasRepo = new RecetasRepository(new PW3_TP_20161CEntities());
+        static PW3_TP_20161CEntities contexto;
+        static EventosRepository EventosRepo;
+        static UsuariosRepository UsuariosRepo;
+        static RecetasRepository RecetasRepo;
 
         static int userId;
 
@@ -21,6 +22,11 @@ namespace Tp__PrograWeb3.main.cocineros
         {
             if (!IsPostBack)
             {
+                contexto = new PW3_TP_20161CEntities();
+                EventosRepo = new EventosRepository(contexto);
+                UsuariosRepo = new UsuariosRepository(contexto);
+                RecetasRepo = new RecetasRepository(contexto);
+
                 userId = Int32.Parse(Session["userId"].ToString());
                 CargarPerfil();
             }

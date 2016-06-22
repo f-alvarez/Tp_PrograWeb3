@@ -12,16 +12,21 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class eventos : System.Web.UI.Page
     {
-        static PW3_TP_20161CEntities contexto = new PW3_TP_20161CEntities();
-        EventosRepository eventoRepositorio = new EventosRepository(contexto);
-        UsuariosRepository UsuariosRepo = new UsuariosRepository(contexto);
-        RecetasRepository RecetasRepo = new RecetasRepository(contexto);
+        static PW3_TP_20161CEntities contexto;
+        static EventosRepository eventoRepositorio;
+        static UsuariosRepository UsuariosRepo;
+        static RecetasRepository RecetasRepo;
         string filename = "";
         static int userId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
+                contexto = new PW3_TP_20161CEntities();
+                eventoRepositorio = new EventosRepository(contexto);
+                UsuariosRepo = new UsuariosRepository(contexto);
+                RecetasRepo = new RecetasRepository(contexto);
+
                 userId = Int32.Parse(Session["userId"].ToString());
                 CargarRecetas();
             }

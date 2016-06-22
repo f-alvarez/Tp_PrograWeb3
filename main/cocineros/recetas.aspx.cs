@@ -11,12 +11,16 @@ namespace Tp__PrograWeb3.main.cocineros
 {
     public partial class recetas : System.Web.UI.Page
     {
-        RecetasRepository recetaRepositorio = new RecetasRepository(new PW3_TP_20161CEntities());
+        static PW3_TP_20161CEntities contexto;
+        static RecetasRepository recetaRepositorio;
         static int userId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
+                contexto = new PW3_TP_20161CEntities();
+                recetaRepositorio = new RecetasRepository(contexto);
+
                 userId = Int32.Parse(Session["userId"].ToString());
             }
 
