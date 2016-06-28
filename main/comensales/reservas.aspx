@@ -15,7 +15,7 @@
                     <div class='well well-lg <%# (byte)Eval("estado") == 2 ? "panel-body cancelado":"panel-body"%>'>
                         <div >
                             <h4><p class="titulo" >Evento: <%# Eval("nombre")%></p></h4>
-                            <p><%# Eval("fecha")%></p>
+                            <p><%# String.Format("{0:d/M/yyyy}",Eval("fecha")) %></p>
                             <p><%# Eval("descripcion")%></p>
                             <p class='<%# Eval("EstadoString") == "Cancelado" ? "text-danger" : Eval("EstadoString") == "Pendiente" ? "text-success":"text-warning" %>'><%# Eval("EstadoString")%></p>
                             <div>  

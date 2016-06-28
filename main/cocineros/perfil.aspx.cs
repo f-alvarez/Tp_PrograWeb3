@@ -37,7 +37,7 @@ namespace Tp__PrograWeb3.main.cocineros
 
             Usuarios usuario = UsuariosRepo.getById(userId);
             nombreId.Text = usuario.Nombre;
-            fechaIngresoId.Text = usuario.FechaRegistracion.ToString();
+            fechaIngresoId.Text = usuario.FechaRegistracion.ToString("dd/MM/yy");
             mailId.Text = usuario.Email;
             
             CargarRecetas();

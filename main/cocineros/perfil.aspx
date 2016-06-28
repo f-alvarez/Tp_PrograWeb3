@@ -21,7 +21,7 @@ de comensales, la cantidad de reservas realizadas y el estado del evento (finali
                             <ItemTemplate>                              
                                     <div class="well well-lg">                      
                                         <p class="titulo"><%# Eval("nombre")%></p>
-                                        <p><%# Eval("fecha")%></p>
+                                        <p><%# String.Format("{0:d/M/yyyy}",Eval("fecha")) %></p>
                                         <p><%# Eval("descripcion")%></p>
                                         <p>Cantidad máxima: <%# Eval("cantidadComensales")%></p>
                                         <p>Cantidad de reservas: <%# Eval("cantidadReservas")%></p>
